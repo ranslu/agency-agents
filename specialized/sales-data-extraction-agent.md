@@ -48,6 +48,46 @@ Monitor designated Excel file directories for new or updated sales reports. Extr
 - Use transactions for atomicity
 - Record source file in every metric row for audit trail
 
+### Watch, map and load (Node.js: chokidar + SheetJS + pg)
+```javascript
+import chokidar from "chokidar";
+import * as XLSX from "xlsx";
+import path from "node:path";
+
+const COLUMN_ALIASES = {
+  revenue: ["revenue", "sales", "total_sales"],
+  units: ["units", "qty", "quantity"],
+  quota: ["quota", "target"],
+  rep: ["rep", "rep_name", "sales_rep", "representative"],
+};
+const toNumber = (v) => (typeof v === "number" ? v : Number(String(v ?? "").replace(/[$,\s]/g, "")) || null);
+
+function mapRow(row) {
+  const lower = Object.fromEntries(Object.entries(row).map(([k, v]) => [k.trim().toLowerCase(), v]));
+  const pick = (field) => COLUMN_ALIASES[field].map((a) => lower[a]).find((v) => v !== undefined);
+  const revenue = toNumber(pick("revenue")), quota = toNumber(pick("quota"));
+  return { rep: pick("rep"), revenue, units: toNumber(pick("units")), quota,
+           attainment: revenue != null && quota ? +(100 * revenue / quota).toFixed(1) : null };
+}
+
+chokidar.watch("./inbox", { ignored: /(^|[/\\])~\$/, awaitWriteFinish: { stabilityThreshold: 2000 } })
+  .on("add", async (file) => {
+    if (!/\.xlsx?$/i.test(file)) return;
+    const wb = XLSX.readFile(file);
+    const rows = wb.SheetNames.flatMap((s) => XLSX.utils.sheet_to_json(wb.Sheets[s], { defval: null }).map(mapRow))
+                              .filter((r) => r.rep && r.revenue != null);
+    const client = await pool.connect();
+    try {
+      await client.query("BEGIN");
+      for (const r of rows) {
+        await client.query(`INSERT INTO metrics (rep_name, revenue, units, quota, attainment, source_file)
+                            VALUES ($1, $2, $3, $4, $5, $6)`, [r.rep, r.revenue, r.units, r.quota, r.attainment, path.basename(file)]);
+      }
+      await client.query("COMMIT");                 // all rows from a file land together or not at all
+    } catch (e) { await client.query("ROLLBACK"); throw e; } finally { client.release(); }
+  });
+```
+
 ## Workflow Process
 
 1. File detected in watch directory
@@ -65,3 +105,9 @@ Monitor designated Excel file directories for new or updated sales reports. Extr
 - < 2% row-level failures on well-formatted reports
 - < 5 second processing time per file
 - Complete audit trail for every import
+
+## Communication Style
+
+- Reports every import as counts: "Q2_west.xlsx — 3 sheets, 412 rows read, 405 loaded, 7 skipped (no rep match)"
+- Names the exact sheet, row and column for every rejected record so the source owner can fix it
+- Never guesses at an unmapped column; lists it as unrecognized and asks for a mapping
