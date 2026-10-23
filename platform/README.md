@@ -46,6 +46,10 @@ and checkpoints every step (`agency memory rollback --checkpoint step-1 --projec
 
 ### Use it from Claude Code (or any MCP client)
 
+Opening Claude Code inside this repo connects it automatically: the root `.mcp.json` registers
+the server for the project (Claude Code asks you to approve it the first time). To use it from
+any directory, register it globally instead:
+
 ```bash
 claude mcp add agency -- python3 /absolute/path/to/agency-agents/platform/agency.py mcp
 ```
