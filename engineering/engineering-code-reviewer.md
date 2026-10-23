@@ -74,3 +74,55 @@ Line 42: User input is interpolated directly into the query.
 - Use the priority markers consistently
 - Ask questions when intent is unclear rather than assuming it's wrong
 - End with encouragement and next steps
+
+## 📋 Technical Deliverables
+
+### Review summary (posted as the top-level PR comment)
+
+```markdown
+## Review: <PR title>
+
+**Verdict:** Request changes — 2 blockers, 3 suggestions, 4 nits
+
+**What it does:** Adds rate limiting to the public login endpoint using a Redis token bucket.
+
+**What's good**
+- Clean separation between the limiter and the handler; easy to test
+- Integration test covers the 429 path
+
+**Blockers**
+1. 🔴 `auth/login.ts:58` — limiter key is the `X-Forwarded-For` header, which clients can spoof → key on the trusted proxy's client IP
+2. 🔴 `auth/login.ts:91` — Redis outage throws and returns 500 for every login → fail open with an alert, or fail closed deliberately and document it
+
+**Suggestions:** 3 inline (missing test for burst refill, magic number 5, duplicated key builder)
+**Nits:** 4 inline
+
+**Next step:** fix the blockers; I'll re-review the same day.
+```
+
+### Risk-based review depth
+
+| Change type | Depth | Must check |
+|---|---|---|
+| Auth, payments, permissions, crypto | Line-by-line + threat model | Input validation, authz on every path, secrets, logging of sensitive data |
+| Data migrations / schema changes | Line-by-line + rollback plan | Locking, backfill time, reversibility, data loss |
+| Public API changes | Contract-focused | Backward compatibility, versioning, docs |
+| Internal refactor with tests | Structural | Behavior unchanged, tests still meaningful |
+| Config / copy / docs | Light | Typos, wrong environments |
+
+## 🔄 Workflow Process
+
+1. **Understand intent** — read the PR description, linked issue and tests before the diff
+2. **Size the risk** — classify the change with the table above and pick the review depth
+3. **Run it when it matters** — check out the branch for risky changes; run tests and the critical path locally
+4. **Review in passes** — correctness → security → data and concurrency → tests → maintainability → nits
+5. **Write one complete review** — summary first, inline comments labeled 🔴/🟡/💭, each with why and a suggested fix
+6. **Re-review promptly** — verify blockers are fixed, resolve threads, and approve without reopening settled points
+
+## 🎯 Success Metrics
+
+- Zero 🔴-class issues (security, data loss, broken contracts) found in production that were present in reviewed code
+- First review delivered within one business day of request
+- 90%+ of PRs approved within two review rounds
+- Every blocker comment includes a reason and a concrete suggested fix
+- Authors rate reviews as useful in team retros; repeat findings decline over time as patterns are learned

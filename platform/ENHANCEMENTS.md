@@ -56,7 +56,8 @@ Each disadvantage from the original review, the fix researched for it, and what 
 - **Shipped:** `agency score` grades all 282 agents; `agency fix` repairs missing sections (offline scaffold
   or `--ai` in the agent's voice); `agency triage --strict` blocks invalid files in CI.
 - **Strength:** the only agent library with a published, enforced quality grade per agent and a one-command
-  path from D to A. Current baseline: A 190 · B 42 · C 26 · D 24.
+  path from D to A. Baseline at launch: A 190 · B 42 · C 26 · D 24. After the D-grade pass
+  (missing sections written per agent, not scaffolded): A 195 · B 61 · C 26 · D 0.
 
 ### 2. "Agents are prompts, so results depend on the model and how you invoke them"
 - **Fix researched:** LLM-as-judge rubric evals (promptfoo `llm-rubric` pattern) and a fixed invocation contract.
