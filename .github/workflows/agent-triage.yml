@@ -1,0 +1,42 @@
+name: Agent PR Triage
+
+# Automated first-pass review of changed agent files: frontmatter, template coverage,
+# quality grade and near-duplicate detection. Runs with a read-only token on the PR's own
+# code (works for forks); the report goes to the job summary, and is posted as a sticky
+# comment when the PR comes from this repository.
+on:
+  pull_request:
+    paths: ["**/*.md"]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Triage changed agents
+        run: |
+          python3 platform/agency.py triage --base "origin/${{ github.base_ref }}" --out triage.md
+          cat triage.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Post sticky comment
+        if: github.event.pull_request.head.repo.full_name == github.repository
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = require('fs').readFileSync('triage.md', 'utf8') + '\n<!-- agency-triage -->';
+            const { owner, repo } = context.repo;
+            const issue_number = context.issue.number;
+            const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number });
+            const mine = comments.find(c => c.body.includes('<!-- agency-triage -->'));
+            if (mine) await github.rest.issues.updateComment({ owner, repo, comment_id: mine.id, body });
+            else await github.rest.issues.createComment({ owner, repo, issue_number, body });
+      - name: Fail on invalid or duplicate agents
+        run: python3 platform/agency.py triage --base "origin/${{ github.base_ref }}" --strict > /dev/null

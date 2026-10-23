@@ -18,6 +18,23 @@ from .memory import Memory
 API_URL = os.environ.get("ANTHROPIC_BASE_URL", "https://api.anthropic.com") + "/v1/messages"
 DEFAULT_MODEL = os.environ.get("AGENCY_MODEL", "claude-sonnet-5-5")
 
+# A consistent invocation contract: every agent gets the task in the same structure, so
+# results depend less on how a person happens to phrase the request.
+BRIEF = """# Task
+
+{task}
+
+## How to respond
+1. If something critical is missing, list your assumptions up front and proceed with them.
+2. Produce the concrete deliverable your role is known for (plan, code, template, table).
+3. Note risks and anything you could not verify.
+4. Finish with "Handoff notes": what the next specialist needs to know."""
+
+
+def build_brief(task: str) -> str:
+    return BRIEF.format(task=task.strip())
+
+
 HANDOFF = """## Handoff from {prev_name}
 
 {prev_output}
@@ -61,7 +78,7 @@ def run_pipeline(task: str, agents: list[Agent], *, model: str = DEFAULT_MODEL, 
     steps: list[Step] = []
     llm = llm or (lambda s, u: call_claude(s, u, model=model))
     for i, agent in enumerate(agents):
-        prompt = f"# Task\n\n{task}"
+        prompt = build_brief(task)
         if memory:
             past = memory.recall(project=project, agent=agent.slug, limit=5)
             if past:

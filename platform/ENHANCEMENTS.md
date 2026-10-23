@@ -46,3 +46,39 @@ memory contract but tells you to bring your own server.
 3. LLM-as-judge evals per agent (`agency eval <slug>`) with stored scores in the catalog.
 4. Auto-fix PRs for D-grade agents: generate the missing template sections, human review.
 5. Run runbooks end-to-end: `agency run --runbook startup-mvp` honoring `activation` phases.
+
+## Disadvantages → strengths
+
+Each disadvantage from the original review, the fix researched for it, and what now ships.
+
+### 1. "Agent quality varies; missing sections and frontmatter fixes still landing"
+- **Fix researched:** treat prompts like code — measurable quality bar, automated gates, assisted repair.
+- **Shipped:** `agency score` grades all 282 agents; `agency fix` repairs missing sections (offline scaffold
+  or `--ai` in the agent's voice); `agency triage --strict` blocks invalid files in CI.
+- **Strength:** the only agent library with a published, enforced quality grade per agent and a one-command
+  path from D to A. Current baseline: A 190 · B 42 · C 26 · D 24.
+
+### 2. "Agents are prompts, so results depend on the model and how you invoke them"
+- **Fix researched:** LLM-as-judge rubric evals (promptfoo `llm-rubric` pattern) and a fixed invocation contract.
+- **Shipped:** `agency eval` builds each agent's rubric from its *own* Success Metrics + Critical Rules,
+  generates scenarios from its Core Mission, and runs them across several models (`--models a,b,c`)
+  to produce a portability matrix. `--promptfoo` exports the same suite for any provider.
+  Every run (`agency run`, evals) wraps the task in one standard brief: assumptions, deliverable, risks, handoff.
+- **Strength:** "model-agnostic" stops being a claim and becomes a measured, per-model score.
+
+### 3. "Using them outside Claude Code may take adaptation"
+- **Fix researched:** the Agent Skills open standard (SKILL.md, published Dec 2025, agentskills.io),
+  AGENTS.md (agents.md), and MCP.
+- **Shipped:** `agency export skills` (spec-compliant names/descriptions), `agency export agents-md`,
+  `json`, `txt`; plus the MCP server, which serves every agent as a prompt to any MCP client.
+- **Strength:** one source, every runtime — native files for 15+ tools via `convert.sh`, open standards
+  for everything else, and a live server for anything MCP-capable.
+
+### 4. "142 open PRs; maintainer review looks backlogged"
+- **Fix researched:** CI triage bots with duplicate detection and completeness checks (GitHub Continuous AI,
+  PR Triage Bot pattern).
+- **Shipped:** `agency triage` + `.github/workflows/agent-triage.yml`: every PR touching agent files gets a
+  sticky comment with verdict (ready / needs-work / possible-duplicate / invalid), grade, missing sections
+  and the nearest existing agents (TF-IDF cosine). Fork-safe: read-only token, report in the job summary.
+  `agency overlaps` audits the whole corpus for near-duplicates.
+- **Strength:** contributors self-correct before a human looks; maintainers review only "ready" PRs.

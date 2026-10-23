@@ -16,6 +16,12 @@ that turn the roster into something you can **query, route, audit, orchestrate a
 | Web dashboard | `agency serve` | Browse, team builder, run pipelines, quality table, runbooks at http://127.0.0.1:8787 |
 | JSON catalog | `agency catalog -o catalog.json` | One machine-readable index for other apps |
 | Doctor | `agency doctor` | Shows which AI CLIs you have, which you're missing, and how to install them |
+| Auto-fix | `agency fix --grade D [--ai] --write` | Adds missing template sections: offline scaffold, or written by Claude in the agent's voice |
+| Behavioural evals | `agency eval <slug> --models a,b` | Grades real outputs against the agent's *own* success metrics and rules; compares models |
+| promptfoo suite | `agency eval --grade A --promptfoo suite.json` | Exports `llm-rubric` tests for any providers promptfoo supports |
+| Open-format export | `agency export skills\|agents-md\|json\|txt -o dist` | Agent Skills (`SKILL.md`), `AGENTS.md`, JSON or plain prompts — no per-tool adaptation |
+| PR triage | `agency triage --base origin/main` | First-pass review of changed agents: grade, missing sections, near-duplicates |
+| Overlap finder | `agency overlaps --threshold 0.45` | Near-duplicate pairs across the whole corpus |
 
 ## Quick start
 
@@ -54,5 +60,6 @@ Tools: `search_agents`, `get_agent`, `recommend_team`, `list_runbooks`, `score_a
 python3 -m unittest discover -s platform/tests -v
 ```
 
-CI runs them in `.github/workflows/platform.yml`. See [ENHANCEMENTS.md](ENHANCEMENTS.md) for the
+CI runs them in `.github/workflows/platform.yml`; `.github/workflows/agent-triage.yml` posts the
+triage report on every PR that touches agent files. See [ENHANCEMENTS.md](ENHANCEMENTS.md) for the
 reverse-engineering notes and the roadmap.

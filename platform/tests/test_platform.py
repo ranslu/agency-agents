@@ -129,5 +129,83 @@ class WebTest(unittest.TestCase):
             srv.shutdown()
 
 
+class FixTest(unittest.TestCase):
+    def test_scaffold_adds_only_missing_sections_and_raises_score(self):
+        from agency_platform.corpus import Agent, split_sections
+        from agency_platform.fix import scaffold
+
+        body = "## Identity\nx\n"
+        a = Agent("s", "Tester", "Tests things thoroughly for teams", "testing", "testing/s.md", body=body,
+                  sections=split_sections(body))
+        before = score_agent(a)
+        added = "\n".join(scaffold(a, f) for f in before.missing)
+        a.body = body + added
+        a.sections = split_sections(a.body)
+        after = score_agent(a)
+        self.assertEqual(after.missing, [])
+        self.assertGreater(after.score, before.score)
+
+
+class EvalTest(unittest.TestCase):
+    def test_rubric_uses_agent_metrics_and_judge_parses_json(self):
+        from agency_platform.evals import judge, rubric_for, run_eval, scenarios_for, UNIVERSAL_RUBRIC
+
+        a = next(x for x in load_corpus() if x.slug == "engineering-frontend-developer")
+        self.assertGreater(len(rubric_for(a)), len(UNIVERSAL_RUBRIC))
+        self.assertTrue(scenarios_for(a))
+        score, ok, _ = judge("out", "t", ["r"], lambda s, u: 'noise {"score": 8, "pass": true, "reasons": ["good"]}')
+        self.assertEqual((score, ok), (8.0, True))
+        fake = lambda model: (lambda s, u: '{"score": 6, "pass": false}' if "Rubric" in u else f"answer from {model}")
+        results = run_eval(a, ["m1", "m2"], n=2, llm_factory=fake)
+        self.assertEqual({r.model for r in results}, {"m1", "m2"})
+        self.assertFalse(any(r.passed for r in results))
+
+
+class ExportTest(unittest.TestCase):
+    def test_skills_names_follow_spec(self):
+        import re
+        import tempfile
+        from agency_platform.export import export, skill_name
+
+        self.assertEqual(skill_name("Foo_Bar--baz"), "foo-bar-baz")
+        with tempfile.TemporaryDirectory() as d:
+            agents = list(load_corpus()[:5])
+            export(agents, "skills", Path(d))
+            for a in agents:
+                text = (Path(d) / skill_name(a.slug) / "SKILL.md").read_text()
+                name = re.search(r"^name: (.+)$", text, re.M).group(1)
+                self.assertRegex(name, r"^[a-z0-9-]{1,64}$")
+            export(agents, "agents-md", Path(d))
+            self.assertIn(agents[0].name, (Path(d) / "AGENTS.md").read_text())
+
+
+class TriageTest(unittest.TestCase):
+    def test_existing_good_agent_is_ready_and_non_agent_ignored(self):
+        from agency_platform.triage import review_file
+
+        self.assertEqual(review_file("engineering/engineering-frontend-developer.md").verdict, "ready")
+        self.assertIsNone(review_file("README.md"))
+
+    def test_copy_is_flagged_duplicate(self):
+        import shutil
+        import tempfile
+        from agency_platform.corpus import REPO_ROOT, load_corpus as lc
+        from agency_platform.triage import review_file
+
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            for f in ("divisions.json",):
+                shutil.copy(REPO_ROOT / f, root / f)
+            (root / "engineering").mkdir()
+            src = REPO_ROOT / "engineering" / "engineering-frontend-developer.md"
+            shutil.copy(src, root / "engineering" / "engineering-frontend-developer.md")
+            (root / "engineering" / "copy.md").write_text(src.read_text().replace("Frontend Developer", "UI Dev"))
+            lc.cache_clear()
+            try:
+                self.assertEqual(review_file("engineering/copy.md", root).verdict, "possible-duplicate")
+            finally:
+                lc.cache_clear()
+
+
 if __name__ == "__main__":
     unittest.main()
