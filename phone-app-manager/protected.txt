@@ -1,0 +1,23 @@
+# Apps appsweep will never remove, however long since you opened them.
+# One package name per line. Wildcards work: com.mybank.* matches every app from that developer.
+# Find package names with:  python3 appsweep.py scan
+#
+# Rarely opened, but painful to lose. Edit to match your phone.
+
+# Two-factor authenticators and password managers
+com.google.android.apps.authenticator2
+com.azure.authenticator
+com.authy.authy
+com.twofasapp
+com.x8bit.bitwarden
+com.onepassword.android
+com.agilebits.onepassword
+com.lastpass.lpandroid
+
+# Emergency, safety and medical
+com.google.android.apps.safetyhub
+com.medicalid.*
+
+# Add your own below, for example:
+# com.mybank.*
+# com.airline.boardingpass
