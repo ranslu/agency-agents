@@ -1,0 +1,39 @@
+# Seed sources for skill_scraper.py
+# One per line:  owner/repo[@ref][:subpath]   |   https://github.com/owner/repo/tree/ref/subpath   |   ./local/path
+# Lines starting with # are ignored. Repos with "awesome" in the name are expanded with --expand-awesome.
+
+# --- Official / vendor-maintained ---------------------------------------------
+anthropics/skills
+anthropics/claude-plugins-official
+anthropics/knowledge-work-plugins
+huggingface/skills
+vercel-labs/agent-skills
+microsoft/skills
+openai/skills
+getsentry/skills
+cloudflare/skills
+supabase/agent-skills
+expo/skills
+hashicorp/agent-skills
+trailofbits/skills
+
+# --- Large community collections ----------------------------------------------
+obra/superpowers
+obra/superpowers-skills
+K-Dense-AI/claude-scientific-skills
+alirezarezvani/claude-skills
+wshobson/agents
+mrgoonie/claudekit-skills
+Jeffallan/claude-skills
+daymade/claude-code-skills
+levnikolaevich/claude-code-skills
+sickn33/antigravity-awesome-skills
+czlonkowski/n8n-skills
+lackeyjb/playwright-skill
+
+# --- Curated lists (followed with --expand-awesome) ---------------------------
+travisvn/awesome-claude-skills
+ComposioHQ/awesome-claude-skills
+VoltAgent/awesome-agent-skills
+BehiSecc/awesome-claude-skills
+hesreallyhim/awesome-claude-code

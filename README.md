@@ -128,6 +128,28 @@ claude mcp add agency -- python3 "$(pwd)/platform/agency.py" mcp
 
 See [platform/README.md](platform/README.md).
 
+### Option 6: Skill Scraper (find the most comprehensive Claude Skills)
+
+A Claude Code skill plus a stdlib-only Python engine that clones ~30 curated skill repos
+(and optionally awesome-lists and GitHub search), scores every `SKILL.md` on bundled
+scripts/references/evals, dynamic runtime features (`$ARGUMENTS`, `` !`shell` `` context
+injection, `${CLAUDE_SKILL_DIR}`, forked context, MCP and subagent use) and guidance depth,
+flags risky content, and harvests the winners with provenance.
+
+```bash
+# In Claude Code, from this repo:
+/skill-scraper most dynamic skills with scripts --harvest 5
+
+# Or directly:
+python3 .claude/skills/skill-scraper/scripts/skill_scraper.py --sort dynamic --top 30
+python3 .claude/skills/skill-scraper/scripts/skill_scraper.py --query pdf,xlsx --require scripts --harvest 3
+python3 .claude/skills/skill-scraper/scripts/skill_scraper.py --discover --expand-awesome   # cast a wider net
+```
+
+Output lands in `skill-scraper-out/` (`report.md`, `skills.json`, `skills.csv`, `harvest/`).
+To use it in any project, copy `.claude/skills/skill-scraper/` to `~/.claude/skills/`. The scoring
+rubric is in [.claude/skills/skill-scraper/references/scoring.md](.claude/skills/skill-scraper/references/scoring.md).
+
 ---
 
 ## 🎨 The Agency Roster
