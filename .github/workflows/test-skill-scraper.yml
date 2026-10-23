@@ -1,0 +1,28 @@
+name: Test Skill Scraper
+
+# Offline unit tests for .claude/skills/skill-scraper (no network, no deps beyond python3).
+on:
+  pull_request:
+    paths:
+      - ".claude/skills/skill-scraper/**"
+      - "scripts/test-skill-scraper.py"
+      - ".github/workflows/test-skill-scraper.yml"
+  push:
+    branches: [main]
+    paths:
+      - ".claude/skills/skill-scraper/**"
+      - "scripts/test-skill-scraper.py"
+
+jobs:
+  test-skill-scraper:
+    name: skill-scraper unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.9"
+
+      - name: Run tests
+        run: python3 scripts/test-skill-scraper.py
