@@ -9,9 +9,9 @@ from .corpus import Agent
 # Section families from the contributing template. Each entry lists accepted heading keywords.
 SECTION_CHECKS = {
     "identity": ("identity", "who you are", "role"),
-    "mission": ("mission", "core responsibilit", "capabilit", "what you do"),
+    "mission": ("mission", "core responsibilit", "capabilit", "competenc", "what you do"),
     "rules": ("critical rules", "rules", "guardrail", "constraints"),
-    "deliverables": ("deliverable", "output", "templates"),
+    "deliverables": ("deliverable", "output", "template", "toolkit", "checklist"),
     "workflow": ("workflow", "process", "methodology", "framework"),
     "communication": ("communication",),
     "metrics": ("success metric", "metrics", "kpi"),

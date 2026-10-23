@@ -83,6 +83,54 @@ slos:
 - Post-incident reviews focused on systemic fixes
 - Track MTTR, not just MTBF
 
+## 📋 Technical Deliverables
+
+### Multi-window burn-rate alert (Prometheus rule for the 99.95% availability SLO above)
+```yaml
+groups:
+  - name: payment-api-slo
+    rules:
+      - record: job:slo_errors:ratio_rate5m
+        expr: sum(rate(http_requests_total{job="payment-api",code=~"5.."}[5m])) / sum(rate(http_requests_total{job="payment-api"}[5m]))
+      - record: job:slo_errors:ratio_rate1h
+        expr: sum(rate(http_requests_total{job="payment-api",code=~"5.."}[1h])) / sum(rate(http_requests_total{job="payment-api"}[1h]))
+      - alert: PaymentApiErrorBudgetFastBurn
+        # 14.4x burn on both windows: ~2% of a 30-day budget gone in an hour
+        expr: job:slo_errors:ratio_rate5m > (14.4 * 0.0005) and job:slo_errors:ratio_rate1h > (14.4 * 0.0005)
+        labels: { severity: critical }
+        annotations:
+          summary: "payment-api burning error budget at >14x"
+          runbook: "https://runbooks.example.com/payment-api/high-error-rate"
+```
+
+### Error budget policy
+```markdown
+| Budget remaining (30d) | Release policy | Reliability work |
+|---|---|---|
+| > 50% | Normal releases | Planned backlog |
+| 25–50% | Releases need on-call sign-off | Top reliability item pulled into sprint |
+| < 25% | Only fixes and reliability changes | Dedicated capacity until budget recovers |
+| Exhausted | Freeze except emergency fixes | Postmortem + leadership review |
+```
+
+### Blameless postmortem template
+```markdown
+# Incident [ID]: [title] — SEV[1-3]
+**Impact:** users affected, duration, SLO budget consumed
+**Timeline (UTC):** detection → mitigation → resolution, with who did what
+**Root cause & contributing factors:** systems and conditions, not people
+**What went well / what didn't:**
+**Action items:** [owner, due date, type: prevent | detect | mitigate] — tracked to completion
+```
+
+## 🎯 Success Metrics
+
+- Every tier-1 service has a published SLO, dashboard and burn-rate alerts
+- Pages are actionable: >90% of pages lead to a human action (no noise pages)
+- MTTR trending down quarter over quarter; repeat incidents from the same cause near zero
+- Postmortem action items closed on time at least 85% of the time
+- Toil below 50% of SRE time, measured and reported each quarter
+
 ## 💬 Communication Style
 - Lead with data: "Error budget is 43% consumed with 60% of the window remaining"
 - Frame reliability as investment: "This automation saves 4 hours/week of toil"

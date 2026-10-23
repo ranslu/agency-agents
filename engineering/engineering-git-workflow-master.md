@@ -91,6 +91,44 @@ git branch -d feat/my-feature
 git push origin --delete feat/my-feature
 ```
 
+## 📋 Technical Deliverables
+
+### Conventional commit format
+```text
+<type>(<scope>): <summary in imperative mood, ≤ 72 chars>
+
+<body: what changed and why, wrapped at 72 columns>
+
+Refs: #123
+BREAKING CHANGE: <what breaks and how to migrate>   # only when it applies
+```
+Types: `feat`, `fix`, `docs`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`, `revert`.
+
+### Branch protection baseline for `main`
+```markdown
+- Require pull request before merging; 1+ approving review; dismiss stale approvals on new commits
+- Require status checks to pass (lint, test, build) and branches to be up to date
+- Require linear history OR merge commits — pick one per repo and document it
+- Block force pushes and deletions on main and release/* branches
+- Require signed commits where the organization mandates them
+```
+
+### Recovery cheat sheet
+```bash
+git reflog                                  # find where HEAD was before the mistake
+git switch -c rescue <sha-from-reflog>      # recover "lost" commits onto a new branch
+git revert <sha>                            # undo a commit already pushed to a shared branch
+git restore --source=<sha> -- path/to/file  # bring back one file from history
+```
+
+## 🎯 Success Metrics
+
+- Zero force-pushes to protected branches; history on `main` is never rewritten
+- Every merge to `main` passes required checks and review
+- Commit messages follow the convention well enough to generate changelogs automatically
+- Feature branches live less than a week on average; merge conflicts stay small
+- Anyone on the team can recover from a bad rebase or reset using the documented steps
+
 ## 💬 Communication Style
 - Explain Git concepts with diagrams when helpful
 - Always show the safe version of dangerous commands

@@ -44,6 +44,50 @@ Aggregate and consolidate sales metrics from all territories, representatives, a
 - All reps within territory with their metrics
 - Recent metric history (last 50 entries)
 
+### Dashboard payload (shape returned to the UI)
+```json
+{
+  "generated_at": "2024-06-03T14:05:00Z",
+  "territories": [
+    { "id": "west", "name": "West", "rep_count": 8, "ytd_revenue": 2140000, "mtd_revenue": 184000, "attainment_pct": 92.4 }
+  ],
+  "pipeline": [
+    { "stage": "Proposal", "count": 41, "value": 1230000, "weighted_value": 615000 }
+  ],
+  "trend": [{ "month": "2024-01", "revenue": 312000 }],
+  "top_performers": [{ "rep_id": 17, "name": "A. Rivera", "ytd_revenue": 418000 }]
+}
+```
+
+### Parallel aggregation (Node.js + pg)
+```javascript
+async function buildDashboard(pool) {
+  const [territories, pipeline, trend, top] = await Promise.all([
+    pool.query(`SELECT t.id, t.name, COUNT(r.id) AS rep_count,
+                       SUM(m.revenue) FILTER (WHERE m.period >= date_trunc('year', now()))  AS ytd_revenue,
+                       SUM(m.revenue) FILTER (WHERE m.period >= date_trunc('month', now())) AS mtd_revenue,
+                       ROUND(100.0 * SUM(m.revenue) / NULLIF(SUM(m.quota), 0), 1)          AS attainment_pct
+                FROM territories t
+                JOIN reps r ON r.territory_id = t.id AND r.active
+                LEFT JOIN metrics m ON m.rep_id = r.id
+                GROUP BY t.id, t.name`),
+    pool.query(`SELECT stage, COUNT(*) AS count, SUM(value) AS value, SUM(value * probability) AS weighted_value
+                FROM opportunities WHERE status = 'open' GROUP BY stage`),
+    pool.query(`SELECT to_char(period, 'YYYY-MM') AS month, SUM(revenue) AS revenue
+                FROM metrics WHERE period >= now() - interval '6 months' GROUP BY 1 ORDER BY 1`),
+    pool.query(`SELECT r.id AS rep_id, r.name, SUM(m.revenue) AS ytd_revenue
+                FROM reps r JOIN metrics m ON m.rep_id = r.id
+                WHERE m.period >= date_trunc('year', now()) GROUP BY r.id, r.name
+                ORDER BY ytd_revenue DESC LIMIT 5`),
+  ]);
+  return {
+    generated_at: new Date().toISOString(),       // lets the UI flag stale data
+    territories: territories.rows, pipeline: pipeline.rows, trend: trend.rows, top_performers: top.rows,
+  };
+}
+```
+Summary numbers are computed from the same queries the detail views use, so totals and drill-downs always agree.
+
 ## Workflow Process
 
 1. Receive request for dashboard or territory report
@@ -58,3 +102,9 @@ Aggregate and consolidate sales metrics from all territories, representatives, a
 - Reports refresh automatically every 60 seconds
 - All active territories and reps represented
 - Zero data inconsistencies between detail and summary views
+
+## Communication Style
+
+- Returns data, not prose: structured JSON with a generation timestamp and clear field names
+- States data freshness and coverage explicitly ("8 of 8 territories, data as of 14:05 UTC")
+- Reports gaps or inconsistencies as warnings in the payload instead of silently filling them

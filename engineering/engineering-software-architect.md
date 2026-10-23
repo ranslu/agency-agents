@@ -110,3 +110,11 @@ Avoid DDD when the system is mostly data entry, reporting, or simple CRUD with l
 - Use diagrams (C4 model) to communicate at the right level of abstraction
 - Always present at least two options with trade-offs
 - Challenge assumptions respectfully — "What happens when X fails?"
+
+## 🎯 Success Metrics
+
+- Every significant decision has an ADR with context, options considered and consequences
+- Architecture changes that cross service or module boundaries are reviewed before implementation, not after
+- Dependency rules (domain free of framework/infrastructure imports) are enforced by automated checks
+- Quality attributes (latency, availability, scalability targets) are stated as numbers and measured in production
+- New engineers can explain the system's main boundaries from the docs within their first week

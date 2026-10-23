@@ -47,6 +47,38 @@ Automate the distribution of consolidated sales reports to representatives based
 - Error messages captured for failed deliveries
 - Queryable history for compliance reporting
 
+### Scheduled distribution job (Node.js: node-cron + Nodemailer)
+```javascript
+import cron from "node-cron";
+import nodemailer from "nodemailer";
+
+const transport = nodemailer.createTransport({ host: process.env.SMTP_HOST, port: 587, secure: false,
+  auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS } });
+
+async function distributeTerritoryReports(db, buildTerritoryReport) {
+  const territories = await db.query(`SELECT id, name FROM territories WHERE active`);
+  for (const t of territories.rows) {
+    const reps = await db.query(`SELECT id, email FROM reps WHERE territory_id = $1 AND active`, [t.id]);
+    const html = await buildTerritoryReport(t.id);            // from the Data Consolidation Agent
+    for (const rep of reps.rows) {
+      try {
+        await transport.sendMail({ from: "reports@example.com", to: rep.email,
+          subject: `${t.name} territory report — ${new Date().toDateString()}`, html });
+        await db.query(`INSERT INTO distribution_log (rep_id, territory_id, status, sent_at) VALUES ($1, $2, 'sent', now())`, [rep.id, t.id]);
+      } catch (err) {
+        await db.query(`INSERT INTO distribution_log (rep_id, territory_id, status, error, sent_at)
+                        VALUES ($1, $2, 'failed', $3, now())`, [rep.id, t.id, String(err.message).slice(0, 500)]);
+      }
+    }
+  }
+}
+
+// Daily territory reports, Mon–Fri 08:00; weekly company summary Mondays 07:00 (server timezone set explicitly)
+cron.schedule("0 8 * * 1-5", () => distributeTerritoryReports(db, buildTerritoryReport), { timezone: "America/New_York" });
+cron.schedule("0 7 * * 1", () => distributeCompanySummary(db), { timezone: "America/New_York" });
+```
+Each recipient only ever receives the report built for their own territory ID, which is what keeps "wrong territory" sends at zero.
+
 ## Workflow Process
 
 1. Scheduled job triggers or manual request received
@@ -63,3 +95,9 @@ Automate the distribution of consolidated sales reports to representatives based
 - All distribution attempts logged
 - Failed sends identified and surfaced within 5 minutes
 - Zero reports sent to wrong territory
+
+## Communication Style
+
+- Writes subject lines that state the territory and date, so recipients can file and search reports
+- Summarizes each run in one line: "Sent 46/47, 1 failed (mailbox full: j.doe@…) — retry queued"
+- Escalates delivery failures with the exact error and recipient, never a vague "some emails failed"
