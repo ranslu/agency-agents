@@ -115,6 +115,19 @@ for r in json.load(open("strategy/runbooks.json"))["runbooks"]:
 
 See the [Multi-Tool Integrations](#-multi-tool-integrations) section below for full details.
 
+### Option 5: Agency Platform (search, team routing, pipelines, MCP server)
+
+Search the roster, auto-assemble a team for a task, grade agent quality, run multi-agent
+pipelines through the Claude API, and serve every agent over MCP — no dependencies beyond Python 3.
+
+```bash
+python3 platform/agency.py team "B2B SaaS launch with SEO and paid ads" -n 6
+python3 platform/agency.py serve        # web dashboard on http://127.0.0.1:8787
+claude mcp add agency -- python3 "$(pwd)/platform/agency.py" mcp
+```
+
+See [platform/README.md](platform/README.md).
+
 ---
 
 ## 🎨 The Agency Roster
