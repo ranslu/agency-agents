@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agency Platform</title>
+<style>
+:root{--bg:#f7f7f8;--panel:#fff;--ink:#16171a;--muted:#6b6f76;--line:#e3e4e8;--accent:#2563eb;--good:#16a34a;--warn:#d97706;--bad:#dc2626}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1115;--panel:#171a21;--ink:#e8eaee;--muted:#9aa0aa;--line:#2a2f3a;--accent:#60a5fa}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+header{padding:16px;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+h1{font-size:18px;margin:0}nav button{background:none;border:0;color:var(--muted);font:inherit;padding:6px 10px;border-radius:6px;cursor:pointer}
+nav button.on{background:var(--panel);color:var(--ink);box-shadow:0 0 0 1px var(--line)}
+main{max-width:1100px;margin:0 auto;padding:16px}section{display:none}section.on{display:block}
+input,textarea,select{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink);font:inherit}
+textarea{min-height:90px}.row{display:flex;gap:8px;margin-bottom:12px}.row>*{flex:1}.row>button,.row>select{flex:0 0 auto;width:auto}
+button.primary{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:10px 16px;font:inherit;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px;cursor:pointer}
+.card h3{margin:0 0 4px;font-size:15px}.card p{margin:0;color:var(--muted);font-size:13px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.tag{display:inline-block;font-size:11px;padding:1px 6px;border-radius:99px;border:1px solid var(--line);color:var(--muted);margin-top:6px}
+pre{white-space:pre-wrap;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px;max-height:60vh;overflow:auto}
+table{width:100%;border-collapse:collapse;background:var(--panel)}td,th{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left;font-size:13px}
+.A{color:var(--good)}.B{color:var(--accent)}.C{color:var(--warn)}.D{color:var(--bad)}
+dialog{max-width:900px;width:calc(100% - 32px);border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink)}
+.muted{color:var(--muted)}
+</style>
+</head>
+<body>
+<header><h1>🎭 Agency Platform</h1>
+<nav><button data-tab="browse" class="on">Browse</button><button data-tab="team">Team builder</button><button data-tab="run">Run pipeline</button><button data-tab="quality">Quality</button><button data-tab="runbooks">Runbooks</button></nav>
+<span id="count" class="muted"></span></header>
+<main>
+<section id="browse" class="on">
+  <div class="row"><input id="q" placeholder="Search agents — e.g. 'react performance', 'tiktok growth', 'SOC2 audit'"><select id="div"><option value="">All divisions</option></select></div>
+  <div id="results" class="grid"></div>
+</section>
+<section id="team">
+  <div class="row"><textarea id="task" placeholder="Describe the project — the router picks a cross-functional team"></textarea></div>
+  <div class="row"><input id="size" type="number" value="5" min="1" max="15"><button class="primary" id="build">Build team</button></div>
+  <div id="teamOut" class="grid"></div>
+</section>
+<section id="run">
+  <p class="muted">Agents run in order; each receives the previous agent's output as a handoff. Live runs need <code>ANTHROPIC_API_KEY</code> on the server.</p>
+  <div class="row"><textarea id="runTask" placeholder="Task"></textarea></div>
+  <div class="row"><input id="runAgents" placeholder="Comma-separated slugs (Team builder fills this)"></div>
+  <div class="row"><label><input type="checkbox" id="dry" checked style="width:auto"> Dry run</label><button class="primary" id="go">Run</button></div>
+  <div id="runOut"></div>
+</section>
+<section id="quality"><p class="muted">Lowest-scoring agents first. Score = frontmatter + template sections + examples + depth.</p><table id="qt"></table></section>
+<section id="runbooks"><div id="rb"></div></section>
+</main>
+<dialog id="dlg"><div style="display:flex;justify-content:space-between;align-items:center"><h2 id="dt"></h2><button onclick="dlg.close()">✕</button></div><p id="dd" class="muted"></p><pre id="dp"></pre></dialog>
+<script>
+const $=s=>document.querySelector(s), api=p=>fetch(p).then(r=>r.json());
+function el(tag,props={},...kids){const e=document.createElement(tag);Object.assign(e,props);kids.forEach(k=>e.append(k));return e}
+function card(a){const c=el('div',{className:'card'},el('h3',{textContent:`${a.emoji||''} ${a.name}`}),el('p',{textContent:a.description}),el('span',{className:'tag',textContent:a.division}));c.onclick=()=>show(a.slug);return c}
+async function show(slug){const a=await api('/api/agent/'+slug);$('#dt').textContent=`${a.emoji||''} ${a.name}`;$('#dd').textContent=`${a.slug} · ${a.path}`;$('#dp').textContent=a.prompt;dlg.showModal()}
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{document.querySelectorAll('nav button,section').forEach(x=>x.classList.remove('on'));b.classList.add('on');$('#'+b.dataset.tab).classList.add('on');if(b.dataset.tab==='quality')loadQ();if(b.dataset.tab==='runbooks')loadRB()});
+let all=[];
+(async()=>{all=await api('/api/agents');$('#count').textContent=all.length+' agents';const d=await api('/api/divisions');Object.entries(d).forEach(([k,v])=>$('#div').append(el('option',{value:k,textContent:v.label})));render(all)})();
+function render(list){$('#results').replaceChildren(...list.map(card))}
+let t;async function search(){const q=$('#q').value.trim(),dv=$('#div').value;if(!q){render(dv?all.filter(a=>a.division===dv):all);return}render(await api(`/api/search?q=${encodeURIComponent(q)}&division=${dv}&limit=40`))}
+$('#q').oninput=()=>{clearTimeout(t);t=setTimeout(search,200)};$('#div').onchange=search;
+$('#build').onclick=async()=>{const team=await api(`/api/team?task=${encodeURIComponent($('#task').value)}&size=${$('#size').value}`);$('#teamOut').replaceChildren(...team.map(card));$('#runTask').value=$('#task').value;$('#runAgents').value=team.map(a=>a.slug).join(',')};
+$('#go').onclick=async()=>{$('#runOut').replaceChildren(el('p',{className:'muted',textContent:'Running…'}));const r=await fetch('/api/run',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({task:$('#runTask').value,agents:$('#runAgents').value.split(',').map(s=>s.trim()).filter(Boolean),dry_run:$('#dry').checked})}).then(r=>r.json());
+ if(r.error){$('#runOut').replaceChildren(el('p',{className:'D',textContent:r.error}));return}$('#runOut').replaceChildren(...r.flatMap(s=>[el('h3',{textContent:s.agent}),el('pre',{textContent:s.output})]))};
+async function loadQ(){const r=await api('/api/quality');const tb=el('tbody');r.forEach(x=>tb.append(el('tr',{},el('td',{className:x.grade,textContent:x.grade+' '+x.score}),el('td',{textContent:x.name}),el('td',{textContent:x.division}),el('td',{textContent:[...x.missing.map(m=>'missing '+m),...x.notes].join('; ')}))));$('#qt').replaceChildren(el('thead',{},el('tr',{},...['Score','Agent','Division','Issues'].map(h=>el('th',{textContent:h})))),tb)}
+async function loadRB(){const r=await api('/api/runbooks');$('#rb').replaceChildren(...r.map(b=>el('div',{className:'card',style:'margin-bottom:12px;cursor:default'},el('h3',{textContent:`${b.title} · ${b.mode} · ${b.duration||''}`}),el('p',{textContent:b.summary}),...b.roster.map(g=>el('p',{textContent:`${g.group} (${g.activation}): ${g.agents.join(', ')}`})))))}
+</script>
+</body>
+</html>
