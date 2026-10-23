@@ -175,6 +175,11 @@ class ExportTest(unittest.TestCase):
                 text = (Path(d) / skill_name(a.slug) / "SKILL.md").read_text()
                 name = re.search(r"^name: (.+)$", text, re.M).group(1)
                 self.assertRegex(name, r"^[a-z0-9-]{1,64}$")
+            export(agents, "skill-bundle", Path(d))
+            bundle = Path(d) / "agency-roster"
+            self.assertIn("name: agency-roster", (bundle / "SKILL.md").read_text())
+            self.assertIn(agents[0].slug, (bundle / "references" / "INDEX.md").read_text())
+            self.assertEqual(len(list((bundle / "references").glob("*.md"))), len(agents) + 1)
             export(agents, "agents-md", Path(d))
             self.assertIn(agents[0].name, (Path(d) / "AGENTS.md").read_text())
 
