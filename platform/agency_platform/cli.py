@@ -190,7 +190,15 @@ def cmd_eval(args):
 def cmd_export(args):
     from .export import export
 
-    n = export(_select(args), args.format, Path(args.out))
+    agents = _select(args)
+    if getattr(args, "slugs", None):
+        wanted = [s.strip() for s in args.slugs.split(",") if s.strip()]
+        known = {a.slug for a in agents}
+        missing = [s for s in wanted if s not in known]
+        if missing:
+            sys.exit(f"unknown agents: {', '.join(missing)}")
+        agents = [a for a in agents if a.slug in wanted]
+    n = export(agents, args.format, Path(args.out))
     print(f"exported {n} agents as {args.format} to {args.out}")
 
 
@@ -284,9 +292,10 @@ def main(argv: list[str] | None = None) -> None:
     s.add_argument("--judge", default=os.environ.get("AGENCY_JUDGE_MODEL", "claude-opus-5-5")); s.add_argument("-n", type=int, default=3)
     s.add_argument("--grade"); s.add_argument("--division")
     s.add_argument("--promptfoo", metavar="FILE", help="export a promptfoo suite instead of running"); s.set_defaults(fn=cmd_eval)
-    s = sub.add_parser("export", help="export to open formats (skills, agents-md, json, txt)")
-    s.add_argument("format", choices=["skills", "agents-md", "json", "txt"]); s.add_argument("-o", "--out", default="dist")
-    s.add_argument("--division"); s.add_argument("--grade"); s.set_defaults(fn=cmd_export)
+    s = sub.add_parser("export", help="export to open formats (skills, skill-bundle, agents-md, json, txt)")
+    s.add_argument("format", choices=["skills", "skill-bundle", "agents-md", "json", "txt"]); s.add_argument("-o", "--out", default="dist")
+    s.add_argument("--division"); s.add_argument("--grade")
+    s.add_argument("--slugs", help="comma-separated agent slugs to export (default: all)"); s.set_defaults(fn=cmd_export)
     s = sub.add_parser("triage", help="first-pass review of changed agent files (for PRs)"); s.add_argument("files", nargs="*")
     s.add_argument("--base", default="origin/main"); s.add_argument("--out"); s.add_argument("--strict", action="store_true")
     s.set_defaults(fn=cmd_triage)
