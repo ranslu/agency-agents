@@ -7,6 +7,9 @@ on:
       - "scripts/plugin-scraper.py"
       - "scripts/plugin_categories.py"
       - "scripts/plugin_vetting.py"
+      - "scripts/build-shortlist.py"
+      - "catalogs/ai-plugins/shortlist.json"
+      - "catalogs/ai-plugins/plugins.json"
       - "scripts/test-plugin-scraper.py"
       - ".github/workflows/test-plugin-scraper.yml"
   push:
@@ -15,6 +18,9 @@ on:
       - "scripts/plugin-scraper.py"
       - "scripts/plugin_categories.py"
       - "scripts/plugin_vetting.py"
+      - "scripts/build-shortlist.py"
+      - "catalogs/ai-plugins/shortlist.json"
+      - "catalogs/ai-plugins/plugins.json"
       - "scripts/test-plugin-scraper.py"
 
 jobs:

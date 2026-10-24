@@ -194,6 +194,18 @@ def scrape_awesome(label, url, entry_type):
     return out
 
 
+def _absorb(cur, e):
+    cur["sources"] = sorted(set(cur["sources"]) | set(e["sources"]))
+    if len(e["description"]) > len(cur["description"]):
+        cur["description"] = e["description"]
+    if cur["category"] in GENERIC and e["category"] not in GENERIC:
+        if cur["category"] in ("remote", "package"):
+            cur["hosting"] = cur["category"]
+        cur["category"] = e["category"]
+    if cur["type"] == "mcp-server" and e["type"] == "claude-code-plugin":
+        cur["type"] = e["type"]
+
+
 def merge(entries):
     merged = {}
     for e in entries:
@@ -204,18 +216,21 @@ def merge(entries):
         else:
             key = norm_url(e["url"]) or e["id"].lower()
         if key in merged:
-            cur = merged[key]
-            cur["sources"] = sorted(set(cur["sources"]) | set(e["sources"]))
-            if len(e["description"]) > len(cur["description"]):
-                cur["description"] = e["description"]
-            if cur["category"] in GENERIC and e["category"] not in GENERIC:
-                if cur["category"] in ("remote", "package"):
-                    cur["hosting"] = cur["category"]
-                cur["category"] = e["category"]
-            if cur["type"] == "mcp-server" and e["type"] == "claude-code-plugin":
-                cur["type"] = e["type"]
+            _absorb(merged[key], e)
         else:
             merged[key] = dict(e)
+
+    # Fold a server listing into the plugin for the same repo, but only when
+    # that plugin is the repo's only one (monorepos hold many plugins).
+    by_repo = {}
+    for key, e in merged.items():
+        if key.startswith("plugin:"):
+            by_repo.setdefault(norm_url(e["url"]), []).append(key)
+    for repo, keys in by_repo.items():
+        if len(keys) == 1 and repo in merged:
+            plugin = merged[keys[0]]
+            _absorb(plugin, merged.pop(repo))
+            plugin["type"] = "claude-code-plugin"
     return sorted(merged.values(), key=lambda e: (e["type"], e["category"].lower(), e["name"].lower()))
 
 
@@ -278,6 +293,8 @@ def write_outputs(entries, outdir, errors):
             row["all"] += 1
             row[e.get("tier")] = row.get(e.get("tier"), 0) + 1
     readme = lines + [
+        "Hand-picked plugins for each Agency division: [SHORTLIST.md](SHORTLIST.md).",
+        "",
         "The complete list of every entry is in [plugins.md](plugins.md). Categories marked",
         "`inferred` in the CSV were assigned from the plugin's description (`scripts/plugin_categories.py`).",
         "", "## MCP server categories", "", "| Category | All | Recommended | Likely junk |", "|---|---|---|---|",

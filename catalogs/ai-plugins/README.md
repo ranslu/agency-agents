@@ -1,13 +1,13 @@
 # AI Plugin Catalog
 
-20,811 unique AI plugins scraped on 2026-10-24 with `scripts/plugin-scraper.py`.
+20,805 unique AI plugins scraped on 2026-10-24 with `scripts/plugin-scraper.py`.
 Machine-readable copies: [plugins.json](plugins.json), [plugins.csv](plugins.csv).
 
 | Type | Count |
 |---|---|
-| claude-code-extension | 242 |
+| claude-code-extension | 241 |
 | claude-code-plugin | 352 |
-| mcp-server | 20,217 |
+| mcp-server | 20,212 |
 
 | Source | Entries |
 |---|---|
@@ -30,9 +30,11 @@ and the permissions it asks for before installing anything.
 | Tier | Meaning | Count |
 |---|---|---|
 | recommended | Anthropic-curated, or human-curated and cross-listed | 959 |
-| ok | vouched for by one human-curated list | 4,349 |
-| unvetted | self-published to a registry; nobody else vouches for it | 14,379 |
-| likely-junk | temporary hosting, template text, bulk spam or duplicates | 1,124 |
+| ok | vouched for by one human-curated list | 4,348 |
+| unvetted | self-published to a registry; nobody else vouches for it | 14,375 |
+| likely-junk | temporary hosting, template text, bulk spam or duplicates | 1,123 |
+
+Hand-picked plugins for each Agency division: [SHORTLIST.md](SHORTLIST.md).
 
 The complete list of every entry is in [plugins.md](plugins.md). Categories marked
 `inferred` in the CSV were assigned from the plugin's description (`scripts/plugin_categories.py`).
@@ -46,7 +48,7 @@ The complete list of every entry is in [plugins.md](plugins.md). Categories mark
 | Developer Tools | 1,169 | 44 | 35 |
 | Security | 1,164 | 29 | 89 |
 | Communication | 902 | 28 | 31 |
-| Workplace & Productivity | 817 | 23 | 18 |
+| Workplace & Productivity | 816 | 23 | 18 |
 | Multimedia Process | 798 | 15 | 29 |
 | Search & Data Extraction | 750 | 54 | 52 |
 | Marketing | 679 | 23 | 29 |
@@ -56,7 +58,7 @@ The complete list of every entry is in [plugins.md](plugins.md). Categories mark
 | Data Science Tools | 484 | 7 | 9 |
 | Travel & Transportation | 480 | 17 | 8 |
 | AI Models & Agent Infrastructure | 435 | 2 | 72 |
-| Aggregators | 387 | 22 | 15 |
+| Aggregators | 386 | 22 | 15 |
 | Monitoring | 375 | 14 | 24 |
 | Social Media | 361 | 13 | 33 |
 | Art & Culture | 359 | 16 | 7 |
@@ -66,8 +68,8 @@ The complete list of every entry is in [plugins.md](plugins.md). Categories mark
 | Location Services | 269 | 14 | 9 |
 | Research | 246 | 6 | 6 |
 | Jobs | 239 | 0 | 11 |
-| Browser Automation | 233 | 17 | 5 |
-| Architecture & Design | 207 | 6 | 0 |
+| Browser Automation | 232 | 17 | 4 |
+| Architecture & Design | 206 | 6 | 0 |
 | Code Execution | 192 | 3 | 6 |
 | Data Visualization | 191 | 0 | 17 |
 | Gaming | 184 | 6 | 0 |
@@ -76,7 +78,7 @@ The complete list of every entry is in [plugins.md](plugins.md). Categories mark
 | Sports | 167 | 7 | 3 |
 | File Systems | 160 | 7 | 10 |
 | Health & Wellness | 155 | 1 | 15 |
-| Education | 135 | 2 | 3 |
+| Education | 134 | 2 | 3 |
 | Delivery | 124 | 4 | 21 |
 | Command Line | 111 | 2 | 2 |
 | Customer Data Platforms | 104 | 5 | 2 |
@@ -106,7 +108,7 @@ The complete list of every entry is in [plugins.md](plugins.md). Categories mark
 | Identity | 2 | 2 | 0 |
 | Observability | 1 | 1 | 0 |
 
-## claude-code-extension (242)
+## claude-code-extension (241)
 
 | # | Name | Category | Tier | Description |
 |---|---|---|---|---|
@@ -306,52 +308,51 @@ The complete list of every entry is in [plugins.md](plugins.md). Categories mark
 | 194 | [LinkedIn Skills](https://github.com/sergebulaev/linkedin-skills) | Skills | ok | by Serge Bulaev - A set of skills for LinkedIn marketing: drafting posts, comments and replies, extracting the hook formula from a viral post, planning a week… |
 | 195 | [localpr](https://github.com/gilles-g/localpr) | Skills | ok | by gilles-g - Reviews Claude's uncommitted changes in a local GitHub-style pull request page: comment on any line, send comments in batches while Claude keeps… |
 | 196 | [mcu-skills](https://github.com/alexex1993/mcu-skills) | Skills | ok | by Alex New - A collection of board-specific Claude Code skills for microcontrollers firmware development, one per board, covering STM32, ESP32, ESP8266, RP204… |
-| 197 | [Superpowers](https://github.com/obra/superpowers) | Skills | ok | by Jesse Vincent - A strong bundle of core competencies for software engineering, with good coverage of a large portion of the SDLC - from planning, reviewing,… |
-| 198 | [SuperSEO Skills](https://github.com/inhouseseo/superseo-skills) | Skills | ok | by sanderbz - A nice package of Claude Skills focused on SEO workflows: page audits, content briefs, article writing, E-E-A-T audits, semantic gap analysis, an… |
-| 199 | [A Field Guide to Claude Fable 5](https://claude.com/blog/a-field-guide-to-claude-fable-finding-your-unknowns) | Start Here | ok | by Thariq Shihipar, Anthropic - Really solid, insightful guidance on working/thinking with Claude Fable, and with AI in general. Very well written. Hints of Ru… |
-| 200 | [andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) | Start Here | ok | by multica-ai - A drop-in CLAUDE.md distilling four behavioral guidelines for LLM-assisted coding into Claude Code a low-friction quick win. Karpathy-inspired,… |
-| 201 | [Beyond the Prompt: Claude Code](https://arps18.github.io/posts/claude-code-mastery) | Start Here | ok | by Arpan Patel - This has what you need. Remarkably clear, information-dense, it's Claude Code: the good parts, for beginners, advanced users, pets, anybody. |
-| 202 | [Claude Code Guide](https://github.com/zebbern/claude-code-guide) | Start Here | ok | by zebbern - A current single-page reference for Claude Code: install, environment variables, slash commands, MCP, hooks, and subagents, kept in sync with the… |
-| 203 | [Claude Code Hooks: Complete Guide](https://hidekazu-konishi.com/entry/claude_code_hooks_complete_guide.html) | Start Here | ok | by Hidekazu Konishi - A thorough walkthrough of every hook event, when each fires, the two return channels, common anti-patterns, and copy-ready settings.json… |
-| 204 | [Claude Code: Everything You Need to Know](https://github.com/wesammustafa/Claude-Code-Everything-You-Need-to-Know) | Start Here | ok | by wesammustafa - A conceptual, mental-models-first primer that explains what Claude Code is and how its agentic loop works, then layers setup, prompt-engineer… |
-| 205 | [claude-howto](https://github.com/luongnv89/claude-howto) | Start Here | ok | by luongnv89 - A structured, chapter-based getting-started guide for Claude Code with a self-assessment quiz and a ten-module progressive learning path slash c… |
-| 206 | [explore-claude-code](https://github.com/LukeRenton/explore-claude-code) | Start Here | ok | by Luke Renton - An interactive click-through of an annotated Claude Code project where every file and folder CLAUDE.md, settings.json, rules, commands, skills… |
-| 207 | [Learn Claude Code](https://github.com/shareAI-lab/learn-claude-code) | Start Here | ok | by shareAI-lab - A really interesting analysis of how coding agents like Claude Code are designed. It attempts to break an agent down into its fundamental part… |
-| 208 | [Writing a Good CLAUDE.md](https://www.humanlayer.dev/blog/writing-a-good-claude-md) | Start Here | ok | by HumanLayer - An essay on CLAUDE.md craft: instruction-budget reasoning, progressive disclosure, and the test of whether Claude would err without a given lin… |
-| 209 | [CCometixLine](https://github.com/Haleclipse/CCometixLine) | Status Lines | ok | by Haleclipse - A high-performance Claude Code statusline tool written in Rust with Git integration, usage tracking, interactive TUI configuration, and Claude… |
-| 210 | [ccstatusline](https://github.com/sirmalloc/ccstatusline) | Status Lines | ok | by sirmalloc - A highly customizable status line formatter for Claude Code CLI that displays model info, git branch, token usage, and other metrics in your ter… |
-| 211 | [Claude HUD](https://github.com/jarrodwatts/claude-hud) | Status Lines | ok | by Jarrod Watts - A really stacked status line that exposes just about everything you might need - context usage, tools, agents, todos, etc. Highly configurabl… |
-| 212 | [claude-carbon](https://github.com/gwittebolle/claude-carbon) | Status Lines | ok | by Gaëtan Wittebolle - Tracks the carbon footprint of Claude Code sessions, feautring a live CO2 estimate in the status line, computed locally from token usage… |
-| 213 | [claude-code-personalities](https://github.com/kumamaki/Claude-Code-Personalities) | Status Lines | ok | by kumamaki - A delightfully different status line: 30+ kaomoji text-faces that react in real time to what Claude is doing context-aware personas by file type,… |
-| 214 | [claude-powerline](https://github.com/Owloops/claude-powerline) | Status Lines | ok | by Owloops - A vim-style powerline statusline for Claude Code with real-time usage tracking, git integration, custom themes, and more. |
-| 215 | [claude-statusbar](https://github.com/leeguooooo/claude-code-usage-bar) | Status Lines | ok | by leeguooooo - The most complete Claude Code status line: 5-hour and 7-day rate-limit usage with reset countdowns and learned end-of-window projections, conte… |
-| 216 | [TermaGITchi](https://github.com/TevvvB/termagitchi) | Status Lines | ok | by TevvvB - A Go CLI that gives each Claude Code session its own creature in the status line, derived by hashing the session id, with one den per git worktree.… |
-| 217 | [tmux-claude-status-tabs](https://github.com/LiveNL/tmux-claude-status-tabs) | Status Lines | ok | by LiveNL - Shows each Claude Code session's state in the tmux tab bar, per window: an animated spinner while it works, amber when it waits on input, red on a… |
-| 218 | [Claude Code Agents](https://github.com/undeadlist/claude-code-agents) | Testing | ok | by Paul - UndeadList - Comprehensive E2E development workflow with helpful Claude Code subagent prompts for solo devs. Run multiple auditors in parallel, autom… |
-| 219 | [TDD Guard](https://github.com/nizos/tdd-guard) | Testing | ok | by Nizar Selander - A hooks-driven system that monitors file operations in real-time and blocks changes that violate TDD principles. |
-| 220 | [AgentWatch](https://github.com/mishanefedov/agentwatch) | Usage & Cost | ok | by mishanefedov - Local-only observability for AI agents on your machine. One timeline across coding and non-coding agents. |
-| 221 | [better-ccflare](https://github.com/tombii/better-ccflare) | Usage & Cost | ok | by tombii - A well-maintained and feature-enhanced fork of the glorious ccflare usage dashboard by @snipeship. better-ccflare builds on that foundation with pe… |
-| 222 | [cc-costline](https://github.com/Ventuss-OvO/cc-costline) | Usage & Cost | ok | by Ventuss-OvO - Enhanced statusline for Claude Code see your 7d/30d spend at a glance |
-| 223 | [cc-probeline](https://github.com/labzink/cc-probeline) | Usage & Cost | ok | by labzink - See where it leaks, stop paying for it a live Claude Code status line that prices every turn, your subagents, cache rebuilds, plus limits, context… |
-| 224 | [CCDash](https://github.com/zihenghe04/CCDash) | Usage & Cost | ok | by zihenghe04 - Open-source unified usage dashboard for Claude track tokens, quota, costs across Claude Code, claude.ai &amp; API in one panel. 开源 Claude 全平台用量… |
-| 225 | [ccusage](https://github.com/ccusage/ccusage) | Usage & Cost | ok | by ryoppippi - A zero-install CLI (npx ccusage) that analyzes Claude Code token usage and cost from local JSONL logs daily, monthly, per-session, and 5-hour-bl… |
-| 226 | [ccvitals](https://github.com/educlopez/ccvitals) | Usage & Cost | ok | by educlopez - The prettiest statusline for Claude Code pure bash, never blocks your prompt. Usage quota, context window, git status &amp; more. |
-| 227 | [ccxray](https://github.com/lis186/ccxray) | Usage & Cost | ok | by lis186 - A transparent HTTP proxy and real-time dashboard that sits between Claude Code and the Anthropic API. Captures every request and response without c… |
-| 228 | [claude-code-status-bar](https://github.com/briansmith80/claude-code-status-bar) | Usage & Cost | ok | by briansmith80 - Configurable status bar for Claude Code: usage limits with pacing markers, context window, git state, live activity, session cost, and 8 colo… |
-| 229 | [ClaudeBar](https://github.com/tddworks/ClaudeBar) | Usage & Cost | ok | by tddworks - A macOS menu-bar app that surfaces remaining usage quota for Claude, Codex, Gemini, Copilot, and other AI coding providers at a glance, with burn… |
-| 230 | [Claumon](https://github.com/fabioconcina/claumon) | Usage & Cost | ok | by fabioconcina - Claude Code dashboard for Pro/Max users: live rate-limit gauges, calibrated usage forecasts, session costs, memory browser. Single binary, ze… |
-| 231 | [Codeburn](https://github.com/getagentseal/codeburn) | Usage & Cost | ok | by iamtoruk - Breakdown of local spend down by project, model, git branch and task. Tracks plan quotas, and identifies token waste, including unused MCP server… |
-| 232 | [context-tax](https://github.com/gethrbr/context-tax) | Usage & Cost | ok | by Harbor - A zero-dependency CLI (npx context-tax) that reads Claude Code session transcripts to measure what is sent on every turn before the first prompt: s… |
-| 233 | [goccc](https://github.com/backstabslash/goccc) | Usage & Cost | ok | by backstabslash - Fast, zero-dependency cost calculator and customizable statusline for Claude Code. Breakdowns by model, day, project, and branch. Lightweigh… |
-| 234 | [Pacer](https://github.com/EricAndrechek/Pacer) | Usage & Cost | ok | by EricAndrechek - Native macOS app for tracking Claude Code usage tokens, cost, rate-limit pacing, per-project breakdowns. SwiftUI + SwiftData. |
-| 235 | [toktrack](https://github.com/mag123c/toktrack) | Usage & Cost | ok | by mag123c - Ultra-fast token &amp; cost tracker for LLM Token Usage (e.g. Claude Code) |
-| 236 | [Avoid AI Writing](https://github.com/conorbronsdon/avoid-ai-writing) | Writing & Prose Quality | ok | by Conor Bronsdon - A portable writing skill that audits and rewrites prose to remove "AI-isms" 49+ pattern categories and a tiered word-replacement vocabulary… |
-| 237 | [Book Factory](https://github.com/robertguss/claude-skills) | Writing & Prose Quality | ok | by Robert Guss - A comprehensive pipeline of Skills that replicates traditional publishing infrastructure for nonfiction book creation using specialized Claude… |
-| 238 | [Claude Style Patch](https://github.com/andrewroxby/claude-style-patch) | Writing & Prose Quality | ok | by Andrew Roxby - A CLAUDE.md section that constrains Claude's prose style. It bans specific habits, including announcing a point before making it, colon-hinge… |
-| 239 | [naming](https://github.com/glacierphonk/naming) | Writing & Prose Quality | ok | by GlacierPhonk - A Claude Code skill for naming products, SaaS tools, brands, and projects via a structured metaphor-driven process naming brief, metaphor exp… |
-| 240 | [oh-my-patent](https://github.com/illusionaireal/oh-my-patent) | Writing & Prose Quality | ok | by illusionaireal - A plugin for turning technical ideas into patent disclosures. |
-| 241 | [Scientific Writing Skills](https://github.com/dvdsosa/scientific-writing-skills) | Writing & Prose Quality | ok | by David Sosa-Trejo - Six Agent Skills for scientific writing based on Stanford's Writing in the Sciences course: sentence-level prose editing, IMRaD manuscrip… |
-| 242 | [Story Skills](https://github.com/danjdewhurst/story-skills) | Writing & Prose Quality | ok | by Daniel Dewhurst - Skills for planning and drafting fiction as markdown with YAML frontmatter: story bible, characters, worldbuilding, arcs, scenes, and chap… |
+| 197 | [SuperSEO Skills](https://github.com/inhouseseo/superseo-skills) | Skills | ok | by sanderbz - A nice package of Claude Skills focused on SEO workflows: page audits, content briefs, article writing, E-E-A-T audits, semantic gap analysis, an… |
+| 198 | [A Field Guide to Claude Fable 5](https://claude.com/blog/a-field-guide-to-claude-fable-finding-your-unknowns) | Start Here | ok | by Thariq Shihipar, Anthropic - Really solid, insightful guidance on working/thinking with Claude Fable, and with AI in general. Very well written. Hints of Ru… |
+| 199 | [andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) | Start Here | ok | by multica-ai - A drop-in CLAUDE.md distilling four behavioral guidelines for LLM-assisted coding into Claude Code a low-friction quick win. Karpathy-inspired,… |
+| 200 | [Beyond the Prompt: Claude Code](https://arps18.github.io/posts/claude-code-mastery) | Start Here | ok | by Arpan Patel - This has what you need. Remarkably clear, information-dense, it's Claude Code: the good parts, for beginners, advanced users, pets, anybody. |
+| 201 | [Claude Code Guide](https://github.com/zebbern/claude-code-guide) | Start Here | ok | by zebbern - A current single-page reference for Claude Code: install, environment variables, slash commands, MCP, hooks, and subagents, kept in sync with the… |
+| 202 | [Claude Code Hooks: Complete Guide](https://hidekazu-konishi.com/entry/claude_code_hooks_complete_guide.html) | Start Here | ok | by Hidekazu Konishi - A thorough walkthrough of every hook event, when each fires, the two return channels, common anti-patterns, and copy-ready settings.json… |
+| 203 | [Claude Code: Everything You Need to Know](https://github.com/wesammustafa/Claude-Code-Everything-You-Need-to-Know) | Start Here | ok | by wesammustafa - A conceptual, mental-models-first primer that explains what Claude Code is and how its agentic loop works, then layers setup, prompt-engineer… |
+| 204 | [claude-howto](https://github.com/luongnv89/claude-howto) | Start Here | ok | by luongnv89 - A structured, chapter-based getting-started guide for Claude Code with a self-assessment quiz and a ten-module progressive learning path slash c… |
+| 205 | [explore-claude-code](https://github.com/LukeRenton/explore-claude-code) | Start Here | ok | by Luke Renton - An interactive click-through of an annotated Claude Code project where every file and folder CLAUDE.md, settings.json, rules, commands, skills… |
+| 206 | [Learn Claude Code](https://github.com/shareAI-lab/learn-claude-code) | Start Here | ok | by shareAI-lab - A really interesting analysis of how coding agents like Claude Code are designed. It attempts to break an agent down into its fundamental part… |
+| 207 | [Writing a Good CLAUDE.md](https://www.humanlayer.dev/blog/writing-a-good-claude-md) | Start Here | ok | by HumanLayer - An essay on CLAUDE.md craft: instruction-budget reasoning, progressive disclosure, and the test of whether Claude would err without a given lin… |
+| 208 | [CCometixLine](https://github.com/Haleclipse/CCometixLine) | Status Lines | ok | by Haleclipse - A high-performance Claude Code statusline tool written in Rust with Git integration, usage tracking, interactive TUI configuration, and Claude… |
+| 209 | [ccstatusline](https://github.com/sirmalloc/ccstatusline) | Status Lines | ok | by sirmalloc - A highly customizable status line formatter for Claude Code CLI that displays model info, git branch, token usage, and other metrics in your ter… |
+| 210 | [Claude HUD](https://github.com/jarrodwatts/claude-hud) | Status Lines | ok | by Jarrod Watts - A really stacked status line that exposes just about everything you might need - context usage, tools, agents, todos, etc. Highly configurabl… |
+| 211 | [claude-carbon](https://github.com/gwittebolle/claude-carbon) | Status Lines | ok | by Gaëtan Wittebolle - Tracks the carbon footprint of Claude Code sessions, feautring a live CO2 estimate in the status line, computed locally from token usage… |
+| 212 | [claude-code-personalities](https://github.com/kumamaki/Claude-Code-Personalities) | Status Lines | ok | by kumamaki - A delightfully different status line: 30+ kaomoji text-faces that react in real time to what Claude is doing context-aware personas by file type,… |
+| 213 | [claude-powerline](https://github.com/Owloops/claude-powerline) | Status Lines | ok | by Owloops - A vim-style powerline statusline for Claude Code with real-time usage tracking, git integration, custom themes, and more. |
+| 214 | [claude-statusbar](https://github.com/leeguooooo/claude-code-usage-bar) | Status Lines | ok | by leeguooooo - The most complete Claude Code status line: 5-hour and 7-day rate-limit usage with reset countdowns and learned end-of-window projections, conte… |
+| 215 | [TermaGITchi](https://github.com/TevvvB/termagitchi) | Status Lines | ok | by TevvvB - A Go CLI that gives each Claude Code session its own creature in the status line, derived by hashing the session id, with one den per git worktree.… |
+| 216 | [tmux-claude-status-tabs](https://github.com/LiveNL/tmux-claude-status-tabs) | Status Lines | ok | by LiveNL - Shows each Claude Code session's state in the tmux tab bar, per window: an animated spinner while it works, amber when it waits on input, red on a… |
+| 217 | [Claude Code Agents](https://github.com/undeadlist/claude-code-agents) | Testing | ok | by Paul - UndeadList - Comprehensive E2E development workflow with helpful Claude Code subagent prompts for solo devs. Run multiple auditors in parallel, autom… |
+| 218 | [TDD Guard](https://github.com/nizos/tdd-guard) | Testing | ok | by Nizar Selander - A hooks-driven system that monitors file operations in real-time and blocks changes that violate TDD principles. |
+| 219 | [AgentWatch](https://github.com/mishanefedov/agentwatch) | Usage & Cost | ok | by mishanefedov - Local-only observability for AI agents on your machine. One timeline across coding and non-coding agents. |
+| 220 | [better-ccflare](https://github.com/tombii/better-ccflare) | Usage & Cost | ok | by tombii - A well-maintained and feature-enhanced fork of the glorious ccflare usage dashboard by @snipeship. better-ccflare builds on that foundation with pe… |
+| 221 | [cc-costline](https://github.com/Ventuss-OvO/cc-costline) | Usage & Cost | ok | by Ventuss-OvO - Enhanced statusline for Claude Code see your 7d/30d spend at a glance |
+| 222 | [cc-probeline](https://github.com/labzink/cc-probeline) | Usage & Cost | ok | by labzink - See where it leaks, stop paying for it a live Claude Code status line that prices every turn, your subagents, cache rebuilds, plus limits, context… |
+| 223 | [CCDash](https://github.com/zihenghe04/CCDash) | Usage & Cost | ok | by zihenghe04 - Open-source unified usage dashboard for Claude track tokens, quota, costs across Claude Code, claude.ai &amp; API in one panel. 开源 Claude 全平台用量… |
+| 224 | [ccusage](https://github.com/ccusage/ccusage) | Usage & Cost | ok | by ryoppippi - A zero-install CLI (npx ccusage) that analyzes Claude Code token usage and cost from local JSONL logs daily, monthly, per-session, and 5-hour-bl… |
+| 225 | [ccvitals](https://github.com/educlopez/ccvitals) | Usage & Cost | ok | by educlopez - The prettiest statusline for Claude Code pure bash, never blocks your prompt. Usage quota, context window, git status &amp; more. |
+| 226 | [ccxray](https://github.com/lis186/ccxray) | Usage & Cost | ok | by lis186 - A transparent HTTP proxy and real-time dashboard that sits between Claude Code and the Anthropic API. Captures every request and response without c… |
+| 227 | [claude-code-status-bar](https://github.com/briansmith80/claude-code-status-bar) | Usage & Cost | ok | by briansmith80 - Configurable status bar for Claude Code: usage limits with pacing markers, context window, git state, live activity, session cost, and 8 colo… |
+| 228 | [ClaudeBar](https://github.com/tddworks/ClaudeBar) | Usage & Cost | ok | by tddworks - A macOS menu-bar app that surfaces remaining usage quota for Claude, Codex, Gemini, Copilot, and other AI coding providers at a glance, with burn… |
+| 229 | [Claumon](https://github.com/fabioconcina/claumon) | Usage & Cost | ok | by fabioconcina - Claude Code dashboard for Pro/Max users: live rate-limit gauges, calibrated usage forecasts, session costs, memory browser. Single binary, ze… |
+| 230 | [Codeburn](https://github.com/getagentseal/codeburn) | Usage & Cost | ok | by iamtoruk - Breakdown of local spend down by project, model, git branch and task. Tracks plan quotas, and identifies token waste, including unused MCP server… |
+| 231 | [context-tax](https://github.com/gethrbr/context-tax) | Usage & Cost | ok | by Harbor - A zero-dependency CLI (npx context-tax) that reads Claude Code session transcripts to measure what is sent on every turn before the first prompt: s… |
+| 232 | [goccc](https://github.com/backstabslash/goccc) | Usage & Cost | ok | by backstabslash - Fast, zero-dependency cost calculator and customizable statusline for Claude Code. Breakdowns by model, day, project, and branch. Lightweigh… |
+| 233 | [Pacer](https://github.com/EricAndrechek/Pacer) | Usage & Cost | ok | by EricAndrechek - Native macOS app for tracking Claude Code usage tokens, cost, rate-limit pacing, per-project breakdowns. SwiftUI + SwiftData. |
+| 234 | [toktrack](https://github.com/mag123c/toktrack) | Usage & Cost | ok | by mag123c - Ultra-fast token &amp; cost tracker for LLM Token Usage (e.g. Claude Code) |
+| 235 | [Avoid AI Writing](https://github.com/conorbronsdon/avoid-ai-writing) | Writing & Prose Quality | ok | by Conor Bronsdon - A portable writing skill that audits and rewrites prose to remove "AI-isms" 49+ pattern categories and a tiered word-replacement vocabulary… |
+| 236 | [Book Factory](https://github.com/robertguss/claude-skills) | Writing & Prose Quality | ok | by Robert Guss - A comprehensive pipeline of Skills that replicates traditional publishing infrastructure for nonfiction book creation using specialized Claude… |
+| 237 | [Claude Style Patch](https://github.com/andrewroxby/claude-style-patch) | Writing & Prose Quality | ok | by Andrew Roxby - A CLAUDE.md section that constrains Claude's prose style. It bans specific habits, including announcing a point before making it, colon-hinge… |
+| 238 | [naming](https://github.com/glacierphonk/naming) | Writing & Prose Quality | ok | by GlacierPhonk - A Claude Code skill for naming products, SaaS tools, brands, and projects via a structured metaphor-driven process naming brief, metaphor exp… |
+| 239 | [oh-my-patent](https://github.com/illusionaireal/oh-my-patent) | Writing & Prose Quality | ok | by illusionaireal - A plugin for turning technical ideas into patent disclosures. |
+| 240 | [Scientific Writing Skills](https://github.com/dvdsosa/scientific-writing-skills) | Writing & Prose Quality | ok | by David Sosa-Trejo - Six Agent Skills for scientific writing based on Stanford's Writing in the Sciences course: sentence-level prose editing, IMRaD manuscrip… |
+| 241 | [Story Skills](https://github.com/danjdewhurst/story-skills) | Writing & Prose Quality | ok | by Daniel Dewhurst - Skills for planning and drafting fiction as markdown with YAML frontmatter: story bible, characters, worldbuilding, arcs, scenes, and chap… |
 
 ## claude-code-plugin (352)
 
@@ -529,7 +530,7 @@ The complete list of every entry is in [plugins.md](plugins.md). Categories mark
 | 170 | [streaming-skills-plugin](https://www.confluent.io) | development | recommended | Skills for streaming application developers, covering Kafka and Flink client libraries and Schema Registry |
 | 171 | [stripe](https://github.com/stripe/ai/tree/main/providers/claude/plugin) | development | recommended | Stripe development plugin for Claude |
 | 172 | [sumup](https://www.sumup.com/) | development | recommended | SumUp payment integrations across terminal and online checkout flows. Build Android and iOS POS apps with SumUp card readers, online checkout with server SDKs… |
-| 173 | [superpowers](https://github.com/obra/superpowers.git) | development | recommended | Superpowers teaches Claude brainstorming, subagent driven development with built in code review, systematic debugging, and red/green TDD. Additionally, it teac… |
+| 173 | [superpowers](https://github.com/obra/superpowers.git) | development | recommended | by Jesse Vincent - A strong bundle of core competencies for software engineering, with good coverage of a large portion of the SDLC - from planning, reviewing,… |
 | 174 | [swift-lsp](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/swift-lsp) | development | recommended | Swift language server (SourceKit-LSP) for code intelligence |
 | 175 | [tavily](https://www.tavily.com/) | development | recommended | Build AI applications with real-time web data using Tavily's search, extract, crawl, and research APIs. |
 | 176 | [teamcity-cli](https://www.jetbrains.com/teamcity/) | development | recommended | Agent skill for interacting with TeamCity CI/CD using the teamcity CLI. Enables Claude to explore builds, view logs, start jobs, manage queues, agents, and mor… |

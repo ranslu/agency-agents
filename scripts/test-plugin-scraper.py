@@ -96,11 +96,31 @@ class Merge(unittest.TestCase):
         b = entry(type="claude-code-plugin", name="marketing", url="https://github.com/anthropics/kw", sources=["m"])
         self.assertEqual(len(ps.merge([a, b])), 2)
 
+    def test_server_folds_into_the_only_plugin_for_its_repo(self):
+        plugin = entry(type="claude-code-plugin", name="chrome-devtools-mcp", url="https://github.com/ChromeDevTools/chrome-devtools-mcp",
+                       sources=["anthropics/claude-plugins-official"], description="Control and inspect a live Chrome browser")
+        server = entry(name="Chrome DevTools MCP", url="https://github.com/ChromeDevTools/chrome-devtools-mcp", description="MCP server")
+        merged = ps.merge([plugin, server])
+        self.assertEqual(len(merged), 1)
+        self.assertEqual(merged[0]["sources"], ["anthropics/claude-plugins-official", "mcp-registry"])
+
     def test_plugin_source_url_points_at_the_plugin_folder(self):
         self.assertEqual(ps.plugin_source_url("anthropics/kw", "./sales"), "https://github.com/anthropics/kw/tree/main/sales")
         sub = {"source": "git-subdir", "url": "https://github.com/acme/mono.git", "path": "plugins/x", "ref": "v1"}
         self.assertEqual(ps.plugin_source_url("m", sub), "https://github.com/acme/mono/tree/v1/plugins/x")
         self.assertEqual(ps.plugin_source_url("m", {"source": "github", "repo": "acme/p"}), "https://github.com/acme/p")
+
+
+class Shortlist(unittest.TestCase):
+    def test_every_pick_resolves_to_one_catalog_entry(self):
+        import json
+        bspec = importlib.util.spec_from_file_location("build_shortlist", ROOT / "scripts" / "build-shortlist.py")
+        bs = importlib.util.module_from_spec(bspec)
+        bspec.loader.exec_module(bs)
+        entries = json.loads((ROOT / "catalogs" / "ai-plugins" / "plugins.json").read_text())
+        spec = json.loads((ROOT / "catalogs" / "ai-plugins" / "shortlist.json").read_text())
+        bad = [p["name"] for d in spec["divisions"] for p in d["picks"] if len(bs.resolve(entries, p)) != 1]
+        self.assertEqual(bad, [])
 
 
 if __name__ == "__main__":
