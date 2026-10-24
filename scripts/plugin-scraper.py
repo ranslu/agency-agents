@@ -7,12 +7,14 @@ Sources:
   - Community awesome-lists of MCP servers and Claude Code extensions
 
 Every entry is normalised to {name, type, category, description, url, sources},
-de-duplicated by repository/homepage URL, and written as JSON, CSV and Markdown.
-Standard library only.
+de-duplicated by repository/homepage URL, given a topic category when its source
+has none (plugin_categories.py), vetted with a heuristic quality tier
+(plugin_vetting.py), and written as JSON, CSV and Markdown. Standard library only.
 
 Usage:
   python3 scripts/plugin-scraper.py --out catalogs/ai-plugins
   python3 scripts/plugin-scraper.py --skip registry --min 1000
+  python3 scripts/plugin-scraper.py --from-json catalogs/ai-plugins/plugins.json
 """
 import argparse
 import csv
@@ -24,6 +26,10 @@ import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from plugin_categories import GENERIC, categorise  # noqa: E402
+from plugin_vetting import vet  # noqa: E402
 
 USER_AGENT = "agency-agents-plugin-scraper/1.0"
 REGISTRY_URL = "https://registry.modelcontextprotocol.io/v0/servers"
@@ -184,6 +190,10 @@ def merge(entries):
             cur["sources"] = sorted(set(cur["sources"]) | set(e["sources"]))
             if len(e["description"]) > len(cur["description"]):
                 cur["description"] = e["description"]
+            if cur["category"] in GENERIC and e["category"] not in GENERIC:
+                if cur["category"] in ("remote", "package"):
+                    cur["hosting"] = cur["category"]
+                cur["category"] = e["category"]
             if cur["type"] == "mcp-server" and e["type"] == "claude-code-plugin":
                 cur["type"] = e["type"]
         else:
@@ -202,13 +212,17 @@ def write_outputs(entries, outdir, errors):
     (outdir / "plugins.json").write_text(json.dumps(entries, indent=1, ensure_ascii=False) + "\n")
     with open(outdir / "plugins.csv", "w", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["name", "type", "category", "description", "url", "sources"])
+        w.writerow(["name", "type", "category", "category_source", "tier", "quality_score", "flags",
+                    "hosting", "description", "url", "sources"])
         for e in entries:
-            w.writerow([e["name"], e["type"], e["category"], e["description"], e["url"], ";".join(e["sources"])])
+            w.writerow([e["name"], e["type"], e["category"], e.get("category_source", ""), e.get("tier", ""),
+                        e.get("quality_score", ""), ";".join(e.get("flags", [])), e.get("hosting", ""),
+                        e["description"], e["url"], ";".join(e["sources"])])
 
-    by_type, by_source = {}, {}
+    by_type, by_source, by_tier = {}, {}, {}
     for e in entries:
         by_type[e["type"]] = by_type.get(e["type"], 0) + 1
+        by_tier[e.get("tier", "")] = by_tier.get(e.get("tier", ""), 0) + 1
         for s in e["sources"]:
             by_source[s] = by_source.get(s, 0) + 1
 
@@ -224,6 +238,15 @@ def write_outputs(entries, outdir, errors):
         "| Source | Entries |", "|---|---|",
         *[f"| {s} | {n:,} |" for s, n in sorted(by_source.items(), key=lambda x: -x[1])],
         "",
+        "## Vetting",
+        "",
+        "Each entry has a heuristic `tier` and `quality_score` (see `scripts/plugin_vetting.py`).",
+        "Tiers measure who vouches for a plugin, not whether its code is good: check the repo",
+        "and the permissions it asks for before installing anything.",
+        "",
+        "| Tier | Meaning | Count |", "|---|---|---|",
+        *[f"| {t} | {TIER_MEANING[t]} | {by_tier.get(t, 0):,} |" for t in TIER_MEANING],
+        "",
     ]
     if errors:
         lines += ["Sources that failed this run: " + ", ".join(errors), ""]
@@ -233,25 +256,45 @@ def write_outputs(entries, outdir, errors):
     mcp_cats = {}
     for e in entries:
         if e["type"] == "mcp-server":
-            mcp_cats[e["category"]] = mcp_cats.get(e["category"], 0) + 1
+            row = mcp_cats.setdefault(e["category"], {"all": 0, "recommended": 0, "likely-junk": 0})
+            row["all"] += 1
+            row[e.get("tier")] = row.get(e.get("tier"), 0) + 1
     readme = lines + [
-        "The complete list of every entry is in [plugins.md](plugins.md).",
-        "", "## Top MCP server categories", "", "| Category | Count |", "|---|---|",
-        *[f"| {md_cell(c, 60)} | {n:,} |" for c, n in sorted(mcp_cats.items(), key=lambda x: -x[1])[:40]],
+        "The complete list of every entry is in [plugins.md](plugins.md). Categories marked",
+        "`inferred` in the CSV were assigned from the plugin's description (`scripts/plugin_categories.py`).",
+        "", "## MCP server categories", "", "| Category | All | Recommended | Likely junk |", "|---|---|---|---|",
+        *[f"| {md_cell(c, 60)} | {r['all']:,} | {r['recommended']:,} | {r['likely-junk']:,} |"
+          for c, r in sorted(mcp_cats.items(), key=lambda x: -x[1]["all"])],
     ]
+
+    def table(title, rows):
+        out = ["", f"## {title} ({len(rows):,})", "", "| # | Name | Category | Tier | Description |", "|---|---|---|---|---|"]
+        return out + [
+            f"| {i} | [{md_cell(e['name'], 60)}]({e['url']}) | {md_cell(e['category'], 40)} | {e.get('tier', '')} | {md_cell(e['description'])} |"
+            for i, e in enumerate(rows, 1)
+        ]
+
     full = list(lines)
     for e_type in sorted(by_type):
         rows = [e for e in entries if e["type"] == e_type]
-        table = ["", f"## {e_type} ({len(rows):,})", "", "| # | Name | Category | Description |", "|---|---|---|---|"]
-        table += [
-            f"| {i} | [{md_cell(e['name'], 60)}]({e['url']}) | {md_cell(e['category'], 40)} | {md_cell(e['description'])} |"
-            for i, e in enumerate(rows, 1)
-        ]
-        full += table
+        full += table(e_type, rows)
         if e_type != "mcp-server":
-            readme += table
+            readme += table(e_type, rows)
+    picks = sorted(
+        (e for e in entries if e["type"] == "mcp-server" and e.get("tier") == "recommended"),
+        key=lambda e: (e["category"].lower(), -e.get("quality_score", 0), e["name"].lower()),
+    )
+    readme += table("Recommended MCP servers", picks)
     (outdir / "README.md").write_text("\n".join(readme) + "\n")
     (outdir / "plugins.md").write_text("\n".join(full) + "\n")
+
+
+TIER_MEANING = {
+    "recommended": "Anthropic-curated, or human-curated and cross-listed",
+    "ok": "vouched for by one human-curated list",
+    "unvetted": "self-published to a registry; nobody else vouches for it",
+    "likely-junk": "temporary hosting, template text, bulk spam or duplicates",
+}
 
 
 def main():
@@ -259,11 +302,18 @@ def main():
     ap.add_argument("--out", default="catalogs/ai-plugins", help="output directory")
     ap.add_argument("--skip", default="", help="comma list of: registry,marketplaces,awesome")
     ap.add_argument("--max-pages", type=int, default=500, help="MCP Registry page cap (100 per page)")
+    ap.add_argument("--from-json", help="re-categorise and re-vet an existing plugins.json instead of scraping")
     ap.add_argument("--min", type=int, default=0, help="exit non-zero if fewer unique plugins are found")
     args = ap.parse_args()
     skip = {s.strip() for s in args.skip.split(",") if s.strip()}
 
     entries, errors = [], []
+    if args.from_json:
+        entries = json.loads(Path(args.from_json).read_text())
+        for e in entries:
+            if e.get("category_source") == "inferred":
+                e["category"] = e.get("hosting", "uncategorized")
+        skip = {"registry", "marketplaces", "awesome"}
 
     def run(label, fn, *a):
         try:
@@ -283,7 +333,7 @@ def main():
         for label, url, kind in AWESOME_LISTS:
             run(label, scrape_awesome, label, url, kind)
 
-    merged = merge(entries)
+    merged = vet(categorise(merge(entries)))
     write_outputs(merged, Path(args.out), errors)
     print(f"{len(entries)} raw entries -> {len(merged)} unique plugins written to {args.out}", file=sys.stderr)
     return 1 if len(merged) < args.min else 0
