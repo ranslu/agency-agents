@@ -21,7 +21,9 @@
       "mcp__google-maps",
       "mcp__neo4j",
       "mcp__dbt",
-      "mcp__fhir"
+      "mcp__fhir",
+      "mcp__mermaid",
+      "mcp__excalidraw"
     ],
     "deny": [
       "Bash(git push --force *)",
@@ -191,6 +193,8 @@
     "google-maps",
     "neo4j",
     "dbt",
-    "fhir"
+    "fhir",
+    "mermaid",
+    "excalidraw"
   ]
 }

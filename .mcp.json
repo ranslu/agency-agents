@@ -99,6 +99,26 @@
         "FHIR_SERVER_BASE_URL": "${FHIR_SERVER_BASE_URL:-}",
         "FHIR_SERVER_ACCESS_TOKEN": "${FHIR_SERVER_ACCESS_TOKEN:-}"
       }
+    },
+    "mermaid": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "-p",
+        "mcp-mermaid@0.4.1",
+        "-p",
+        "playwright@1.63.0",
+        "mcp-mermaid"
+      ],
+      "env": {
+        "npm_config_ignore_scripts": "true"
+      }
+    },
+    "excalidraw": {
+      "command": "uvx",
+      "args": [
+        "excalidraw-architect-mcp@2.0.0"
+      ]
     }
   }
 }
