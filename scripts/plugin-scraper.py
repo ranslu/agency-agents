@@ -239,11 +239,8 @@ def md_cell(text, limit=160):
     return text if len(text) <= limit else text[: limit - 1].rstrip() + "…"
 
 
-def write_outputs(entries, outdir, errors):
-    outdir.mkdir(parents=True, exist_ok=True)
-    stamp = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    (outdir / "plugins.json").write_text(json.dumps(entries, indent=1, ensure_ascii=False) + "\n")
-    with open(outdir / "plugins.csv", "w", newline="") as f:
+def write_csv(path, entries):
+    with open(path, "w", newline="") as f:
         w = csv.writer(f)
         w.writerow(["name", "type", "category", "category_source", "tier", "quality_score", "flags",
                     "hosting", "description", "url", "sources"])
@@ -251,6 +248,17 @@ def write_outputs(entries, outdir, errors):
             w.writerow([e["name"], e["type"], e["category"], e.get("category_source", ""), e.get("tier", ""),
                         e.get("quality_score", ""), ";".join(e.get("flags", [])), e.get("hosting", ""),
                         e["description"], e["url"], ";".join(e["sources"])])
+
+
+def write_outputs(entries, outdir, errors):
+    outdir.mkdir(parents=True, exist_ok=True)
+    stamp = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    (outdir / "plugins.json").write_text(json.dumps(entries, indent=1, ensure_ascii=False) + "\n")
+    write_csv(outdir / "plugins.csv", entries)
+    # One file per tier, small enough to load into a spreadsheet on its own.
+    (outdir / "by-tier").mkdir(exist_ok=True)
+    for tier in TIER_MEANING:
+        write_csv(outdir / "by-tier" / f"{tier}.csv", [e for e in entries if e.get("tier") == tier])
 
     by_type, by_source, by_tier = {}, {}, {}
     for e in entries:
@@ -294,6 +302,7 @@ def write_outputs(entries, outdir, errors):
             row[e.get("tier")] = row.get(e.get("tier"), 0) + 1
     readme = lines + [
         "Hand-picked plugins for each Agency division: [SHORTLIST.md](SHORTLIST.md).",
+        "One CSV per tier: [by-tier/](by-tier/).",
         "",
         "The complete list of every entry is in [plugins.md](plugins.md). Categories marked",
         "`inferred` in the CSV were assigned from the plugin's description (`scripts/plugin_categories.py`).",
