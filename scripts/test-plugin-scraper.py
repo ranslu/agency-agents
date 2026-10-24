@@ -91,6 +91,17 @@ class Merge(unittest.TestCase):
         self.assertEqual(merged[0]["hosting"], "remote")
         self.assertEqual(merged[0]["sources"], ["mcp-registry", "punkpeye/awesome-mcp-servers"])
 
+    def test_plugins_sharing_a_marketplace_repo_stay_separate(self):
+        a = entry(type="claude-code-plugin", name="sales", url="https://github.com/anthropics/kw", sources=["m"])
+        b = entry(type="claude-code-plugin", name="marketing", url="https://github.com/anthropics/kw", sources=["m"])
+        self.assertEqual(len(ps.merge([a, b])), 2)
+
+    def test_plugin_source_url_points_at_the_plugin_folder(self):
+        self.assertEqual(ps.plugin_source_url("anthropics/kw", "./sales"), "https://github.com/anthropics/kw/tree/main/sales")
+        sub = {"source": "git-subdir", "url": "https://github.com/acme/mono.git", "path": "plugins/x", "ref": "v1"}
+        self.assertEqual(ps.plugin_source_url("m", sub), "https://github.com/acme/mono/tree/v1/plugins/x")
+        self.assertEqual(ps.plugin_source_url("m", {"source": "github", "repo": "acme/p"}), "https://github.com/acme/p")
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

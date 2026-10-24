@@ -131,14 +131,27 @@ def scrape_registry(max_pages):
     return out
 
 
+def plugin_source_url(label, src):
+    """Link to a plugin's own folder, not just the marketplace or monorepo root."""
+    if isinstance(src, str) and not src.startswith("http"):
+        return f"https://github.com/{label}/tree/main/{src.lstrip('./')}".rstrip("/")
+    if isinstance(src, dict):
+        base = src.get("url") or (f"https://github.com/{src['repo']}" if src.get("repo") else "")
+        if base and not base.startswith("http"):
+            base = f"https://github.com/{base}"
+        base = re.sub(r"\.git$", "", base)
+        if base and src.get("path"):
+            return f"{base}/tree/{src.get('ref') or 'main'}/{src['path'].strip('/')}"
+        if base:
+            return base
+    return f"https://github.com/{label}"
+
+
 def scrape_marketplace(label, url):
     data = json.loads(fetch(url))
     out = []
     for p in data.get("plugins", []):
-        src = p.get("source")
-        link = p.get("homepage") or (src.get("url") if isinstance(src, dict) else "")
-        if not link or not link.startswith("http"):
-            link = f"https://github.com/{label}"
+        link = p.get("homepage") or plugin_source_url(label, p.get("source"))
         out.append({
             "name": p.get("name", ""),
             "id": p.get("name", ""),
@@ -184,7 +197,12 @@ def scrape_awesome(label, url, entry_type):
 def merge(entries):
     merged = {}
     for e in entries:
-        key = norm_url(e["url"]) or e["id"].lower()
+        # Many plugins share one marketplace repo or vendor homepage, so plugins
+        # are keyed by name; everything else by repo/homepage URL.
+        if e["type"] == "claude-code-plugin":
+            key = "plugin:" + e["name"].lower()
+        else:
+            key = norm_url(e["url"]) or e["id"].lower()
         if key in merged:
             cur = merged[key]
             cur["sources"] = sorted(set(cur["sources"]) | set(e["sources"]))

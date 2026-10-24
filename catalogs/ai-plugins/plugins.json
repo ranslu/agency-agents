@@ -1286,11 +1286,12 @@
    "hesreallyhim/awesome-claude-code"
   ],
   "category_source": "listed",
-  "quality_score": 50,
-  "tier": "ok",
+  "quality_score": 30,
+  "tier": "unvetted",
   "flags": [
    "+community-list",
-   "+open-source"
+   "+open-source",
+   "-bulk-publisher(79)"
   ]
  },
  {
@@ -1355,11 +1356,12 @@
    "hesreallyhim/awesome-claude-code"
   ],
   "category_source": "listed",
-  "quality_score": 50,
-  "tier": "ok",
+  "quality_score": 30,
+  "tier": "unvetted",
   "flags": [
    "+community-list",
-   "+open-source"
+   "+open-source",
+   "-bulk-publisher(79)"
   ]
  },
  {
@@ -1373,11 +1375,12 @@
    "hesreallyhim/awesome-claude-code"
   ],
   "category_source": "listed",
-  "quality_score": 50,
-  "tier": "ok",
+  "quality_score": 30,
+  "tier": "unvetted",
   "flags": [
    "+community-list",
-   "+open-source"
+   "+open-source",
+   "-bulk-publisher(79)"
   ]
  },
  {
@@ -1429,6 +1432,25 @@
   "tier": "ok",
   "flags": [
    "+community-list"
+  ]
+ },
+ {
+  "name": "Official Plugin Directory",
+  "id": "github.com/anthropics/claude-plugins-official",
+  "type": "claude-code-extension",
+  "category": "From Anthropic",
+  "description": "by Anthropic - Anthropic's official, curated directory of high-quality Claude Code plugins, installable from within Claude Code.",
+  "url": "https://github.com/anthropics/claude-plugins-official",
+  "sources": [
+   "hesreallyhim/awesome-claude-code"
+  ],
+  "category_source": "listed",
+  "quality_score": 30,
+  "tier": "unvetted",
+  "flags": [
+   "+community-list",
+   "+open-source",
+   "-bulk-publisher(79)"
   ]
  },
  {
@@ -2458,6 +2480,25 @@
   ]
  },
  {
+  "name": "Ralph Wiggum Plugin",
+  "id": "github.com/anthropics/claude-code",
+  "type": "claude-code-extension",
+  "category": "Ralph Wiggum",
+  "description": "by Anthropic PBC - The official Anthropic implementation of the Ralph Wiggum technique for iterative, self-referential AI development loops in Claude Code.",
+  "url": "https://github.com/anthropics/claude-code/tree/main/plugins/ralph-wiggum",
+  "sources": [
+   "hesreallyhim/awesome-claude-code"
+  ],
+  "category_source": "listed",
+  "quality_score": 30,
+  "tier": "unvetted",
+  "flags": [
+   "+community-list",
+   "+open-source",
+   "-bulk-publisher(79)"
+  ]
+ },
+ {
   "name": "ralph-harness",
   "id": "github.com/vkuprin/ralph-harness",
   "type": "claude-code-extension",
@@ -3484,6 +3525,24 @@
   ]
  },
  {
+  "name": "Superpowers",
+  "id": "github.com/obra/superpowers",
+  "type": "claude-code-extension",
+  "category": "Skills",
+  "description": "by Jesse Vincent - A strong bundle of core competencies for software engineering, with good coverage of a large portion of the SDLC - from planning, reviewing, testing, debugging... Well written, well organized, and adaptable. The author refers to them as \"superpowers\", but many of them are just consolidating engineering best practices - which sometimes does feel like a superpower when working with Claude Code.",
+  "url": "https://github.com/obra/superpowers",
+  "sources": [
+   "hesreallyhim/awesome-claude-code"
+  ],
+  "category_source": "listed",
+  "quality_score": 45,
+  "tier": "ok",
+  "flags": [
+   "+community-list",
+   "+open-source"
+  ]
+ },
+ {
   "name": "SuperSEO Skills",
   "id": "github.com/inhouseseo/superseo-skills",
   "type": "claude-code-extension",
@@ -4474,13 +4533,15 @@
   "description": "Official Bigdata.com plugin providing financial research, analytics, and intelligence tools powered by Bigdata MCP.",
   "url": "https://docs.bigdata.com",
   "sources": [
-   "anthropics/claude-plugins-official"
+   "anthropics/claude-plugins-official",
+   "anthropics/knowledge-work-plugins"
   ],
   "category_source": "listed",
-  "quality_score": 70,
+  "quality_score": 80,
   "tier": "recommended",
   "flags": [
-   "+anthropic-marketplace"
+   "+anthropic-marketplace",
+   "+in-2-sources"
   ]
  },
  {
@@ -4630,6 +4691,24 @@
   ]
  },
  {
+  "name": "databases-on-aws",
+  "id": "databases-on-aws",
+  "type": "claude-code-plugin",
+  "category": "database",
+  "description": "Expert database guidance for the AWS database portfolio. Design schemas, execute queries, handle migrations, and choose the right database for your workload.",
+  "url": "https://github.com/awslabs/agent-plugins",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
   "name": "databricks",
   "id": "databricks",
   "type": "claude-code-plugin",
@@ -4714,6 +4793,24 @@
   "tier": "recommended",
   "flags": [
    "+anthropic-marketplace"
+  ]
+ },
+ {
+  "name": "firebase",
+  "id": "firebase",
+  "type": "claude-code-plugin",
+  "category": "database",
+  "description": "Google Firebase MCP integration. Manage Firestore databases, authentication, cloud functions, hosting, and storage. Build and manage your Firebase backend directly from your development workflow.",
+  "url": "https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/firebase",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
   ]
  },
  {
@@ -5040,14 +5137,14 @@
   ]
  },
  {
-  "name": "buildkite",
-  "id": "buildkite",
+  "name": "cloudflare",
+  "id": "cloudflare",
   "type": "claude-code-plugin",
   "category": "deployment",
-  "description": "Official Buildkite skills for Claude Code, Cursor, and other AI coding agents pipelines, migration, preflight, agent runtime, CLI, and API",
-  "url": "https://github.com/buildkite/skills",
+  "description": "Skills for the Cloudflare developer platform: Workers, Durable Objects, Agents SDK, MCP servers, Wrangler CLI, and web performance.",
+  "url": "https://github.com/cloudflare/skills",
   "sources": [
-   "anthropics/knowledge-work-plugins"
+   "anthropics/claude-plugins-official"
   ],
   "category_source": "listed",
   "quality_score": 75,
@@ -5058,12 +5155,12 @@
   ]
  },
  {
-  "name": "cloudflare",
-  "id": "cloudflare",
+  "name": "deploy-on-aws",
+  "id": "deploy-on-aws",
   "type": "claude-code-plugin",
   "category": "deployment",
-  "description": "Skills for the Cloudflare developer platform: Workers, Durable Objects, Agents SDK, MCP servers, Wrangler CLI, and web performance.",
-  "url": "https://github.com/cloudflare/skills",
+  "description": "Deploy applications to AWS with architecture recommendations, cost estimates, and IaC deployment.",
+  "url": "https://github.com/awslabs/agent-plugins",
   "sources": [
    "anthropics/claude-plugins-official"
   ],
@@ -5242,25 +5339,22 @@
   ]
  },
  {
-  "name": "Figma MCP Server",
-  "id": "com.figma.mcp/mcp",
+  "name": "figma",
+  "id": "figma",
   "type": "claude-code-plugin",
   "category": "design",
   "description": "Figma design platform integration. Access design files, extract component information, read design tokens, and translate designs into code. Bridge the gap between design and development workflows.",
   "url": "https://github.com/figma/mcp-server-guide",
   "sources": [
    "anthropics/claude-plugins-official",
-   "anthropics/knowledge-work-plugins",
-   "mcp-registry"
+   "anthropics/knowledge-work-plugins"
   ],
-  "hosting": "remote",
   "category_source": "listed",
-  "quality_score": 100,
+  "quality_score": 85,
   "tier": "recommended",
   "flags": [
    "+anthropic-marketplace",
-   "+in-3-sources",
-   "+verified-domain",
+   "+in-2-sources",
    "+open-source"
   ]
  },
@@ -5289,13 +5383,15 @@
   "description": "Secure access to Miro boards. Enables AI to read board context, create diagrams, and generate code with enterprise-grade security.",
   "url": "https://miro.com",
   "sources": [
-   "anthropics/claude-plugins-official"
+   "anthropics/claude-plugins-official",
+   "anthropics/knowledge-work-plugins"
   ],
   "category_source": "listed",
-  "quality_score": 70,
+  "quality_score": 80,
   "tier": "recommended",
   "flags": [
-   "+anthropic-marketplace"
+   "+anthropic-marketplace",
+   "+in-2-sources"
   ]
  },
  {
@@ -5355,36 +5451,17 @@
   "id": "agent-sdk-dev",
   "type": "claude-code-plugin",
   "category": "development",
-  "description": "Upstash Context7 MCP server for up-to-date documentation lookup. Connects to Context7's hosted remote MCP server (https://mcp.context7.com/mcp) no local Node.js or npx required to pull version-specific documentation and code examples directly from source repositories into your LLM context. Works anonymously out of the box; set CONTEXT7_API_KEY for higher rate limits.",
+  "description": "Development kit for working with the Claude Agent SDK",
   "url": "https://github.com/anthropics/claude-plugins-public/tree/main/plugins/agent-sdk-dev",
   "sources": [
+   "anthropics/claude-code",
    "anthropics/claude-plugins-official"
   ],
   "category_source": "listed",
-  "quality_score": 75,
+  "quality_score": 85,
   "tier": "recommended",
   "flags": [
    "+anthropic-marketplace",
-   "+open-source"
-  ]
- },
- {
-  "name": "agent-sdk-dev",
-  "id": "agent-sdk-dev",
-  "type": "claude-code-plugin",
-  "category": "development",
-  "description": "Comprehensive toolkit for developing Claude Code plugins. Includes 7 expert skills covering hooks, MCP integration, commands, agents, and best practices. AI-assisted plugin creation and validation.",
-  "url": "https://github.com/anthropics/claude-code",
-  "sources": [
-   "anthropics/claude-code",
-   "hesreallyhim/awesome-claude-code"
-  ],
-  "category_source": "listed",
-  "quality_score": 100,
-  "tier": "recommended",
-  "flags": [
-   "+anthropic-marketplace",
-   "+community-list",
    "+in-2-sources",
    "+open-source"
   ]
@@ -5405,6 +5482,23 @@
   "flags": [
    "+anthropic-marketplace",
    "+open-source"
+  ]
+ },
+ {
+  "name": "airwallex-dev",
+  "id": "airwallex-dev",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Build Airwallex payment integrations in your own codebase. Generates the checkout, card-element, onboarding, and subscription-billing code for an Airwallex integration and wires it into your project: Hosted Payment Page, Drop-in and Split Card elements, connected-account KYC onboarding, and Billing Hosted Checkout for subscriptions and card-saving. Also plans card-on-file merchant-initiated flows for AI providers such as top-ups and auto-recharge.",
+  "url": "https://www.airwallex.com/docs",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 65,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace"
   ]
  },
  {
@@ -5499,6 +5593,114 @@
   "id": "aws-agents",
   "type": "claude-code-plugin",
   "category": "development",
+  "description": "Build, deploy, and operate AI agents on AWS. Skills for scaffolding agents with Amazon Bedrock AgentCore, connecting tools, memory, policies, evaluation, debugging, and production hardening.",
+  "url": "https://github.com/aws/agent-toolkit-for-aws",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "aws-agents-for-devsecops",
+  "id": "aws-agents-for-devsecops",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Investigate incidents, review code and execute UAT for release readiness, scan code for vulnerabilities, and run penetration tests with AWS DevOps Agent and AWS Security Agent.",
+  "url": "https://github.com/aws/agent-toolkit-for-aws",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "aws-amplify",
+  "id": "aws-amplify",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Build full-stack apps with AWS Amplify Gen 2 using guided workflows for authentication, data models, storage, GraphQL APIs, and Lambda functions.",
+  "url": "https://github.com/awslabs/agent-plugins",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "aws-core",
+  "id": "aws-core",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Build, deploy, and operate applications on AWS. Skills to author infrastructure-as-code, use core services, and complete common tasks.",
+  "url": "https://github.com/aws/agent-toolkit-for-aws",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "aws-data-analytics",
+  "id": "aws-data-analytics",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Data lake, analytics, and ETL workflows with S3 Tables, AWS Glue, and Athena.",
+  "url": "https://github.com/aws/agent-toolkit-for-aws",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "aws-serverless",
+  "id": "aws-serverless",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Design, build, deploy, test, and debug serverless applications with AWS Serverless services.",
+  "url": "https://github.com/awslabs/agent-plugins",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "aws-startup-advisor",
+  "id": "aws-startup-advisor",
+  "type": "claude-code-plugin",
+  "category": "development",
   "description": "Personalized AWS guidance built on patterns from 350,000+ startups. Get architecture, cost, and security recommendations matched to your stage, from day-one account setup to production-ready infrastructure. Migrate to AWS from Azure, GCP, or Heroku with resource discovery, cost estimates, and generated Terraform. Move OpenAI, Azure OpenAI, and Gemini code to Amazon Bedrock, and plan and prototype AI agents on AgentCore and other AWS runtimes. Includes AWS Activate credits eligibility, 60+ exclusive startup offers, and multi-account, multi-region support. Built by AWS Startup Solutions Architects.",
   "url": "https://github.com/aws/agent-toolkit-for-aws",
   "sources": [
@@ -5556,13 +5758,15 @@
   "description": "Official Buildkite skills for Claude Code, Cursor, and other AI coding agents pipelines, migration, preflight, agent runtime, CLI, and API",
   "url": "https://buildkite.com",
   "sources": [
-   "anthropics/claude-plugins-official"
+   "anthropics/claude-plugins-official",
+   "anthropics/knowledge-work-plugins"
   ],
   "category_source": "listed",
-  "quality_score": 70,
+  "quality_score": 80,
   "tier": "recommended",
   "flags": [
-   "+anthropic-marketplace"
+   "+anthropic-marketplace",
+   "+in-2-sources"
   ]
  },
  {
@@ -5600,23 +5804,20 @@
   ]
  },
  {
-  "name": "Chrome DevTools MCP",
-  "id": "io.github.ChromeDevTools/chrome-devtools-mcp",
+  "name": "chrome-devtools-mcp",
+  "id": "chrome-devtools-mcp",
   "type": "claude-code-plugin",
   "category": "development",
   "description": "Control and inspect a live Chrome browser from your coding agent. Record performance traces, analyze network requests, check console messages with source-mapped stack traces, and automate browser actions with Puppeteer.",
   "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
   "sources": [
-   "anthropics/claude-plugins-official",
-   "mcp-registry"
+   "anthropics/claude-plugins-official"
   ],
-  "hosting": "package",
   "category_source": "listed",
-  "quality_score": 85,
+  "quality_score": 75,
   "tier": "recommended",
   "flags": [
    "+anthropic-marketplace",
-   "+in-2-sources",
    "+open-source"
   ]
  },
@@ -5660,20 +5861,52 @@
   "id": "clangd-lsp",
   "type": "claude-code-plugin",
   "category": "development",
-  "description": "Guided modernization for any legacy codebase: start with /modernize, get an assessment, an interactive map, the business rules mined from the code, and a plan you approve, then an upgrade, a rewrite or a rebuild with independent proof that the new code behaves like the old. Includes security hardening, a one-page report, specialist agents, and an optional live progress pane (early access).",
-  "url": "https://github.com/anthropics/claude-plugins-official",
+  "description": "C/C++ language server (clangd) for code intelligence",
+  "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/clangd-lsp",
   "sources": [
-   "anthropics/claude-plugins-official",
-   "anthropics/knowledge-work-plugins",
-   "hesreallyhim/awesome-claude-code"
+   "anthropics/claude-plugins-official"
   ],
   "category_source": "listed",
-  "quality_score": 100,
+  "quality_score": 75,
   "tier": "recommended",
   "flags": [
    "+anthropic-marketplace",
-   "+community-list",
-   "+in-3-sources",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "claude-opus-4-5-migration",
+  "id": "claude-opus-4-5-migration",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Migrate your code and prompts from Sonnet 4.x and Opus 4.1 to Opus 4.5.",
+  "url": "https://github.com/anthropics/claude-code/tree/main/plugins/claude-opus-4-5-migration",
+  "sources": [
+   "anthropics/claude-code"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "code-modernization",
+  "id": "code-modernization",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Guided modernization for any legacy codebase: start with /modernize, get an assessment, an interactive map, the business rules mined from the code, and a plan you approve, then an upgrade, a rewrite or a rebuild with independent proof that the new code behaves like the old. Includes security hardening, a one-page report, specialist agents, and an optional live progress pane (early access).",
+  "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/code-modernization",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
    "+open-source"
   ]
  },
@@ -5709,6 +5942,62 @@
   "tier": "recommended",
   "flags": [
    "+anthropic-marketplace"
+  ]
+ },
+ {
+  "name": "context7",
+  "id": "context7",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Upstash Context7 MCP server for up-to-date documentation lookup. Connects to Context7's hosted remote MCP server (https://mcp.context7.com/mcp) no local Node.js or npx required to pull version-specific documentation and code examples directly from source repositories into your LLM context. Works anonymously out of the box; set CONTEXT7_API_KEY for higher rate limits.",
+  "url": "https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/context7",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "csharp-lsp",
+  "id": "csharp-lsp",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "C# language server for code intelligence",
+  "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/csharp-lsp",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "data",
+  "id": "data",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Data engineering for Apache Airflow and Astronomer. Author DAGs with best practices, debug pipeline failures, trace data lineage, profile tables, migrate Airflow 2 to 3, and manage local and cloud deployments.",
+  "url": "https://github.com/astronomer/agents",
+  "sources": [
+   "anthropics/claude-plugins-official",
+   "anthropics/knowledge-work-plugins"
+  ],
+  "category_source": "listed",
+  "quality_score": 85,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+in-2-sources",
+   "+open-source"
   ]
  },
  {
@@ -5801,6 +6090,44 @@
   ]
  },
  {
+  "name": "fakechat",
+  "id": "fakechat",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Localhost web chat for testing the channel notification flow. No tokens, no access control, no third-party service.",
+  "url": "https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/fakechat",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "feature-dev",
+  "id": "feature-dev",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Comprehensive feature development workflow with specialized agents for codebase exploration, architecture design, and quality review",
+  "url": "https://github.com/anthropics/claude-plugins-public/tree/main/plugins/feature-dev",
+  "sources": [
+   "anthropics/claude-code",
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 85,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+in-2-sources",
+   "+open-source"
+  ]
+ },
+ {
   "name": "firecrawl",
   "id": "firecrawl",
   "type": "claude-code-plugin",
@@ -5836,6 +6163,26 @@
   ]
  },
  {
+  "name": "frontend-design",
+  "id": "frontend-design",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Create distinctive, production-grade frontend interfaces with high design quality. Generates creative, polished code that avoids generic AI aesthetics.",
+  "url": "https://github.com/anthropics/claude-plugins-public/tree/main/plugins/frontend-design",
+  "sources": [
+   "anthropics/claude-code",
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 85,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+in-2-sources",
+   "+open-source"
+  ]
+ },
+ {
   "name": "gitkraken",
   "id": "gitkraken",
   "type": "claude-code-plugin",
@@ -5852,6 +6199,24 @@
   "flags": [
    "+anthropic-marketplace",
    "+in-2-sources"
+  ]
+ },
+ {
+  "name": "gopls-lsp",
+  "id": "gopls-lsp",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Go language server for code intelligence and refactoring",
+  "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/gopls-lsp",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
   ]
  },
  {
@@ -5908,12 +6273,84 @@
   ]
  },
  {
+  "name": "jdtls-lsp",
+  "id": "jdtls-lsp",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Java language server (Eclipse JDT.LS) for code intelligence",
+  "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/jdtls-lsp",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "kotlin-lsp",
+  "id": "kotlin-lsp",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Kotlin language server for code intelligence",
+  "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/kotlin-lsp",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "laravel-boost",
+  "id": "laravel-boost",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Laravel development toolkit MCP server. Provides intelligent assistance for Laravel applications including Artisan commands, Eloquent queries, routing, migrations, and framework-specific code generation.",
+  "url": "https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/laravel-boost",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
   "name": "liquid-lsp",
   "id": "liquid-lsp",
   "type": "claude-code-plugin",
   "category": "development",
-  "description": "Liquid language fundamentals, CSS/JS/HTML coding standards, and WCAG accessibility patterns for Shopify themes",
+  "description": "LSP integration for Shopify Liquid templates via the Shopify CLI theme language server.",
   "url": "https://github.com/Shopify/liquid-skills/tree/main/plugins/liquid-lsp",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "liquid-skills",
+  "id": "liquid-skills",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Liquid language fundamentals, CSS/JS/HTML coding standards, and WCAG accessibility patterns for Shopify themes",
+  "url": "https://github.com/Shopify/liquid-skills/tree/main/plugins/liquid-skills",
   "sources": [
    "anthropics/claude-plugins-official"
   ],
@@ -5940,6 +6377,24 @@
   "tier": "recommended",
   "flags": [
    "+anthropic-marketplace"
+  ]
+ },
+ {
+  "name": "lua-lsp",
+  "id": "lua-lsp",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Lua language server for code intelligence",
+  "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/lua-lsp",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
   ]
  },
  {
@@ -5995,6 +6450,42 @@
   ]
  },
  {
+  "name": "mcp-server-dev",
+  "id": "mcp-server-dev",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Skills for designing and building MCP servers that work seamlessly with Claude. Guides you through deployment models (remote HTTP, MCPB, local), tool design patterns, auth, and interactive MCP apps.",
+  "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/mcp-server-dev",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "mcp-tunnels",
+  "id": "mcp-tunnels",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Connect Claude to a private MCP server through an Anthropic MCP tunnel. The /create-docker-mcp-tunnel command drives the Docker Compose quickstart end to end: certificates, proxy config, cloudflared, and a verifiable sample server.",
+  "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/mcp-tunnels",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
   "name": "mercadopago",
   "id": "mercadopago",
   "type": "claude-code-plugin",
@@ -6030,24 +6521,20 @@
   ]
  },
  {
-  "name": "Microsoft Learn MCP",
-  "id": "com.microsoft/microsoft-learn-mcp",
+  "name": "microsoft-docs",
+  "id": "microsoft-docs",
   "type": "claude-code-plugin",
   "category": "development",
   "description": "Access official Microsoft documentation, API references, and code samples for Azure, .NET, Windows, and more.",
-  "url": "https://github.com/MicrosoftDocs/mcp",
+  "url": "https://github.com/microsoftdocs/mcp",
   "sources": [
-   "anthropics/claude-plugins-official",
-   "mcp-registry"
+   "anthropics/claude-plugins-official"
   ],
-  "hosting": "remote",
   "category_source": "listed",
-  "quality_score": 90,
+  "quality_score": 75,
   "tier": "recommended",
   "flags": [
    "+anthropic-marketplace",
-   "+in-2-sources",
-   "+verified-domain",
    "+open-source"
   ]
  },
@@ -6126,6 +6613,24 @@
   ]
  },
  {
+  "name": "netsuite-suitecloud",
+  "id": "netsuite-suitecloud",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Develop NetSuite SuiteCloud solutions with SuiteScript, SDF, and best practices: SuiteScript records and upgrades, SDF objects, roles and permissions, UIF single-page apps, OWASP secure coding, project documentation, and the SAFE Guide.",
+  "url": "https://github.com/oracle/netsuite-suitecloud-sdk/tree/ai-plugins-dist/anthropic/netsuite-suitecloud",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
   "name": "nvidia-skills",
   "id": "nvidia-skills",
   "type": "claude-code-plugin",
@@ -6147,7 +6652,41 @@
   "id": "oracle-ai-data-platform-workbench-databricks-migrator",
   "type": "claude-code-plugin",
   "category": "development",
+  "description": "Drive the Oracle AI Data Platform (AIDP) Databricks Migration Toolkit in natural language. Plans and executes automated Databricks AIDP migrations of notebooks, jobs, schedules, and catalog DDL Pass-1 dependency rewrite + Pass-2 cell-by-cell execute/verify/fix on a live AIDP cluster with Claude.",
+  "url": "https://docs.oracle.com/en/cloud/paas/ai-data-platform/index.html",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 70,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace"
+  ]
+ },
+ {
+  "name": "oracle-ai-data-platform-workbench-engineer-agent",
+  "id": "oracle-ai-data-platform-workbench-engineer-agent",
+  "type": "claude-code-plugin",
+  "category": "development",
   "description": "Oracle AI Data Platform (AIDP) Workbench engineer agent for Claude Code a 37-skill agent that operates the full Spark/Delta lakehouse in natural language. Discovers your catalog into a grounding cache, turns plain English into accurate Spark SQL, and runs the lifecycle (CREATE/INSERT/UPDATE/DELETE/MERGE, OPTIMIZE/VACUUM, time-travel). Ingests files, profiles data and sets quality rules, authors and repairs pipelines, provisions clusters, and debugs via the Spark UI. Governs the platform (roles, credential store, Delta Sharing, audit logs), plus native Git, bundles, and MLOps/MLflow. Runs via the official Oracle aidp CLI.",
+  "url": "https://docs.oracle.com/en/cloud/paas/ai-data-platform/index.html",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 65,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace"
+  ]
+ },
+ {
+  "name": "oracle-ai-data-platform-workbench-spark-connectors",
+  "id": "oracle-ai-data-platform-workbench-spark-connectors",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Oracle AI Data Platform Workbench Spark connectors for Claude Code. 18 connector skills covering every data source workbench customers commonly need: Oracle Autonomous DB family (ALH/ADW/ATP) via wallet/IAM-DB-Token/API-key, ExaCS, Fusion ERP REST, Fusion BICC, EPM Cloud Planning, Essbase 21c, OCI Streaming (Kafka), OCI Object Storage, Apache Iceberg, plus external systems (PostgreSQL, MySQL/HeatWave, SQL Server, Snowflake, Azure ADLS Gen2, AWS S3, generic REST, custom JDBC, Excel). Live-validated on the workbench tpcds cluster (Spark 3.5.0): 17 PASS / 4 ship-as-is out of 21 test rows.",
   "url": "https://docs.oracle.com/en/cloud/paas/ai-data-platform/index.html",
   "sources": [
    "anthropics/claude-plugins-official"
@@ -6194,6 +6733,24 @@
   ]
  },
  {
+  "name": "php-lsp",
+  "id": "php-lsp",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "PHP language server (Intelephense) for code intelligence",
+  "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/php-lsp",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
   "name": "pixeltable",
   "id": "pixeltable",
   "type": "claude-code-plugin",
@@ -6210,6 +6767,44 @@
   "flags": [
    "+anthropic-marketplace",
    "+in-2-sources"
+  ]
+ },
+ {
+  "name": "playground",
+  "id": "playground",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Creates interactive HTML playgrounds self-contained single-file explorers with visual controls, live preview, and prompt output with copy button. Includes templates for design playgrounds, data explorers, concept maps, and document critique.",
+  "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/playground",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "plugin-dev",
+  "id": "plugin-dev",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Comprehensive toolkit for developing Claude Code plugins. Includes 7 expert skills covering hooks, MCP integration, commands, agents, and best practices. AI-assisted plugin creation and validation.",
+  "url": "https://github.com/anthropics/claude-plugins-public/tree/main/plugins/plugin-dev",
+  "sources": [
+   "anthropics/claude-code",
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 85,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+in-2-sources",
+   "+open-source"
   ]
  },
  {
@@ -6248,12 +6843,30 @@
   ]
  },
  {
-  "name": "qodo",
-  "id": "qodo",
+  "name": "pydantic-ai",
+  "id": "pydantic-ai",
   "type": "claude-code-plugin",
   "category": "development",
-  "description": "Bring Qodo's codebase intelligence, coding standards, and code review into your coding agent.",
-  "url": "https://github.com/qodo-ai/qodo-skills.git",
+  "description": "Write accurate Pydantic AI code from the start. Up-to-date patterns, decision trees, and common gotchas for agents, tools, structured output, streaming, and multi-agent apps.",
+  "url": "https://github.com/pydantic/skills/tree/main/plugins/ai",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "pyright-lsp",
+  "id": "pyright-lsp",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Python language server (Pyright) for type checking and code intelligence",
+  "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/pyright-lsp",
   "sources": [
    "anthropics/claude-plugins-official"
   ],
@@ -6271,32 +6884,38 @@
   "type": "claude-code-plugin",
   "category": "development",
   "description": "Bring Qodo's codebase intelligence, coding standards, and code review into your coding agent.",
-  "url": "https://qodo.ai",
+  "url": "https://github.com/qodo-ai/qodo-skills.git",
   "sources": [
+   "anthropics/claude-plugins-official",
    "anthropics/knowledge-work-plugins"
   ],
   "category_source": "listed",
-  "quality_score": 70,
+  "quality_score": 85,
   "tier": "recommended",
   "flags": [
-   "+anthropic-marketplace"
+   "+anthropic-marketplace",
+   "+in-2-sources",
+   "+open-source"
   ]
  },
  {
-  "name": "qt-development-skills",
-  "id": "qt-development-skills",
+  "name": "qodo-standards",
+  "id": "qodo-standards",
   "type": "claude-code-plugin",
   "category": "development",
-  "description": "Agentic engineering skills for Qt software development Qt C++/QML code review, QML coding, and Qt C++/QML code documentation.",
-  "url": "https://www.qt.io/",
+  "description": "Optional Qodo rules discovery and standards administration workflows.",
+  "url": "https://github.com/qodo-ai/qodo-skills.git",
   "sources": [
-   "anthropics/claude-plugins-official"
+   "anthropics/claude-plugins-official",
+   "anthropics/knowledge-work-plugins"
   ],
   "category_source": "listed",
-  "quality_score": 70,
+  "quality_score": 85,
   "tier": "recommended",
   "flags": [
-   "+anthropic-marketplace"
+   "+anthropic-marketplace",
+   "+in-2-sources",
+   "+open-source"
   ]
  },
  {
@@ -6305,16 +6924,17 @@
   "type": "claude-code-plugin",
   "category": "development",
   "description": "Agentic engineering skills for Qt software development, including Qt C++/QML code review, QML coding, and Qt C++/QML code documentation. These skills use AI and can make mistakes. Always double-check the output carefully.",
-  "url": "https://github.com/TheQtCompanyRnD/agent-skills",
+  "url": "https://www.qt.io/",
   "sources": [
+   "anthropics/claude-plugins-official",
    "anthropics/knowledge-work-plugins"
   ],
   "category_source": "listed",
-  "quality_score": 75,
+  "quality_score": 80,
   "tier": "recommended",
   "flags": [
    "+anthropic-marketplace",
-   "+open-source"
+   "+in-2-sources"
   ]
  },
  {
@@ -6332,6 +6952,42 @@
   "tier": "recommended",
   "flags": [
    "+anthropic-marketplace"
+  ]
+ },
+ {
+  "name": "ralph-loop",
+  "id": "ralph-loop",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Interactive self-referential AI loops for iterative development, implementing the Ralph Wiggum technique. Claude works on the same task repeatedly, seeing its previous work, until completion.",
+  "url": "https://github.com/anthropics/claude-plugins-public/tree/main/plugins/ralph-loop",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "ralph-wiggum",
+  "id": "ralph-wiggum",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Interactive self-referential AI loops for iterative development. Claude works on the same task repeatedly, seeing its previous work, until completion.",
+  "url": "https://github.com/anthropics/claude-code/tree/main/plugins/ralph-wiggum",
+  "sources": [
+   "anthropics/claude-code"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
   ]
  },
  {
@@ -6369,6 +7025,23 @@
   ]
  },
  {
+  "name": "revenuecat",
+  "id": "revenuecat",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Configure RevenueCat projects, apps, products, entitlements, and offerings directly from Claude Code. Manage your in-app purchase backend without leaving your development workflow.",
+  "url": "https://www.revenuecat.com",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 70,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace"
+  ]
+ },
+ {
   "name": "rill",
   "id": "rill",
   "type": "claude-code-plugin",
@@ -6383,6 +7056,60 @@
   "tier": "recommended",
   "flags": [
    "+anthropic-marketplace"
+  ]
+ },
+ {
+  "name": "ruby-lsp",
+  "id": "ruby-lsp",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Ruby language server for code intelligence and analysis",
+  "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/ruby-lsp",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "rust-analyzer-lsp",
+  "id": "rust-analyzer-lsp",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Rust language server for code intelligence and analysis",
+  "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/rust-analyzer-lsp",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "sagemaker-ai",
+  "id": "sagemaker-ai",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Build, train, and deploy AI models with deep AWS AI/ML expertise brought directly into your coding assistants, covering the surface area of Amazon SageMaker AI.",
+  "url": "https://github.com/awslabs/agent-plugins",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
   ]
  },
  {
@@ -6411,15 +7138,47 @@
   "description": "Sanity content platform integration with MCP server, agent skills, and slash commands. Query and author content, build and optimize GROQ queries, design schemas, and set up Visual Editing.",
   "url": "https://www.sanity.io",
   "sources": [
-   "anthropics/claude-plugins-official",
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 70,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace"
+  ]
+ },
+ {
+  "name": "sanity-plugin",
+  "id": "sanity-plugin",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Sanity content platform integration with MCP server, agent skills, and slash commands. Query and author content, build and optimize GROQ queries, design schemas, and set up Visual Editing.",
+  "url": "https://www.sanity.io",
+  "sources": [
    "anthropics/knowledge-work-plugins"
   ],
   "category_source": "listed",
-  "quality_score": 80,
+  "quality_score": 70,
   "tier": "recommended",
   "flags": [
-   "+anthropic-marketplace",
-   "+in-2-sources"
+   "+anthropic-marketplace"
+  ]
+ },
+ {
+  "name": "sap-cds-mcp",
+  "id": "sap-cds-mcp",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "AI-assisted development of SAP Cloud Application Programming Model (CAP) projects. Search CDS models and CAP documentation.",
+  "url": "https://cap.cloud.sap/",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 70,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace"
   ]
  },
  {
@@ -6476,6 +7235,24 @@
   ]
  },
  {
+  "name": "serena",
+  "id": "serena",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Semantic code analysis MCP server providing intelligent code understanding, refactoring suggestions, and codebase navigation through language server protocol integration.",
+  "url": "https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/serena",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
   "name": "servicenow-sdk",
   "id": "servicenow-sdk",
   "type": "claude-code-plugin",
@@ -6495,6 +7272,42 @@
   ]
  },
  {
+  "name": "setup-agent-analytics",
+  "id": "setup-agent-analytics",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Detect AI agents in your codebase and instrument them with Pendo Agent Analytics via the best-fit path: Python SDK, TypeScript SDK, client-side trackAgent(), or the Conversations API.",
+  "url": "https://github.com/pendo-io/claude-pendo-plugin/tree/main/plugins/setup-agent-analytics",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "setup-mcp-agent-analytics",
+  "id": "setup-mcp-agent-analytics",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Detect an MCP server's language (Python, TypeScript or Go) and instrument it with the matching Pendo SDK so MCP tool calls flow into Pendo Agent Analytics.",
+  "url": "https://github.com/pendo-io/claude-pendo-plugin/tree/main/plugins/setup-mcp-agent-analytics",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
   "name": "shopify-ai-toolkit",
   "id": "shopify-ai-toolkit",
   "type": "claude-code-plugin",
@@ -6509,6 +7322,24 @@
   "tier": "recommended",
   "flags": [
    "+anthropic-marketplace"
+  ]
+ },
+ {
+  "name": "skill-creator",
+  "id": "skill-creator",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Create new skills, improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, update or optimize an existing skill, run evals to test a skill, or benchmark skill performance with variance analysis.",
+  "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/skill-creator",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
   ]
  },
  {
@@ -6602,19 +7433,34 @@
   "id": "superpowers",
   "type": "claude-code-plugin",
   "category": "development",
-  "description": "by Jesse Vincent - A strong bundle of core competencies for software engineering, with good coverage of a large portion of the SDLC - from planning, reviewing, testing, debugging... Well written, well organized, and adaptable. The author refers to them as \"superpowers\", but many of them are just consolidating engineering best practices - which sometimes does feel like a superpower when working with Claude Code.",
+  "description": "Superpowers teaches Claude brainstorming, subagent driven development with built in code review, systematic debugging, and red/green TDD. Additionally, it teaches Claude how to author and test new skills.",
   "url": "https://github.com/obra/superpowers.git",
   "sources": [
-   "anthropics/claude-plugins-official",
-   "hesreallyhim/awesome-claude-code"
+   "anthropics/claude-plugins-official"
   ],
   "category_source": "listed",
-  "quality_score": 100,
+  "quality_score": 75,
   "tier": "recommended",
   "flags": [
    "+anthropic-marketplace",
-   "+community-list",
-   "+in-2-sources",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "swift-lsp",
+  "id": "swift-lsp",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Swift language server (SourceKit-LSP) for code intelligence",
+  "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/swift-lsp",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
    "+open-source"
   ]
  },
@@ -6655,6 +7501,24 @@
   ]
  },
  {
+  "name": "terraform",
+  "id": "terraform",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "The Terraform MCP Server provides seamless integration with Terraform ecosystem, enabling advanced automation and interaction capabilities for Infrastructure as Code (IaC) development.",
+  "url": "https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/terraform",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
   "name": "togetherai-skills",
   "id": "togetherai-skills",
   "type": "claude-code-plugin",
@@ -6691,11 +7555,65 @@
   ]
  },
  {
+  "name": "typescript-lsp",
+  "id": "typescript-lsp",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "TypeScript/JavaScript language server for enhanced code intelligence",
+  "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/typescript-lsp",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
   "name": "ui5",
   "id": "ui5",
   "type": "claude-code-plugin",
   "category": "development",
   "description": "SAPUI5 / OpenUI5 plugin for coding agents. Create and validate UI5 projects, access API documentation, run UI5 linter, get development guidelines and best practices for UI5 development.",
+  "url": "https://github.com/UI5/plugins-coding-agents",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "ui5-modernization",
+  "id": "ui5-modernization",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "Complete UI5 modernization toolkit with workflow and specialized fix patterns for modernizing SAPUI5/OpenUI5 applications.",
+  "url": "https://github.com/UI5/plugins-coding-agents",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "ui5-typescript-conversion",
+  "id": "ui5-typescript-conversion",
+  "type": "claude-code-plugin",
+  "category": "development",
+  "description": "SAPUI5 / OpenUI5 plugin for coding agents. Convert JavaScript based UI5 projects to TypeScript.",
   "url": "https://github.com/UI5/plugins-coding-agents",
   "sources": [
    "anthropics/claude-plugins-official"
@@ -6768,16 +7686,18 @@
   "id": "zoom-plugin",
   "type": "claude-code-plugin",
   "category": "development",
-  "description": "Claude plugin for planning, building, and debugging Zoom integrations across REST APIs, SDKs, webhooks, bots, and MCP workflows.",
+  "description": "Plan, build, and debug Zoom integrations across REST APIs, Meeting SDK, Video SDK, webhooks, bots, and MCP workflows. Search meetings, retrieve recordings, access transcripts, and design AI-powered Zoom experiences.",
   "url": "https://developers.zoom.us/",
   "sources": [
-   "anthropics/claude-plugins-official"
+   "anthropics/claude-plugins-official",
+   "anthropics/knowledge-work-plugins"
   ],
   "category_source": "listed",
-  "quality_score": 70,
+  "quality_score": 80,
   "tier": "recommended",
   "flags": [
-   "+anthropic-marketplace"
+   "+anthropic-marketplace",
+   "+in-2-sources"
   ]
  },
  {
@@ -6852,6 +7772,26 @@
   ]
  },
  {
+  "name": "explanatory-output-style",
+  "id": "explanatory-output-style",
+  "type": "claude-code-plugin",
+  "category": "learning",
+  "description": "Adds educational insights about implementation choices and codebase patterns (mimics the deprecated Explanatory output style)",
+  "url": "https://github.com/anthropics/claude-plugins-public/tree/main/plugins/explanatory-output-style",
+  "sources": [
+   "anthropics/claude-code",
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 85,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+in-2-sources",
+   "+open-source"
+  ]
+ },
+ {
   "name": "learn-with-coursera",
   "id": "learn-with-coursera",
   "type": "claude-code-plugin",
@@ -6872,11 +7812,31 @@
   ]
  },
  {
+  "name": "learning-output-style",
+  "id": "learning-output-style",
+  "type": "claude-code-plugin",
+  "category": "learning",
+  "description": "Interactive learning mode that requests meaningful code contributions at decision points (mimics the unshipped Learning output style)",
+  "url": "https://github.com/anthropics/claude-plugins-public/tree/main/plugins/learning-output-style",
+  "sources": [
+   "anthropics/claude-code",
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 85,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+in-2-sources",
+   "+open-source"
+  ]
+ },
+ {
   "name": "amazon-location-service",
   "id": "amazon-location-service",
   "type": "claude-code-plugin",
   "category": "location",
-  "description": "Migrate, modernize, and upgrade codebases to AWS. Transforms .NET Framework to .NET 8/10, mainframe COBOL to Java, VMware VMs to EC2, SQL Server to Aurora, and upgrades Java/Python/Node.js versions and AWS SDKs. AWS Transform - continuous modernization analyzes codebases for tech debt, security issues, and upgrade opportunities, then remediates them.",
+  "description": "Guide developers through adding maps, places search, geocoding, routing, and other geospatial features with Amazon Location Service, including authentication setup, SDK integration, and best practices.",
   "url": "https://github.com/awslabs/agent-plugins",
   "sources": [
    "anthropics/claude-plugins-official"
@@ -6904,6 +7864,60 @@
   "tier": "recommended",
   "flags": [
    "+anthropic-marketplace"
+  ]
+ },
+ {
+  "name": "math-olympiad",
+  "id": "math-olympiad",
+  "type": "claude-code-plugin",
+  "category": "math",
+  "description": "Solve competition math (IMO, Putnam, USAMO) with adversarial verification that catches what self-verification misses. Fresh-context verifiers attack proofs with specific failure patterns. Calibrated abstention over bluffing.",
+  "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/math-olympiad",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "math-proof",
+  "id": "math-proof",
+  "type": "claude-code-plugin",
+  "category": "math",
+  "description": "Two skills for hard mathematics problems, each ending in a self-contained proof.md: /math-proof:solo has the session work the problem itself in stages with a notes file; /math-proof:siege works on it for hours in rounds of judge and worker sub-agents and says plainly what is and is not proved.",
+  "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/math-proof",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "aws-transform",
+  "id": "aws-transform",
+  "type": "claude-code-plugin",
+  "category": "migration",
+  "description": "Migrate, modernize, and upgrade codebases to AWS. Transforms .NET Framework to .NET 8/10, mainframe COBOL to Java, VMware VMs to EC2, SQL Server to Aurora, and upgrades Java/Python/Node.js versions and AWS SDKs. AWS Transform - continuous modernization analyzes codebases for tech debt, security issues, and upgrade opportunities, then remediates them.",
+  "url": "https://github.com/awslabs/agent-plugins",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
   ]
  },
  {
@@ -6949,30 +7963,15 @@
   "description": "Use Datadog directly in Claude Code through a preconfigured Datadog MCP server. Query logs, metrics, traces, dashboards, and more through natural conversation. This plugin is in preview.",
   "url": "https://www.datadoghq.com/",
   "sources": [
-   "anthropics/claude-plugins-official"
-  ],
-  "category_source": "listed",
-  "quality_score": 70,
-  "tier": "recommended",
-  "flags": [
-   "+anthropic-marketplace"
-  ]
- },
- {
-  "name": "datadog",
-  "id": "datadog",
-  "type": "claude-code-plugin",
-  "category": "monitoring",
-  "description": "Use Datadog directly in Claude Code through a preconfigured Datadog MCP server. Query logs, metrics, traces, dashboards, and more through natural conversation. This plugin is in preview.",
-  "url": "https://docs.datadoghq.com/bits_ai/mcp_server/setup?tab=claudecode",
-  "sources": [
+   "anthropics/claude-plugins-official",
    "anthropics/knowledge-work-plugins"
   ],
   "category_source": "listed",
-  "quality_score": 70,
+  "quality_score": 80,
   "tier": "recommended",
   "flags": [
-   "+anthropic-marketplace"
+   "+anthropic-marketplace",
+   "+in-2-sources"
   ]
  },
  {
@@ -7014,6 +8013,25 @@
   "id": "grafana-assistant",
   "type": "claude-code-plugin",
   "category": "monitoring",
+  "description": "Skills and rules for developing and using the Grafana Assistant app and CLI.",
+  "url": "https://grafana.com",
+  "sources": [
+   "anthropics/claude-plugins-official",
+   "anthropics/knowledge-work-plugins"
+  ],
+  "category_source": "listed",
+  "quality_score": 80,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+in-2-sources"
+  ]
+ },
+ {
+  "name": "grafana-cloud-mcp",
+  "id": "grafana-cloud-mcp",
+  "type": "claude-code-plugin",
+  "category": "monitoring",
   "description": "Hosted MCP server for AI-assisted Grafana Cloud observability no local installation required.",
   "url": "https://grafana.com",
   "sources": [
@@ -7029,12 +8047,12 @@
   ]
  },
  {
-  "name": "honeycomb",
-  "id": "honeycomb",
+  "name": "grafana-mcp",
+  "id": "grafana-mcp",
   "type": "claude-code-plugin",
   "category": "monitoring",
-  "description": "Skills, agents, and workflows for Honeycomb observability query patterns, production investigations, SLOs, OpenTelemetry instrumentation, and Beeline migration. Designed to complement the Honeycomb MCP server.",
-  "url": "https://www.honeycomb.io",
+  "description": "MCP server for AI-assisted Grafana dashboard, datasource, alerting, and incident management.",
+  "url": "https://grafana.com",
   "sources": [
    "anthropics/claude-plugins-official"
   ],
@@ -7051,16 +8069,17 @@
   "type": "claude-code-plugin",
   "category": "monitoring",
   "description": "Skills, agents, and workflows for Honeycomb observability query patterns, production investigations, SLOs, OpenTelemetry instrumentation, and Beeline migration. Designed to complement the Honeycomb MCP server.",
-  "url": "https://github.com/honeycombio/agent-skill",
+  "url": "https://www.honeycomb.io",
   "sources": [
+   "anthropics/claude-plugins-official",
    "anthropics/knowledge-work-plugins"
   ],
   "category_source": "listed",
-  "quality_score": 75,
+  "quality_score": 80,
   "tier": "recommended",
   "flags": [
    "+anthropic-marketplace",
-   "+open-source"
+   "+in-2-sources"
   ]
  },
  {
@@ -7123,7 +8142,7 @@
   "id": "logfire",
   "type": "claude-code-plugin",
   "category": "monitoring",
-  "description": "Write accurate Pydantic AI code from the start. Up-to-date patterns, decision trees, and common gotchas for agents, tools, structured output, streaming, and multi-agent apps.",
+  "description": "Add Logfire observability to Python applications with auto-instrumentation for FastAPI, httpx, asyncpg, SQLAlchemy, and more",
   "url": "https://github.com/pydantic/skills/tree/main/plugins/logfire",
   "sources": [
    "anthropics/claude-plugins-official"
@@ -7370,14 +8389,14 @@
   "id": "airwallex-agentos",
   "type": "claude-code-plugin",
   "category": "productivity",
-  "description": "Build Airwallex payment integrations in your own codebase. Generates the checkout, card-element, onboarding, and subscription-billing code for an Airwallex integration and wires it into your project: Hosted Payment Page, Drop-in and Split Card elements, connected-account KYC onboarding, and Billing Hosted Checkout for subscriptions and card-saving. Also plans card-on-file merchant-initiated flows for AI providers such as top-ups and auto-recharge.",
+  "description": "Bring Airwallex's global financial infrastructure to Claude. Orchestrate actions across your account in plain language, e.g., set up invoices from a PO, onboard suppliers from invoices, and check current cash position across currencies. AgentOS bundles pre-built finance Skills with MCP servers. A public CLI connects your agent to Airwallex's capabilities.",
   "url": "https://www.airwallex.com/docs",
   "sources": [
    "anthropics/claude-plugins-official",
    "anthropics/knowledge-work-plugins"
   ],
   "category_source": "listed",
-  "quality_score": 75,
+  "quality_score": 80,
   "tier": "recommended",
   "flags": [
    "+anthropic-marketplace",
@@ -7412,34 +8431,50 @@
   "description": "Prospect, enrich leads, load outreach sequences, and query sales analytics with Apollo.io one-click MCP server integration for Claude Code and Cowork.",
   "url": "https://www.apollo.io/",
   "sources": [
-   "anthropics/claude-plugins-official"
+   "anthropics/claude-plugins-official",
+   "anthropics/knowledge-work-plugins"
   ],
   "category_source": "listed",
-  "quality_score": 70,
+  "quality_score": 80,
   "tier": "recommended",
   "flags": [
-   "+anthropic-marketplace"
+   "+anthropic-marketplace",
+   "+in-2-sources"
   ]
  },
  {
-  "name": "Atlassian Rovo MCP Server",
-  "id": "com.atlassian/atlassian-mcp-server",
+  "name": "asana",
+  "id": "asana",
+  "type": "claude-code-plugin",
+  "category": "productivity",
+  "description": "Asana project management integration. Connects Claude Code to Asana's V2 MCP server to create and manage tasks, search projects, update assignments, and track progress. Requires a one-time Asana OAuth app setup run /asana-setup after installing.",
+  "url": "https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/asana",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "atlassian",
+  "id": "atlassian",
   "type": "claude-code-plugin",
   "category": "productivity",
   "description": "Connect to Atlassian products including Jira and Confluence. Search and create issues, access documentation, manage sprints, and integrate your development workflow with Atlassian's collaboration tools.",
   "url": "https://github.com/atlassian/atlassian-mcp-server",
   "sources": [
-   "anthropics/claude-plugins-official",
-   "mcp-registry"
+   "anthropics/claude-plugins-official"
   ],
-  "hosting": "remote",
   "category_source": "listed",
-  "quality_score": 90,
+  "quality_score": 75,
   "tier": "recommended",
   "flags": [
    "+anthropic-marketplace",
-   "+in-2-sources",
-   "+verified-domain",
    "+open-source"
   ]
  },
@@ -7524,6 +8559,44 @@
   "id": "carta-cap-table",
   "type": "claude-code-plugin",
   "category": "productivity",
+  "description": "Carta Cap Table plugin skills and hooks for querying cap tables, grants, SAFEs, 409A valuations, waterfall scenarios, and more",
+  "url": "https://carta.com",
+  "sources": [
+   "anthropics/claude-plugins-official",
+   "anthropics/knowledge-work-plugins"
+  ],
+  "category_source": "listed",
+  "quality_score": 80,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+in-2-sources"
+  ]
+ },
+ {
+  "name": "carta-crm",
+  "id": "carta-crm",
+  "type": "claude-code-plugin",
+  "category": "productivity",
+  "description": "Manage the Carta CRM conversationally search, add, update, and enrich investors, companies, contacts, deals, notes, and fundraisings via the Carta CRM MCP Server.",
+  "url": "https://carta.com",
+  "sources": [
+   "anthropics/claude-plugins-official",
+   "anthropics/knowledge-work-plugins"
+  ],
+  "category_source": "listed",
+  "quality_score": 80,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+in-2-sources"
+  ]
+ },
+ {
+  "name": "carta-investors",
+  "id": "carta-investors",
+  "type": "claude-code-plugin",
+  "category": "productivity",
   "description": "Carta Investors plugin skills for querying investor data, performance benchmarks, regulatory reporting, AGM deck generation, brand extraction, and more via the Carta MCP Server.",
   "url": "https://carta.com",
   "sources": [
@@ -7558,12 +8631,67 @@
   ]
  },
  {
+  "name": "chronograph-lp",
+  "id": "chronograph-lp",
+  "type": "claude-code-plugin",
+  "category": "productivity",
+  "description": "Portfolio monitoring and analytics for private-capital LP teams using the Chronograph connector: cashflow forecasting, commitment pacing, look-through exposure scans and GP-meeting prep. Requires a Chronograph account and the Chronograph connector.",
+  "url": "https://www.chronograph.pe/",
+  "sources": [
+   "anthropics/claude-plugins-official",
+   "anthropics/knowledge-work-plugins"
+  ],
+  "category_source": "listed",
+  "quality_score": 80,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+in-2-sources"
+  ]
+ },
+ {
   "name": "circleback",
   "id": "circleback",
   "type": "claude-code-plugin",
   "category": "productivity",
   "description": "Circleback conversational context integration. Search and access meetings, emails, calendar events, and more.",
   "url": "https://github.com/circlebackai/claude-code-plugin.git",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "claude-code-setup",
+  "id": "claude-code-setup",
+  "type": "claude-code-plugin",
+  "category": "productivity",
+  "description": "Analyze codebases and recommend tailored Claude Code automations such as hooks, skills, MCP servers, and subagents.",
+  "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-code-setup",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "claude-md-management",
+  "id": "claude-md-management",
+  "type": "claude-code-plugin",
+  "category": "productivity",
+  "description": "Tools to maintain and improve CLAUDE.md files - audit quality, capture session learnings, and keep project memory current.",
+  "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-md-management",
   "sources": [
    "anthropics/claude-plugins-official"
   ],
@@ -7594,6 +8722,44 @@
   ]
  },
  {
+  "name": "code-review",
+  "id": "code-review",
+  "type": "claude-code-plugin",
+  "category": "productivity",
+  "description": "Automated code review for pull requests using multiple specialized agents with confidence-based scoring to filter false positives",
+  "url": "https://github.com/anthropics/claude-plugins-public/tree/main/plugins/code-review",
+  "sources": [
+   "anthropics/claude-code",
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 85,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+in-2-sources",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "code-simplifier",
+  "id": "code-simplifier",
+  "type": "claude-code-plugin",
+  "category": "productivity",
+  "description": "Agent that simplifies and refines code for clarity, consistency, and maintainability while preserving functionality. Focuses on recently modified code.",
+  "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/code-simplifier",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
   "name": "coderabbit",
   "id": "coderabbit",
   "type": "claude-code-plugin",
@@ -7608,6 +8774,26 @@
   "tier": "recommended",
   "flags": [
    "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "commit-commands",
+  "id": "commit-commands",
+  "type": "claude-code-plugin",
+  "category": "productivity",
+  "description": "Commands for git commit workflows including commit, push, and PR creation",
+  "url": "https://github.com/anthropics/claude-plugins-public/tree/main/plugins/commit-commands",
+  "sources": [
+   "anthropics/claude-code",
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 85,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+in-2-sources",
    "+open-source"
   ]
  },
@@ -7645,6 +8831,24 @@
   "flags": [
    "+anthropic-marketplace",
    "+in-2-sources"
+  ]
+ },
+ {
+  "name": "discord",
+  "id": "discord",
+  "type": "claude-code-plugin",
+  "category": "productivity",
+  "description": "Discord messaging bridge with built-in access control. Manage pairing, allowlists, and policy via /discord:access.",
+  "url": "https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/discord",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
   ]
  },
  {
@@ -7705,6 +8909,42 @@
   ]
  },
  {
+  "name": "github",
+  "id": "github",
+  "type": "claude-code-plugin",
+  "category": "productivity",
+  "description": "Official GitHub MCP server for repository management. Create issues, manage pull requests, review code, search repositories, and interact with GitHub's full API directly from Claude Code.",
+  "url": "https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/github",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "gitlab",
+  "id": "gitlab",
+  "type": "claude-code-plugin",
+  "category": "productivity",
+  "description": "GitLab DevOps platform integration. Manage repositories, merge requests, CI/CD pipelines, issues, and wikis. Full access to GitLab's comprehensive DevOps lifecycle tools.",
+  "url": "https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/gitlab",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
   "name": "govtribe",
   "id": "govtribe",
   "type": "claude-code-plugin",
@@ -7741,6 +8981,26 @@
   ]
  },
  {
+  "name": "hookify",
+  "id": "hookify",
+  "type": "claude-code-plugin",
+  "category": "productivity",
+  "description": "Easily create custom hooks to prevent unwanted behaviors by analyzing conversation patterns or from explicit instructions. Define rules via simple markdown files.",
+  "url": "https://github.com/anthropics/claude-plugins-public/tree/main/plugins/hookify",
+  "sources": [
+   "anthropics/claude-code",
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 85,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+in-2-sources",
+   "+open-source"
+  ]
+ },
+ {
   "name": "hubspot-sales",
   "id": "hubspot-sales",
   "type": "claude-code-plugin",
@@ -7774,6 +9034,24 @@
   "tier": "recommended",
   "flags": [
    "+anthropic-marketplace"
+  ]
+ },
+ {
+  "name": "imessage",
+  "id": "imessage",
+  "type": "claude-code-plugin",
+  "category": "productivity",
+  "description": "iMessage messaging bridge with built-in access control. Reads chat.db directly, sends via AppleScript. Manage pairing, allowlists, and policy via /imessage:access.",
+  "url": "https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/imessage",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
   ]
  },
  {
@@ -7853,6 +9131,24 @@
   ]
  },
  {
+  "name": "linear",
+  "id": "linear",
+  "type": "claude-code-plugin",
+  "category": "productivity",
+  "description": "Linear issue tracking integration. Create issues, manage projects, update statuses, search across workspaces, and streamline your software development workflow with Linear's modern issue tracker.",
+  "url": "https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/linear",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
   "name": "linq-alpha",
   "id": "linq-alpha",
   "type": "claude-code-plugin",
@@ -7906,6 +9202,23 @@
   ]
  },
  {
+  "name": "monday-com",
+  "id": "monday-com",
+  "type": "claude-code-plugin",
+  "category": "productivity",
+  "description": "The official monday.com plugin for Claude Cowork. Manage boards, items, docs, and forms across work management, CRM, dev, service, and campaigns. Full read and write access via OAuth.",
+  "url": "https://monday.com",
+  "sources": [
+   "anthropics/knowledge-work-plugins"
+  ],
+  "category_source": "listed",
+  "quality_score": 70,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace"
+  ]
+ },
+ {
   "name": "monday-crm",
   "id": "monday-crm",
   "type": "claude-code-plugin",
@@ -7945,6 +9258,26 @@
   ]
  },
  {
+  "name": "netsuite-finance-analyst",
+  "id": "netsuite-finance-analyst",
+  "type": "claude-code-plugin",
+  "category": "productivity",
+  "description": "Director-level finance analysis on live NetSuite data: financial reporting, period close, variance, aging and reconciliation reviews, cash reporting, and board-ready narratives with next actions. Requires the NetSuite AI Connector Service.",
+  "url": "https://github.com/oracle/netsuite-suitecloud-sdk/tree/ai-plugins-dist/anthropic/netsuite-finance-analyst",
+  "sources": [
+   "anthropics/claude-plugins-official",
+   "anthropics/knowledge-work-plugins"
+  ],
+  "category_source": "listed",
+  "quality_score": 85,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+in-2-sources",
+   "+open-source"
+  ]
+ },
+ {
   "name": "notion",
   "id": "notion",
   "type": "claude-code-plugin",
@@ -7970,31 +9303,56 @@
   "description": "Bring Pendo product analytics into Claude Code: account health, feature adoption, session replay lookup and triage, feedback analysis, and data-informed planning grounded in real usage data. Requires the Pendo connector and a Pendo subscription.",
   "url": "https://github.com/pendo-io/claude-pendo-plugin/tree/main/plugins/pendo-analytics",
   "sources": [
-   "anthropics/claude-plugins-official"
+   "anthropics/claude-plugins-official",
+   "anthropics/knowledge-work-plugins"
   ],
   "category_source": "listed",
-  "quality_score": 75,
+  "quality_score": 85,
   "tier": "recommended",
   "flags": [
    "+anthropic-marketplace",
+   "+in-2-sources",
    "+open-source"
   ]
  },
  {
-  "name": "pendo-analytics",
-  "id": "pendo-analytics",
+  "name": "pendo-guides",
+  "id": "pendo-guides",
   "type": "claude-code-plugin",
   "category": "productivity",
-  "description": "Bring Pendo product analytics into Claude: account health, feature adoption, session replay lookup and triage, feedback analysis, and data-informed planning grounded in real usage data. Requires the Pendo connector and a Pendo subscription.",
-  "url": "https://www.pendo.io",
+  "description": "Create production-ready Pendo in-app guides (walkthroughs, announcements, alerts, polls, promotions) as HTML/CSS/JS from a short intake conversation, using Pendo's guide components.",
+  "url": "https://github.com/pendo-io/claude-pendo-plugin/tree/main/plugins/pendo-guides",
   "sources": [
+   "anthropics/claude-plugins-official",
    "anthropics/knowledge-work-plugins"
   ],
   "category_source": "listed",
-  "quality_score": 70,
+  "quality_score": 85,
   "tier": "recommended",
   "flags": [
-   "+anthropic-marketplace"
+   "+anthropic-marketplace",
+   "+in-2-sources",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "pendo-orchestrate",
+  "id": "pendo-orchestrate",
+  "type": "claude-code-plugin",
+  "category": "productivity",
+  "description": "Create, configure and edit draft Pendo Orchestrate email journeys, including multi-email and conditional split flows, via the Pendo connector. Journeys stay in draft; activation happens in the Orchestrate UI.",
+  "url": "https://github.com/pendo-io/claude-pendo-plugin/tree/main/plugins/pendo-orchestrate",
+  "sources": [
+   "anthropics/claude-plugins-official",
+   "anthropics/knowledge-work-plugins"
+  ],
+  "category_source": "listed",
+  "quality_score": 85,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+in-2-sources",
+   "+open-source"
   ]
  },
  {
@@ -8015,12 +9373,86 @@
   ]
  },
  {
+  "name": "pr-review-toolkit",
+  "id": "pr-review-toolkit",
+  "type": "claude-code-plugin",
+  "category": "productivity",
+  "description": "Comprehensive PR review agents specializing in comments, tests, error handling, type design, code quality, and code simplification",
+  "url": "https://github.com/anthropics/claude-plugins-public/tree/main/plugins/pr-review-toolkit",
+  "sources": [
+   "anthropics/claude-code",
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 85,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+in-2-sources",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "project-artifact",
+  "id": "project-artifact",
+  "type": "claude-code-plugin",
+  "category": "productivity",
+  "description": "Generate and publish a living project status page overview & success criteria, the workstream sequence, and next steps as a shareable claude.ai artifact backed by a per-project config, so refreshes re-gather live state, redeploy the same URL, and report only the delta.",
+  "url": "https://github.com/anthropics/claude-plugins-public/tree/main/plugins/project-artifact",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "receipts",
+  "id": "receipts",
+  "type": "claude-code-plugin",
+  "category": "productivity",
+  "description": "A personal Claude Code impact report for justifying your usage to a manager or a self-review: what you shipped, which projects it went to, and each project's share of your usage. Reads your /.claude/projects transcripts and runs read-only git locally; only counts and project names are sent to write it up, and the report stays on your machine.",
+  "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/receipts",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
   "name": "save-to-spotify",
   "id": "save-to-spotify",
   "type": "claude-code-plugin",
   "category": "productivity",
   "description": "Create polished audio episodes with TTS narration, rich timelines, cover images, and save them to Spotify via the save-to-spotify CLI.",
   "url": "https://github.com/spotify/save-to-spotify",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "session-report",
+  "id": "session-report",
+  "type": "claude-code-plugin",
+  "category": "productivity",
+  "description": "Generate an explorable HTML report of Claude Code session usage tokens, cache efficiency, subagents, skills, and the most expensive prompts from local /.claude/projects transcripts.",
+  "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/session-report",
   "sources": [
    "anthropics/claude-plugins-official"
   ],
@@ -8074,6 +9506,24 @@
   "category": "productivity",
   "description": "Manage Spotify ad campaigns with natural language. Create campaigns, ad sets, ads, pull reports, and handle OAuth all through conversation.",
   "url": "https://github.com/spotify/ads-claude-plugin",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "telegram",
+  "id": "telegram",
+  "type": "claude-code-plugin",
+  "category": "productivity",
+  "description": "Telegram messaging bridge with built-in access control. Manage pairing, allowlists, and policy via /telegram:access.",
+  "url": "https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/telegram",
   "sources": [
    "anthropics/claude-plugins-official"
   ],
@@ -8195,25 +9645,22 @@
   ]
  },
  {
-  "name": "Zapier",
-  "id": "com.zapier/mcp",
+  "name": "zapier",
+  "id": "zapier",
   "type": "claude-code-plugin",
   "category": "productivity",
   "description": "Connect 8,000+ apps to your AI workflow. Discover, enable, and execute Zapier actions directly from your client.",
-  "url": "https://github.com/zapier/zapier-mcp",
+  "url": "https://github.com/zapier/zapier-mcp/tree/main/plugins/zapier",
   "sources": [
    "anthropics/claude-plugins-official",
-   "anthropics/knowledge-work-plugins",
-   "mcp-registry"
+   "anthropics/knowledge-work-plugins"
   ],
-  "hosting": "remote",
   "category_source": "listed",
-  "quality_score": 100,
+  "quality_score": 85,
   "tier": "recommended",
   "flags": [
    "+anthropic-marketplace",
-   "+in-3-sources",
-   "+verified-domain",
+   "+in-2-sources",
    "+open-source"
   ]
  },
@@ -8257,28 +9704,6 @@
   ]
  },
  {
-  "name": "Bigdata.com",
-  "id": "com.bigdata/bigdata-mcp",
-  "type": "claude-code-plugin",
-  "category": "Data Science Tools",
-  "description": "Official Bigdata.com plugin providing financial research, analytics, and intelligence tools powered by Bigdata MCP.",
-  "url": "https://github.com/Bigdata-com/bigdata-plugins-marketplace",
-  "sources": [
-   "anthropics/knowledge-work-plugins",
-   "mcp-registry"
-  ],
-  "hosting": "remote",
-  "category_source": "inferred",
-  "quality_score": 90,
-  "tier": "recommended",
-  "flags": [
-   "+anthropic-marketplace",
-   "+in-2-sources",
-   "+verified-domain",
-   "+open-source"
-  ]
- },
- {
   "name": "42crunch-api-security-testing",
   "id": "42crunch-api-security-testing",
   "type": "claude-code-plugin",
@@ -8303,24 +9728,26 @@
   "description": "Enterprise-grade auth, easy to implement. Add login, SSO, MFA, and access control to any app with framework-aware guidance.",
   "url": "https://auth0.com",
   "sources": [
-   "anthropics/claude-plugins-official"
+   "anthropics/claude-plugins-official",
+   "anthropics/knowledge-work-plugins"
   ],
   "category_source": "listed",
-  "quality_score": 70,
+  "quality_score": 80,
   "tier": "recommended",
   "flags": [
-   "+anthropic-marketplace"
+   "+anthropic-marketplace",
+   "+in-2-sources"
   ]
  },
  {
-  "name": "auth0",
-  "id": "auth0",
+  "name": "claude-security",
+  "id": "claude-security",
   "type": "claude-code-plugin",
   "category": "security",
-  "description": "Essential Auth0 skills including quickstarts, migration from other providers, and Multi-Factor Authentication (MFA).",
-  "url": "https://github.com/auth0/agent-skills",
+  "description": "Deep vulnerability scanning of your own code, run entirely inside your Claude Code session at a chosen effort tier, with every finding challenged before it is reported and the verification tally computed in code. Turns surviving findings into targeted patches, each verified by a panel of agents, that you apply when you choose.",
+  "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-security",
   "sources": [
-   "anthropics/knowledge-work-plugins"
+   "anthropics/claude-plugins-official"
   ],
   "category_source": "listed",
   "quality_score": 75,
@@ -8418,6 +9845,27 @@
   ]
  },
  {
+  "name": "security-guidance",
+  "id": "security-guidance",
+  "type": "claude-code-plugin",
+  "category": "security",
+  "description": "Security review for Claude-generated code. Pattern-based warnings on edits, LLM-powered diff review on Stop, and an agentic commit reviewer that catches injection, XSS, SSRF, hardcoded secrets, and 25+ other vulnerability classes.",
+  "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/security-guidance",
+  "sources": [
+   "anthropics/claude-code",
+   "anthropics/claude-plugins-official",
+   "anthropics/knowledge-work-plugins"
+  ],
+  "category_source": "listed",
+  "quality_score": 95,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+in-3-sources",
+   "+open-source"
+  ]
+ },
+ {
   "name": "semgrep",
   "id": "semgrep",
   "type": "claude-code-plugin",
@@ -8471,6 +9919,25 @@
   ]
  },
  {
+  "name": "stackhawk-api",
+  "id": "stackhawk-api",
+  "type": "claude-code-plugin",
+  "category": "security",
+  "description": "Query the StackHawk platform API for security posture reporting, findings analysis, and app management. Guides agents through authentication, data retrieval, and result presentation.",
+  "url": "https://docs.stackhawk.com/ai-security/",
+  "sources": [
+   "anthropics/claude-plugins-official",
+   "anthropics/knowledge-work-plugins"
+  ],
+  "category_source": "listed",
+  "quality_score": 80,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+in-2-sources"
+  ]
+ },
+ {
   "name": "stackhawk-hawkscan",
   "id": "stackhawk-hawkscan",
   "type": "claude-code-plugin",
@@ -8492,6 +9959,23 @@
  {
   "name": "vanta",
   "id": "vanta",
+  "type": "claude-code-plugin",
+  "category": "security",
+  "description": "The Vanta plugin connects Claude Code to Vanta's security and compliance platform through the Vanta MCP server. It combines Vanta's test-specific remediation intelligence with your local repository context to help you fix compliance failures faster.",
+  "url": "https://help.vanta.com/en/articles/14094979-connecting-to-vanta-mcp#h_887ce3f337",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 70,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace"
+  ]
+ },
+ {
+  "name": "vanta-mcp-plugin",
+  "id": "vanta-mcp-plugin",
   "type": "claude-code-plugin",
   "category": "security",
   "description": "The Vanta plugin connects Claude to Vanta's security and compliance platform through the Vanta MCP server. List failing compliance tests, get test-specific remediation context, and fix failing tests with code changes directly from your Claude session.",
@@ -8560,6 +10044,25 @@
   "flags": [
    "+anthropic-marketplace",
    "+in-2-sources"
+  ]
+ },
+ {
+  "name": "playwright",
+  "id": "playwright",
+  "type": "claude-code-plugin",
+  "category": "testing",
+  "description": "Browser automation and end-to-end testing MCP server by Microsoft. Enables Claude to interact with web pages, take screenshots, fill forms, click elements, and perform automated browser testing workflows.",
+  "url": "https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/playwright",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "listed",
+  "quality_score": 50,
+  "tier": "ok",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source",
+   "-placeholder-description"
   ]
  },
  {
@@ -8634,6 +10137,42 @@
   ]
  },
  {
+  "name": "bio-research",
+  "id": "bio-research",
+  "type": "claude-code-plugin",
+  "category": "Research",
+  "description": "Connect to preclinical research tools and databases (literature search, genomics analysis, target prioritization) to accelerate early-stage life sciences R&D",
+  "url": "https://github.com/anthropics/knowledge-work-plugins/tree/main/bio-research",
+  "sources": [
+   "anthropics/knowledge-work-plugins"
+  ],
+  "category_source": "inferred",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "brand-voice",
+  "id": "brand-voice",
+  "type": "claude-code-plugin",
+  "category": "Marketing",
+  "description": "Discover your brand voice from existing documents and conversations, generate enforceable guidelines, and validate AI-generated content against your established tone and positioning.",
+  "url": "https://github.com/anthropics/knowledge-work-plugins/tree/main/partner-built/brand-voice",
+  "sources": [
+   "anthropics/knowledge-work-plugins"
+  ],
+  "category_source": "inferred",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
   "name": "brightdata-plugin",
   "id": "brightdata-plugin",
   "type": "claude-code-plugin",
@@ -8689,6 +10228,132 @@
   ]
  },
  {
+  "name": "common-room",
+  "id": "common-room",
+  "type": "claude-code-plugin",
+  "category": "Communication",
+  "description": "Turn Common Room into your GTM copilot. Research accounts and contacts, prep for calls with attendee profiles and talking points, and draft personalized outreach across email, LinkedIn, and phone.",
+  "url": "https://github.com/anthropics/knowledge-work-plugins/tree/main/partner-built/common-room",
+  "sources": [
+   "anthropics/knowledge-work-plugins"
+  ],
+  "category_source": "inferred",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "cowork-plugin-management",
+  "id": "cowork-plugin-management",
+  "type": "claude-code-plugin",
+  "category": "Workplace & Productivity",
+  "description": "Create, customize, and manage plugins tailored to your organization's tools and workflows. Configure MCP servers, adjust plugin behavior, and adapt templates to match how your team works.",
+  "url": "https://github.com/anthropics/knowledge-work-plugins/tree/main/cowork-plugin-management",
+  "sources": [
+   "anthropics/knowledge-work-plugins"
+  ],
+  "category_source": "inferred",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "customer-support",
+  "id": "customer-support",
+  "type": "claude-code-plugin",
+  "category": "Support & Service Management",
+  "description": "Triage tickets, draft responses, escalate issues, and build your knowledge base. Research customer context and turn resolved issues into self-service content.",
+  "url": "https://github.com/anthropics/knowledge-work-plugins/tree/main/customer-support",
+  "sources": [
+   "anthropics/knowledge-work-plugins"
+  ],
+  "category_source": "inferred",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "data-engineering",
+  "id": "data-engineering",
+  "type": "claude-code-plugin",
+  "category": "Data Platforms",
+  "description": "Data engineering plugin - warehouse exploration, pipeline authoring, Airflow integration",
+  "url": "https://github.com/astronomer/agents",
+  "sources": [
+   "anthropics/claude-plugins-official"
+  ],
+  "category_source": "inferred",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "design",
+  "id": "design",
+  "type": "claude-code-plugin",
+  "category": "Architecture & Design",
+  "description": "Accelerate design workflows critique, design system management, UX writing, accessibility audits, research synthesis, and dev handoff. From exploration to pixel-perfect specs.",
+  "url": "https://github.com/anthropics/knowledge-work-plugins/tree/main/design",
+  "sources": [
+   "anthropics/knowledge-work-plugins"
+  ],
+  "category_source": "inferred",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "engineering",
+  "id": "engineering",
+  "type": "claude-code-plugin",
+  "category": "Workplace & Productivity",
+  "description": "Streamline engineering workflows standups, code review, architecture decisions, incident response, and technical documentation. Works with your existing tools or standalone.",
+  "url": "https://github.com/anthropics/knowledge-work-plugins/tree/main/engineering",
+  "sources": [
+   "anthropics/knowledge-work-plugins"
+  ],
+  "category_source": "inferred",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "enterprise-search",
+  "id": "enterprise-search",
+  "type": "claude-code-plugin",
+  "category": "Communication",
+  "description": "Search across all of your company's tools in one place. Find anything across email, chat, documents, and wikis without switching between apps.",
+  "url": "https://github.com/anthropics/knowledge-work-plugins/tree/main/enterprise-search",
+  "sources": [
+   "anthropics/knowledge-work-plugins"
+  ],
+  "category_source": "inferred",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
   "name": "fastly-agent-toolkit",
   "id": "fastly-agent-toolkit",
   "type": "claude-code-plugin",
@@ -8726,12 +10391,66 @@
   ]
  },
  {
-  "name": "miro",
-  "id": "miro",
+  "name": "finance",
+  "id": "finance",
+  "type": "claude-code-plugin",
+  "category": "Finance & Fintech",
+  "description": "Streamline finance and accounting workflows, from journal entries and reconciliation to financial statements and variance analysis. Speed up audit prep, month-end close, and keeping your books clean.",
+  "url": "https://github.com/anthropics/knowledge-work-plugins/tree/main/finance",
+  "sources": [
+   "anthropics/knowledge-work-plugins"
+  ],
+  "category_source": "inferred",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "human-resources",
+  "id": "human-resources",
   "type": "claude-code-plugin",
   "category": "Security",
-  "description": "Secure access to Miro boards. Enables AI to read board context, create diagrams, and generate code with enterprise-grade security.",
-  "url": "https://github.com/miroapp/miro-ai.git",
+  "description": "Streamline people operations recruiting, onboarding, performance reviews, compensation analysis, and policy guidance. Maintain compliance and keep your team running smoothly.",
+  "url": "https://github.com/anthropics/knowledge-work-plugins/tree/main/human-resources",
+  "sources": [
+   "anthropics/knowledge-work-plugins"
+  ],
+  "category_source": "inferred",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "legal",
+  "id": "legal",
+  "type": "claude-code-plugin",
+  "category": "Legal",
+  "description": "Speed up contract review, NDA triage, and compliance workflows for in-house legal teams. Draft legal briefs, organize precedent research, and manage institutional knowledge.",
+  "url": "https://github.com/anthropics/knowledge-work-plugins/tree/main/legal",
+  "sources": [
+   "anthropics/knowledge-work-plugins"
+  ],
+  "category_source": "inferred",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "marketing",
+  "id": "marketing",
+  "type": "claude-code-plugin",
+  "category": "Marketing",
+  "description": "Create content, plan campaigns, and analyze performance across marketing channels. Maintain brand voice consistency, track competitors, and report on what's working.",
+  "url": "https://github.com/anthropics/knowledge-work-plugins/tree/main/marketing",
   "sources": [
    "anthropics/knowledge-work-plugins"
   ],
@@ -8781,6 +10500,42 @@
   ]
  },
  {
+  "name": "operations",
+  "id": "operations",
+  "type": "claude-code-plugin",
+  "category": "Developer Tools",
+  "description": "Optimize business operations vendor management, process documentation, change management, capacity planning, and compliance tracking. Keep your organization running efficiently.",
+  "url": "https://github.com/anthropics/knowledge-work-plugins/tree/main/operations",
+  "sources": [
+   "anthropics/knowledge-work-plugins"
+  ],
+  "category_source": "inferred",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "pdf-viewer",
+  "id": "pdf-viewer",
+  "type": "claude-code-plugin",
+  "category": "Search & Data Extraction",
+  "description": "View, annotate, and sign PDFs in a live interactive viewer. Mark up contracts, fill forms with visual feedback, stamp approvals, and place signatures then download the annotated copy.",
+  "url": "https://github.com/anthropics/knowledge-work-plugins/tree/main/pdf-viewer",
+  "sources": [
+   "anthropics/knowledge-work-plugins"
+  ],
+  "category_source": "inferred",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
   "name": "postiz",
   "id": "postiz",
   "type": "claude-code-plugin",
@@ -8819,6 +10574,24 @@
   ]
  },
  {
+  "name": "product-management",
+  "id": "product-management",
+  "type": "claude-code-plugin",
+  "category": "Product Management",
+  "description": "Write feature specs, plan roadmaps, and synthesize user research faster. Keep stakeholders updated and stay ahead of the competitive landscape.",
+  "url": "https://github.com/anthropics/knowledge-work-plugins/tree/main/product-management",
+  "sources": [
+   "anthropics/knowledge-work-plugins"
+  ],
+  "category_source": "inferred",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
   "name": "product-tracking-skills",
   "id": "product-tracking-skills",
   "type": "claude-code-plugin",
@@ -8840,8 +10613,8 @@
   "id": "productivity",
   "type": "claude-code-plugin",
   "category": "Workplace & Productivity",
-  "description": "Prep calls, summarize and follow up, research accounts, review deals and pipeline, and write the forecast, using the CRM, email, calendar and chat tools your team already uses, or uploaded files. Updates records, drafts or sends email, posts to chat and books meetings when you ask.",
-  "url": "https://github.com/anthropics/knowledge-work-plugins",
+  "description": "Manage tasks, plan your day, and build up memory of important context about your work. Syncs with your calendar, email, and chat to keep everything organized and on track.",
+  "url": "https://github.com/anthropics/knowledge-work-plugins/tree/main/productivity",
   "sources": [
    "anthropics/knowledge-work-plugins"
   ],
@@ -8872,6 +10645,24 @@
   ]
  },
  {
+  "name": "sales",
+  "id": "sales",
+  "type": "claude-code-plugin",
+  "category": "Communication",
+  "description": "Prep calls, summarize and follow up, research accounts, review deals and pipeline, and write the forecast, using the CRM, email, calendar and chat tools your team already uses, or uploaded files. Updates records, drafts or sends email, posts to chat and books meetings when you ask.",
+  "url": "https://github.com/anthropics/knowledge-work-plugins/tree/main/sales",
+  "sources": [
+   "anthropics/knowledge-work-plugins"
+  ],
+  "category_source": "inferred",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
   "name": "searchfit-seo",
   "id": "searchfit-seo",
   "type": "claude-code-plugin",
@@ -8886,6 +10677,42 @@
   "tier": "recommended",
   "flags": [
    "+anthropic-marketplace"
+  ]
+ },
+ {
+  "name": "slack-by-salesforce",
+  "id": "slack-by-salesforce",
+  "type": "claude-code-plugin",
+  "category": "Communication",
+  "description": "Slack integration for searching messages, sending communications, managing canvases, and more",
+  "url": "https://github.com/anthropics/knowledge-work-plugins/tree/main/partner-built/slack",
+  "sources": [
+   "anthropics/knowledge-work-plugins"
+  ],
+  "category_source": "inferred",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
+  ]
+ },
+ {
+  "name": "small-business",
+  "id": "small-business",
+  "type": "claude-code-plugin",
+  "category": "Workplace & Productivity",
+  "description": "Pre-built small business workflows to help you run and grow your business. Supports a majority of the tools you already use. You approve every step that touches money or customers. Install and then ask Claude to help you get onboarded.",
+  "url": "https://github.com/anthropics/knowledge-work-plugins/tree/main/small-business",
+  "sources": [
+   "anthropics/knowledge-work-plugins"
+  ],
+  "category_source": "inferred",
+  "quality_score": 75,
+  "tier": "recommended",
+  "flags": [
+   "+anthropic-marketplace",
+   "+open-source"
   ]
  },
  {
@@ -82457,6 +84284,25 @@
   ]
  },
  {
+  "name": "Chrome DevTools MCP",
+  "id": "io.github.ChromeDevTools/chrome-devtools-mcp",
+  "type": "mcp-server",
+  "category": "Browser Automation",
+  "description": "MCP server for Chrome DevTools",
+  "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+  "sources": [
+   "mcp-registry"
+  ],
+  "hosting": "package",
+  "category_source": "inferred",
+  "quality_score": 0,
+  "tier": "likely-junk",
+  "flags": [
+   "+open-source",
+   "-placeholder-description"
+  ]
+ },
+ {
   "name": "CICD AIops",
   "id": "io.github.AIops-tools/cicd-aiops",
   "type": "mcp-server",
@@ -111712,6 +113558,25 @@
   ]
  },
  {
+  "name": "SQLite MCP Sidecar",
+  "id": "dev.xakpc/sqlite-mcp-sidecar",
+  "type": "mcp-server",
+  "category": "Databases",
+  "description": "Agent-safe MCP sidecar for one live SQLite database: read-only default, bounded writes.",
+  "url": "https://github.com/xakpc/sqlite-mcp-sidecar",
+  "sources": [
+   "mcp-registry"
+  ],
+  "hosting": "package",
+  "category_source": "inferred",
+  "quality_score": 35,
+  "tier": "unvetted",
+  "flags": [
+   "+verified-domain",
+   "+open-source"
+  ]
+ },
+ {
   "name": "ssave.cc — TikTok & Instagram Downloader",
   "id": "cc.ssave/tiktok-instagram-downloader",
   "type": "mcp-server",
@@ -111960,6 +113825,24 @@
   "category": "Data Science Tools",
   "description": "Read-only Sui analytics: fund tracing, protocol-aware tx decoding, no API keys or wallet.",
   "url": "https://github.com/0xfreak0/sui-mcp",
+  "sources": [
+   "mcp-registry"
+  ],
+  "hosting": "package",
+  "category_source": "inferred",
+  "quality_score": 30,
+  "tier": "unvetted",
+  "flags": [
+   "+open-source"
+  ]
+ },
+ {
+  "name": "supragnosis",
+  "id": "io.github.Ashon/supragnosis",
+  "type": "mcp-server",
+  "category": "Knowledge & Memory",
+  "description": "Memory for AI agents that remembers who said it.",
+  "url": "https://github.com/Ashon/supragnosis",
   "sources": [
    "mcp-registry"
   ],
@@ -114578,7 +116461,7 @@
   "id": "co.apillow/zillow",
   "type": "mcp-server",
   "category": "Real Estate",
-  "description": "Zillow property data for AI agents: search listings and get 50+ fields for any US property.",
+  "description": "Zillow property data for AI agents, 50+ fields per US property. Not affiliated with Zillow Group.",
   "url": "https://apillow.co/blog/zillow-mcp-server",
   "sources": [
    "mcp-registry"
@@ -145683,6 +147566,25 @@
   "flags": []
  },
  {
+  "name": "Atlassian Rovo MCP Server",
+  "id": "com.atlassian/atlassian-mcp-server",
+  "type": "mcp-server",
+  "category": "Workplace & Productivity",
+  "description": "Connect to Atlassian Jira, Confluence, Loom, and more to search, create, and manage your work.",
+  "url": "https://github.com/atlassian/atlassian-mcp-server",
+  "sources": [
+   "mcp-registry"
+  ],
+  "hosting": "remote",
+  "category_source": "inferred",
+  "quality_score": 35,
+  "tier": "unvetted",
+  "flags": [
+   "+verified-domain",
+   "+open-source"
+  ]
+ },
+ {
   "name": "Atlassian Statuspage Scraper & JSON API Tool",
   "id": "com.ranovam/statuspage-scraper",
   "type": "mcp-server",
@@ -151681,6 +153583,25 @@
   ]
  },
  {
+  "name": "Bigdata.com",
+  "id": "com.bigdata/bigdata-mcp",
+  "type": "mcp-server",
+  "category": "Finance & Fintech",
+  "description": "Licensed, cited financial data for AI agents: news, filings, transcripts, research and tearsheets.",
+  "url": "https://github.com/Bigdata-com/bigdata-plugins-marketplace",
+  "sources": [
+   "mcp-registry"
+  ],
+  "hosting": "remote",
+  "category_source": "inferred",
+  "quality_score": 35,
+  "tier": "unvetted",
+  "flags": [
+   "+verified-domain",
+   "+open-source"
+  ]
+ },
+ {
   "name": "BigQuery MCP by InsightfulPipe",
   "id": "com.insightfulpipe/bigquery",
   "type": "mcp-server",
@@ -155124,7 +157045,7 @@
   "id": "com.botsrated/botsrated",
   "type": "mcp-server",
   "category": "Other Tools and Integrations",
-  "description": "Beta. Measured facts on paid x402 agent services. No grade until 3 paid buys on 3 different days.",
+  "description": "Signed checks of x402 sellers on Base and remote MCP servers, before your agent pays.",
   "url": "https://github.com/botsrated/botsrated",
   "sources": [
    "mcp-registry"
@@ -222721,6 +224642,25 @@
   ]
  },
  {
+  "name": "Figma MCP Server",
+  "id": "com.figma.mcp/mcp",
+  "type": "mcp-server",
+  "category": "Architecture & Design",
+  "description": "The Figma MCP server brings Figma design context directly into your AI workflow.",
+  "url": "https://github.com/figma/mcp-server-guide",
+  "sources": [
+   "mcp-registry"
+  ],
+  "hosting": "remote",
+  "category_source": "inferred",
+  "quality_score": 35,
+  "tier": "unvetted",
+  "flags": [
+   "+verified-domain",
+   "+open-source"
+  ]
+ },
+ {
   "name": "FigurePages",
   "id": "com.figurepages/figurepages",
   "type": "mcp-server",
@@ -229863,9 +231803,9 @@
   "name": "GAIAN",
   "id": "com.unclepony/gaian",
   "type": "mcp-server",
-  "category": "Other Tools and Integrations",
-  "description": "Korean social board for AI agents: self-register, post, comment, vote, elect a daily master.",
-  "url": "https://gaian.unclepony.com",
+  "category": "Communication",
+  "description": "Korean beta community board for AI agents and humans: register, post, comment, vote, notifications",
+  "url": "https://gaian.unclepony.com/?ref=registry",
   "sources": [
    "mcp-registry"
   ],
@@ -233787,6 +235727,24 @@
   "category": "Multimedia Process",
   "description": "Turn a web app URL and a one-sentence instruction into an edited demo video with voiceover.",
   "url": "https://gogoscreen.com/docs/mcp",
+  "sources": [
+   "mcp-registry"
+  ],
+  "hosting": "remote",
+  "category_source": "inferred",
+  "quality_score": 30,
+  "tier": "unvetted",
+  "flags": [
+   "+verified-domain"
+  ]
+ },
+ {
+  "name": "GoKuna",
+  "id": "com.gokuna/gokuna",
+  "type": "mcp-server",
+  "category": "Multimedia Process",
+  "description": "Pay real people for photo and video proof from the physical world. No fee on top.",
+  "url": "https://gokuna.com/for-agents",
   "sources": [
    "mcp-registry"
   ],
@@ -250372,168 +252330,6 @@
   "category": "Search & Data Extraction",
   "description": "Structured Google search, news, and local results at scale - organic results, news, and local packs",
   "url": "https://github.com/DataLeadsPRO/google-serp",
-  "sources": [
-   "mcp-registry"
-  ],
-  "hosting": "remote",
-  "category_source": "inferred",
-  "quality_score": 30,
-  "tier": "unvetted",
-  "flags": [
-   "+open-source"
-  ]
- },
- {
-  "name": "io.github.DataLeadsPRO/government-tenders",
-  "id": "io.github.DataLeadsPRO/government-tenders",
-  "type": "mcp-server",
-  "category": "Government & Public Data",
-  "description": "Search government tenders and public procurement opportunities with structured results.",
-  "url": "https://github.com/DataLeadsPRO/government-tenders",
-  "sources": [
-   "mcp-registry"
-  ],
-  "hosting": "remote",
-  "category_source": "inferred",
-  "quality_score": 30,
-  "tier": "unvetted",
-  "flags": [
-   "+open-source"
-  ]
- },
- {
-  "name": "io.github.DataLeadsPRO/jobs-search-multi",
-  "id": "io.github.DataLeadsPRO/jobs-search-multi",
-  "type": "mcp-server",
-  "category": "Jobs",
-  "description": "Search job postings across Indeed, LinkedIn, and more from one request - titles, companies",
-  "url": "https://github.com/DataLeadsPRO/jobs-search-multi",
-  "sources": [
-   "mcp-registry"
-  ],
-  "hosting": "remote",
-  "category_source": "inferred",
-  "quality_score": 30,
-  "tier": "unvetted",
-  "flags": [
-   "+open-source"
-  ]
- },
- {
-  "name": "io.github.DataLeadsPRO/keyword-research",
-  "id": "io.github.DataLeadsPRO/keyword-research",
-  "type": "mcp-server",
-  "category": "Marketing",
-  "description": "Keyword ideas and question discovery for any seed term - volumes, difficulty, and SERP intent.",
-  "url": "https://github.com/DataLeadsPRO/keyword-research",
-  "sources": [
-   "mcp-registry"
-  ],
-  "hosting": "remote",
-  "category_source": "inferred",
-  "quality_score": 30,
-  "tier": "unvetted",
-  "flags": [
-   "+open-source"
-  ]
- },
- {
-  "name": "io.github.DataLeadsPRO/news-article-extractor",
-  "id": "io.github.DataLeadsPRO/news-article-extractor",
-  "type": "mcp-server",
-  "category": "Search & Data Extraction",
-  "description": "Extract clean article text, titles, and metadata from news URLs - ready for NLP pipelines.",
-  "url": "https://github.com/DataLeadsPRO/news-article-extractor",
-  "sources": [
-   "mcp-registry"
-  ],
-  "hosting": "remote",
-  "category_source": "inferred",
-  "quality_score": 30,
-  "tier": "unvetted",
-  "flags": [
-   "+open-source"
-  ]
- },
- {
-  "name": "io.github.DataLeadsPRO/product-price-extractor",
-  "id": "io.github.DataLeadsPRO/product-price-extractor",
-  "type": "mcp-server",
-  "category": "Search & Data Extraction",
-  "description": "Extract product names, prices, and currency from any e-commerce product page in one call.",
-  "url": "https://github.com/DataLeadsPRO/product-price-extractor",
-  "sources": [
-   "mcp-registry"
-  ],
-  "hosting": "remote",
-  "category_source": "inferred",
-  "quality_score": 30,
-  "tier": "unvetted",
-  "flags": [
-   "+open-source"
-  ]
- },
- {
-  "name": "io.github.DataLeadsPRO/rank-tracker",
-  "id": "io.github.DataLeadsPRO/rank-tracker",
-  "type": "mcp-server",
-  "category": "Marketing",
-  "description": "Track keyword positions over time: create trackers, check ranks, and pull history programmatically.",
-  "url": "https://github.com/DataLeadsPRO/rank-tracker",
-  "sources": [
-   "mcp-registry"
-  ],
-  "hosting": "remote",
-  "category_source": "inferred",
-  "quality_score": 30,
-  "tier": "unvetted",
-  "flags": [
-   "+open-source"
-  ]
- },
- {
-  "name": "io.github.DataLeadsPRO/real-estate-listings",
-  "id": "io.github.DataLeadsPRO/real-estate-listings",
-  "type": "mcp-server",
-  "category": "Real Estate",
-  "description": "Pull property listings, prices, and details from real-estate sites as structured JSON.",
-  "url": "https://github.com/DataLeadsPRO/real-estate-listings",
-  "sources": [
-   "mcp-registry"
-  ],
-  "hosting": "remote",
-  "category_source": "inferred",
-  "quality_score": 30,
-  "tier": "unvetted",
-  "flags": [
-   "+open-source"
-  ]
- },
- {
-  "name": "io.github.DataLeadsPRO/saas-pricing-extractor",
-  "id": "io.github.DataLeadsPRO/saas-pricing-extractor",
-  "type": "mcp-server",
-  "category": "Search & Data Extraction",
-  "description": "Extract and structure pricing pages from any SaaS site: plans, tiers, and features.",
-  "url": "https://github.com/DataLeadsPRO/saas-pricing-extractor",
-  "sources": [
-   "mcp-registry"
-  ],
-  "hosting": "remote",
-  "category_source": "inferred",
-  "quality_score": 30,
-  "tier": "unvetted",
-  "flags": [
-   "+open-source"
-  ]
- },
- {
-  "name": "io.github.DataLeadsPRO/screenshot",
-  "id": "io.github.DataLeadsPRO/screenshot",
-  "type": "mcp-server",
-  "category": "Search & Data Extraction",
-  "description": "Pixel-perfect webpage screenshots rendered in a real browser, full-page or viewport, via one POST.",
-  "url": "https://github.com/DataLeadsPRO/screenshot",
   "sources": [
    "mcp-registry"
   ],
@@ -272131,6 +273927,25 @@
   ]
  },
  {
+  "name": "Microsoft Learn MCP",
+  "id": "com.microsoft/microsoft-learn-mcp",
+  "type": "mcp-server",
+  "category": "Education",
+  "description": "Official Microsoft Learn MCP Server real-time, trusted docs & code samples for AI and LLMs.",
+  "url": "https://github.com/MicrosoftDocs/mcp",
+  "sources": [
+   "mcp-registry"
+  ],
+  "hosting": "remote",
+  "category_source": "inferred",
+  "quality_score": 35,
+  "tier": "unvetted",
+  "flags": [
+   "+verified-domain",
+   "+open-source"
+  ]
+ },
+ {
   "name": "Microsoft Sentinel Data Exploration",
   "id": "com.microsoft/sentinel-data-exploration",
   "type": "mcp-server",
@@ -289978,6 +291793,24 @@
   "flags": [
    "+verified-domain",
    "+open-source"
+  ]
+ },
+ {
+  "name": "Pass-through tax rules",
+  "id": "app.vercel.pass-through-tax-rules/pass-through-tax-rules",
+  "type": "mcp-server",
+  "category": "Finance & Fintech",
+  "description": "Cited, tax-year-dated rules for state PTET, the federal SALT cap, and bonus-depreciation conformity.",
+  "url": "https://pass-through-tax-rules.vercel.app",
+  "sources": [
+   "mcp-registry"
+  ],
+  "hosting": "remote",
+  "category_source": "inferred",
+  "quality_score": 30,
+  "tier": "unvetted",
+  "flags": [
+   "+verified-domain"
   ]
  },
  {
@@ -309330,17 +311163,18 @@
   "id": "com.deployrocketship/rocketship",
   "type": "mcp-server",
   "category": "Cloud Platforms",
-  "description": "Find buyers, email them from your own Gmail, and track replies and deals.",
-  "url": "https://deployrocketship.com/claude",
+  "description": "Rocketship is the customer acquisition engine. It gets you customers, then runs your business.",
+  "url": "https://github.com/CarlosJeer/rocketship-mcp",
   "sources": [
    "mcp-registry"
   ],
   "hosting": "remote",
   "category_source": "inferred",
-  "quality_score": 30,
+  "quality_score": 35,
   "tier": "unvetted",
   "flags": [
-   "+verified-domain"
+   "+verified-domain",
+   "+open-source"
   ]
  },
  {
@@ -334864,6 +336698,25 @@
   ]
  },
  {
+  "name": "Testsy",
+  "id": "dev.testsy/testsy",
+  "type": "mcp-server",
+  "category": "Developer Tools",
+  "description": "Run plain-English web QA tests and inspect check results and evidence.",
+  "url": "https://github.com/nhatlongsinh/testsy-integrations",
+  "sources": [
+   "mcp-registry"
+  ],
+  "hosting": "remote",
+  "category_source": "inferred",
+  "quality_score": 35,
+  "tier": "unvetted",
+  "flags": [
+   "+verified-domain",
+   "+open-source"
+  ]
+ },
+ {
   "name": "TestWell Lab Tests",
   "id": "com.test-well/testwell",
   "type": "mcp-server",
@@ -358852,6 +360705,25 @@
   "tier": "unvetted",
   "flags": [
    "+verified-domain"
+  ]
+ },
+ {
+  "name": "Zapier",
+  "id": "com.zapier/mcp",
+  "type": "mcp-server",
+  "category": "Aggregators",
+  "description": "Hosted MCP server connecting AI assistants to 9,000+ apps and 40,000+ actions via Zapier.",
+  "url": "https://github.com/zapier/zapier-mcp",
+  "sources": [
+   "mcp-registry"
+  ],
+  "hosting": "remote",
+  "category_source": "inferred",
+  "quality_score": 35,
+  "tier": "unvetted",
+  "flags": [
+   "+verified-domain",
+   "+open-source"
   ]
  },
  {
