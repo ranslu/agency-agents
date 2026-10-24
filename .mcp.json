@@ -3,7 +3,102 @@
     "agency": {
       "type": "stdio",
       "command": "python3",
-      "args": ["platform/agency.py", "mcp"]
+      "args": [
+        "platform/agency.py",
+        "mcp"
+      ]
+    },
+    "brave-search": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@brave/brave-search-mcp-server@2.1.4"
+      ],
+      "env": {
+        "BRAVE_API_KEY": "${BRAVE_API_KEY:-}"
+      }
+    },
+    "apify": {
+      "type": "http",
+      "url": "https://mcp.apify.com",
+      "headers": {
+        "Authorization": "Bearer ${APIFY_TOKEN:-}"
+      }
+    },
+    "shodan": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@burtthecoder/mcp-shodan@1.0.34"
+      ],
+      "env": {
+        "SHODAN_API_KEY": "${SHODAN_API_KEY:-}"
+      }
+    },
+    "xero": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@xeroapi/xero-mcp-server@0.0.17"
+      ],
+      "env": {
+        "XERO_CLIENT_ID": "${XERO_CLIENT_ID:-}",
+        "XERO_CLIENT_SECRET": "${XERO_CLIENT_SECRET:-}"
+      }
+    },
+    "currents": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@currents/mcp@2.7.0"
+      ],
+      "env": {
+        "CURRENTS_API_KEY": "${CURRENTS_API_KEY:-}"
+      }
+    },
+    "google-maps": {
+      "type": "http",
+      "url": "https://mcp.hasdata.com/mcp?apis=google_maps",
+      "headers": {
+        "x-api-key": "${HASDATA_API_KEY:-}"
+      }
+    },
+    "neo4j": {
+      "command": "uvx",
+      "args": [
+        "mcp-neo4j-cypher@0.6.0",
+        "--transport",
+        "stdio"
+      ],
+      "env": {
+        "NEO4J_URI": "${NEO4J_URI:-}",
+        "NEO4J_USERNAME": "${NEO4J_USERNAME:-neo4j}",
+        "NEO4J_PASSWORD": "${NEO4J_PASSWORD:-}",
+        "NEO4J_DATABASE": "${NEO4J_DATABASE:-neo4j}"
+      }
+    },
+    "dbt": {
+      "command": "uvx",
+      "args": [
+        "dbt-mcp@2.7.0"
+      ],
+      "env": {
+        "DBT_HOST": "${DBT_HOST:-cloud.getdbt.com}",
+        "DBT_TOKEN": "${DBT_TOKEN:-}",
+        "DBT_PROD_ENV_ID": "${DBT_PROD_ENV_ID:-}"
+      }
+    },
+    "fhir": {
+      "command": "uvx",
+      "args": [
+        "fhir-mcp-server@0.10.0",
+        "--transport",
+        "stdio"
+      ],
+      "env": {
+        "FHIR_SERVER_BASE_URL": "${FHIR_SERVER_BASE_URL:-}",
+        "FHIR_SERVER_ACCESS_TOKEN": "${FHIR_SERVER_ACCESS_TOKEN:-}"
+      }
     }
   }
 }

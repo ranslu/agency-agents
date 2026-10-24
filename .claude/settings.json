@@ -12,7 +12,16 @@
       "mcp__github",
       "mcp__Firecrawl",
       "mcp__claude-code-remote",
-      "mcp__agency"
+      "mcp__agency",
+      "mcp__brave-search",
+      "mcp__apify",
+      "mcp__shodan",
+      "mcp__xero",
+      "mcp__currents",
+      "mcp__google-maps",
+      "mcp__neo4j",
+      "mcp__dbt",
+      "mcp__fhir"
     ],
     "deny": [
       "Bash(git push --force *)",
@@ -171,5 +180,17 @@
     "zapier@claude-plugins-official": true,
     "zoom-plugin@claude-plugins-official": true,
     "zoominfo@claude-plugins-official": true
-  }
+  },
+  "enabledMcpjsonServers": [
+    "agency",
+    "brave-search",
+    "apify",
+    "shodan",
+    "xero",
+    "currents",
+    "google-maps",
+    "neo4j",
+    "dbt",
+    "fhir"
+  ]
 }
