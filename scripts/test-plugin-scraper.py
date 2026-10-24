@@ -111,6 +111,19 @@ class Merge(unittest.TestCase):
         self.assertEqual(ps.plugin_source_url("m", {"source": "github", "repo": "acme/p"}), "https://github.com/acme/p")
 
 
+class Outputs(unittest.TestCase):
+    def test_writes_one_csv_per_tier(self):
+        import csv, tempfile
+        entries = [entry(name=f"p{i}", url=f"https://example.com/{i}") for i in range(4)]
+        for e, tier in zip(entries, ["recommended", "ok", "unvetted", "likely-junk"]):
+            e["tier"] = tier
+        with tempfile.TemporaryDirectory() as d:
+            ps.write_outputs(entries, Path(d), [])
+            for tier in ["recommended", "ok", "unvetted", "likely-junk"]:
+                rows = list(csv.DictReader(open(Path(d) / "by-tier" / f"{tier}.csv")))
+                self.assertEqual([r["tier"] for r in rows], [tier])
+
+
 class Shortlist(unittest.TestCase):
     def test_every_pick_resolves_to_one_catalog_entry(self):
         import json

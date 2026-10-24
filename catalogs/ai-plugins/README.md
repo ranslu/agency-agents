@@ -35,6 +35,7 @@ and the permissions it asks for before installing anything.
 | likely-junk | temporary hosting, template text, bulk spam or duplicates | 1,123 |
 
 Hand-picked plugins for each Agency division: [SHORTLIST.md](SHORTLIST.md).
+One CSV per tier: [by-tier/](by-tier/).
 
 The complete list of every entry is in [plugins.md](plugins.md). Categories marked
 `inferred` in the CSV were assigned from the plugin's description (`scripts/plugin_categories.py`).
