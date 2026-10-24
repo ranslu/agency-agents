@@ -1,0 +1,268 @@
+{
+  "title": "AI Plugin Shortlist for The Agency",
+  "intro": "Hand-picked plugins for each Agency division, chosen from catalogs/ai-plugins/plugins.json. Picks favour official vendor plugins and servers, Anthropic-maintained plugins, and widely used open-source servers. Every pick is checked against the catalog by scripts/build-shortlist.py.",
+  "divisions": [
+    {
+      "division": "Core (every division)",
+      "picks": [
+        {"name": "github", "match": "external_plugins/github", "why": "Issues, PRs, code search and reviews; the backbone for any repo-based work."},
+        {"name": "context7", "match": "external_plugins/context7", "why": "Pulls current library docs into context so answers match the version in use."},
+        {"name": "exa", "match": "exa.ai", "why": "High-quality web search and content extraction built for agents."},
+        {"name": "firecrawl", "why": "Turns any site into clean markdown; reliable crawling for research tasks."},
+        {"name": "zapier", "why": "One connection to 8,000+ apps for cross-tool automation."},
+        {"name": "skill-creator", "why": "Anthropic's tool for writing and testing new skills for the agents in this repo."},
+        {"name": "plugin-dev", "why": "Anthropic's toolkit for building Claude Code plugins, hooks and commands."},
+        {"name": "productivity", "why": "Anthropic's knowledge-work plugin for tasks, memory and daily planning."},
+        {"name": "enterprise-search", "why": "Anthropic's plugin for searching across connected work tools at once."},
+        {"name": "modelcontextprotocol/server-filesystem", "why": "Reference filesystem server for controlled local file access."},
+        {"name": "microsoft/markitdown", "why": "Converts PDFs, Office files and HTML to markdown for agents to read."}
+      ]
+    },
+    {
+      "division": "Engineering",
+      "picks": [
+        {"name": "feature-dev", "why": "Anthropic's structured explore-plan-build workflow for new features."},
+        {"name": "code-review", "match": "plugins/code-review", "why": "Anthropic's multi-agent PR review with confidence-filtered findings."},
+        {"name": "pr-review-toolkit", "why": "Specialised reviewers for tests, types, comments and silent failures."},
+        {"name": "commit-commands", "why": "Commit, push and open PRs with consistent messages."},
+        {"name": "code-simplifier", "why": "Cleans up recently changed code without changing behaviour."},
+        {"name": "code-modernization", "why": "Guided assessment and migration plan for legacy codebases."},
+        {"name": "typescript-lsp", "why": "Real type-checking and go-to-definition for TypeScript projects."},
+        {"name": "pyright-lsp", "why": "Python type intelligence via Pyright."},
+        {"name": "serena", "why": "Semantic code navigation and symbol-level editing across large repos."},
+        {"name": "frontend-design", "why": "Anthropic's skill for distinctive, production-grade frontend UI."},
+        {"name": "chrome-devtools-mcp", "why": "Debug a live browser: console, network, performance traces."},
+        {"name": "gitkraken", "match": "gitkraken.com", "why": "Git context across repos, branches, PRs and issues."},
+        {"name": "gitlab", "match": "external_plugins/gitlab", "why": "Merge requests and pipelines for GitLab-hosted work."},
+        {"name": "vercel", "why": "Deploy, inspect logs and manage projects on Vercel."},
+        {"name": "cloudflare", "match": "cloudflare/skills", "why": "Workers, Durable Objects and the Agents SDK, from Cloudflare."},
+        {"name": "com.cloudflare.mcp/mcp", "why": "Cloudflare's official server for configuring account resources."},
+        {"name": "terraform", "match": "external_plugins/terraform", "why": "Infrastructure-as-code with provider docs and plan review."},
+        {"name": "azure", "match": "microsoft/azure-skills", "why": "Microsoft's Azure MCP server plus deployment skills."},
+        {"name": "aws-agents", "why": "AWS's official agent toolkit for building and running on AWS."},
+        {"name": "render", "match": "render.com", "why": "Deploy and troubleshoot services on Render."},
+        {"name": "railway", "why": "Deploy and manage Railway projects from the terminal."},
+        {"name": "firebase", "match": "external_plugins/firebase", "why": "Firebase projects, Firestore and hosting from Google."},
+        {"name": "microsoft-docs", "why": "Official Microsoft docs and code samples, always current."},
+        {"name": "buildkite", "why": "CI pipelines and build debugging on Buildkite."}
+      ]
+    },
+    {
+      "division": "Engineering: data and databases",
+      "picks": [
+        {"name": "supabase", "match": "supabase-plugin", "why": "Postgres, auth, storage and edge functions on Supabase."},
+        {"name": "neon", "why": "Serverless Postgres with branching, from Neon."},
+        {"name": "prisma", "match": "prisma.io", "why": "Schema migrations and queries through Prisma."},
+        {"name": "planetscale", "match": "planetscale.com", "why": "PlanetScale databases, branches and deploy requests."},
+        {"name": "mongodb", "match": "mcp-server/overview", "why": "MongoDB's official server for queries and Atlas admin."},
+        {"name": "redis-development", "why": "Redis data modelling and commands, from Redis."},
+        {"name": "clickhouse", "match": "clickhouse-claude-code-plugin", "why": "Analytics queries on ClickHouse Cloud."},
+        {"name": "neo4j-contrib/mcp-neo4j", "why": "Graph queries and memory on Neo4j."},
+        {"name": "qdrant-skills", "why": "Vector search design and tuning from Qdrant."},
+        {"name": "pinecone", "why": "Managed vector indexes for RAG, from Pinecone."},
+        {"name": "dbt-labs/dbt-mcp", "why": "dbt models, lineage and runs from dbt Labs."},
+        {"name": "snowflake-cortex-code", "why": "Snowflake's coding agent for SQL and data apps."},
+        {"name": "bigquery-data-analytics", "why": "Query and analyse BigQuery datasets."},
+        {"name": "databricks", "why": "Databricks notebooks, jobs and Unity Catalog."},
+        {"name": "data", "match": "astronomer/agents", "why": "Airflow DAG authoring and debugging from Astronomer."}
+      ]
+    },
+    {
+      "division": "Testing",
+      "picks": [
+        {"name": "playwright", "match": "external_plugins/playwright", "why": "Drive real browsers for end-to-end tests and repros."},
+        {"name": "microsoft/playwright-mcp", "why": "Microsoft's Playwright server using accessibility snapshots."},
+        {"name": "browser-use", "why": "Agent-driven browsing for exploratory QA flows."},
+        {"name": "Currents", "why": "Fix flaky and failing Playwright tests from Currents reports."},
+        {"name": "codspeed", "why": "Benchmarks and performance regressions in CI."},
+        {"name": "mergify", "why": "Merge queues and flaky-test insights."},
+        {"name": "growthbook", "why": "Feature flags and A/B experiments for safe rollouts."}
+      ]
+    },
+    {
+      "division": "Security",
+      "picks": [
+        {"name": "security-guidance", "why": "Anthropic's hook that warns on risky code patterns as you write."},
+        {"name": "claude-security", "why": "Anthropic's security review workflow for code changes."},
+        {"name": "semgrep", "match": "mcp-marketplace", "why": "Static analysis that flags vulnerabilities in real time."},
+        {"name": "snyk/studio-mcp", "why": "Dependency, code and container scanning from Snyk."},
+        {"name": "sonarqube", "match": "sonarsource.com", "why": "Code quality and security gates in the agent loop."},
+        {"name": "aikido", "why": "SAST, secrets and IaC scanning from Aikido."},
+        {"name": "stackhawk-hawkscan", "why": "Dynamic application security testing (DAST) on running apps."},
+        {"name": "sonatype-guide", "why": "Supply-chain risk and safer dependency versions."},
+        {"name": "vanta-mcp-plugin", "why": "SOC 2 and ISO compliance tests and evidence in Vanta."},
+        {"name": "auth0", "match": "auth0.com", "why": "Login, MFA and migrations done the Auth0 way."},
+        {"name": "workos", "why": "Enterprise SSO, directory sync and RBAC from WorkOS."},
+        {"name": "io.github.BurtTheCoder/shodan", "why": "Internet exposure and CVE lookups for recon."}
+      ]
+    },
+    {
+      "division": "Design",
+      "picks": [
+        {"name": "figma", "why": "Read Figma frames, variables and components to build matching UI."},
+        {"name": "design", "match": "knowledge-work-plugins/tree/main/design", "why": "Anthropic's design plugin: critiques, specs and handoff docs."},
+        {"name": "canva", "match": "canva.com", "why": "Create, resize and brand-check Canva designs."},
+        {"name": "adobe-for-creativity", "why": "Adobe Creative Cloud edits: background removal, vectorising, retouching."},
+        {"name": "miro", "match": "miro.com", "why": "Read and create Miro boards and diagrams."},
+        {"name": "cloudinary", "why": "Image and video transformations and asset management."},
+        {"name": "Excalidraw Architect", "why": "Generates architecture diagrams as editable Excalidraw files."},
+        {"name": "ai.smithery/hustcc-mcp-mermaid", "why": "Renders Mermaid diagrams for docs and specs."}
+      ]
+    },
+    {
+      "division": "Product",
+      "picks": [
+        {"name": "product-management", "why": "Anthropic's PM plugin: specs, roadmaps and research synthesis."},
+        {"name": "linear", "match": "external_plugins/linear", "why": "Issues, projects and cycles in Linear."},
+        {"name": "amplitude", "why": "Product analytics charts and cohorts from Amplitude."},
+        {"name": "posthog", "why": "Product analytics, session replay and flags from PostHog."},
+        {"name": "pendo-analytics", "why": "Feature adoption and account health from Pendo."},
+        {"name": "product-tracking-skills", "why": "Designs and audits event tracking plans."},
+        {"name": "mintlify", "why": "Writes and publishes product documentation sites."}
+      ]
+    },
+    {
+      "division": "Project Management",
+      "picks": [
+        {"name": "atlassian", "why": "Atlassian's official Jira and Confluence server."},
+        {"name": "asana", "match": "external_plugins/asana", "why": "Tasks, projects and status updates in Asana."},
+        {"name": "notion", "match": "makenotion", "why": "Notion's official plugin for pages and databases."},
+        {"name": "monday-com", "why": "Boards, items and docs on monday.com."},
+        {"name": "airtable", "match": "airtable.com", "why": "Airtable bases as a lightweight ops database."},
+        {"name": "operations", "why": "Anthropic's ops plugin: runbooks, status reports, change requests."}
+      ]
+    },
+    {
+      "division": "Marketing",
+      "picks": [
+        {"name": "marketing", "match": "knowledge-work-plugins/tree/main/marketing", "why": "Anthropic's marketing plugin: campaigns, content and reporting."},
+        {"name": "brand-voice", "why": "Builds brand guidelines and keeps content on-voice."},
+        {"name": "searchfit-seo", "why": "SEO audits, keyword clusters and content strategy."},
+        {"name": "activecampaign", "why": "Email automation, lists and campaign reporting."},
+        {"name": "resend", "why": "Transactional and marketing email from code."},
+        {"name": "postiz", "why": "Schedules and manages posts across social networks."},
+        {"name": "sanity-plugin", "why": "Content modelling and publishing on Sanity CMS."},
+        {"name": "wix", "why": "Build and manage Wix sites and apps."},
+        {"name": "brightdata-plugin", "why": "Brand listening, competitor and SERP data at scale."}
+      ]
+    },
+    {
+      "division": "Paid Media",
+      "picks": [
+        {"name": "adspirer-ads-agent", "why": "One agent across Google, Meta, LinkedIn, TikTok and Amazon Ads."},
+        {"name": "gomarble-ai/google-ads-mcp-server", "why": "Google Ads campaigns, keywords and performance."},
+        {"name": "mikusnuz/meta-ads-mcp", "why": "Meta (Facebook and Instagram) ad campaigns and insights."},
+        {"name": "amazon-selling-partner", "why": "Amazon seller data: listings, orders and advertising."}
+      ]
+    },
+    {
+      "division": "Sales",
+      "picks": [
+        {"name": "sales", "match": "knowledge-work-plugins/tree/main/sales", "why": "Anthropic's sales plugin: call prep, pipeline and outreach."},
+        {"name": "hubspot-sales", "why": "HubSpot CRM deals, contacts and sequences."},
+        {"name": "salesforce-development", "why": "Salesforce's own skills for building on the platform."},
+        {"name": "apollo", "match": "apollo.io", "why": "Prospecting and enrichment from Apollo.io."},
+        {"name": "zoominfo", "why": "Company and contact intelligence, intent and lookalikes."},
+        {"name": "common-room", "why": "Buyer signals and account research from Common Room."},
+        {"name": "lusha", "why": "Contact enrichment and call-ready lead lists."},
+        {"name": "leadfeeder", "why": "Turns website visitors into named leads."},
+        {"name": "monday-crm", "why": "Pipeline management in monday CRM."}
+      ]
+    },
+    {
+      "division": "Support",
+      "picks": [
+        {"name": "customer-support", "why": "Anthropic's support plugin: triage, drafts and KB articles."},
+        {"name": "intercom", "match": "intercom/claude-plugin-external", "why": "Intercom conversations, tickets and help-centre content."},
+        {"name": "michaelrice/zendesk-mcp", "why": "Zendesk tickets and macros."},
+        {"name": "slack", "match": "slackapi", "why": "Slack's official server for channels, search and messages."},
+        {"name": "twilio-developer-kit", "why": "SMS, voice and WhatsApp support channels via Twilio."},
+        {"name": "zoom-plugin", "why": "Zoom meetings, recordings and transcripts."},
+        {"name": "incident-io", "why": "Incident response and status updates."}
+      ]
+    },
+    {
+      "division": "Finance",
+      "picks": [
+        {"name": "finance", "match": "knowledge-work-plugins/tree/main/finance", "why": "Anthropic's finance plugin: close, reconciliations, variance analysis."},
+        {"name": "intuit-quickbooks", "why": "QuickBooks books, reports and actions from Intuit."},
+        {"name": "XeroAPI/xero-mcp-server", "why": "Xero's official accounting server."},
+        {"name": "stripe", "match": "stripe/ai", "why": "Payments, customers and billing from Stripe."},
+        {"name": "netsuite-finance-analyst", "why": "NetSuite ERP analysis from Oracle."},
+        {"name": "daloopa", "why": "Institutional-grade company financials and models."},
+        {"name": "lseg", "why": "Bond, curve and FX analytics from LSEG data."},
+        {"name": "sp-global", "why": "S&P Global company data, tear sheets and earnings prep."},
+        {"name": "com.twelvedata/mcp", "why": "Market data for stocks, FX and crypto."}
+      ]
+    },
+    {
+      "division": "Research",
+      "picks": [
+        {"name": "tavily", "match": "tavily.com", "why": "Search, extract and research endpoints tuned for agents."},
+        {"name": "ai.smithery/brave", "why": "Brave Search: independent index, privacy-friendly."},
+        {"name": "Perplexity", "match": "ppl-ai", "why": "Perplexity's cited answers and research mode."},
+        {"name": "apify/actors-mcp-server", "why": "Thousands of ready-made scrapers via Apify Actors."},
+        {"name": "nimble", "why": "Web data at scale: search, extract, map and crawl."},
+        {"name": "unstructured-foundation", "why": "Parses messy documents into searchable chunks."},
+        {"name": "box", "match": "box/skills", "why": "Search and act on Box content."},
+        {"name": "dropbox", "why": "Find and organise Dropbox files."}
+      ]
+    },
+    {
+      "division": "Academic",
+      "picks": [
+        {"name": "blazickjp/arxiv-mcp-server", "why": "Search and read arXiv papers."},
+        {"name": "andybrandt/mcp-simple-pubmed", "why": "PubMed search and abstracts."},
+        {"name": "kaliaboi/mcp-zotero", "why": "Your Zotero library and citations."},
+        {"name": "learn-with-coursera", "why": "Personalised Coursera learning paths."},
+        {"name": "math-proof", "why": "Anthropic's skill for writing and checking proofs."},
+        {"name": "huggingface-skills", "why": "Models, datasets and training jobs on Hugging Face."}
+      ]
+    },
+    {
+      "division": "Healthcare",
+      "picks": [
+        {"name": "bio-research", "why": "Anthropic's bio-research plugin: literature, trials and pipelines."},
+        {"name": "maven-bio", "why": "Evidence-backed biopharma research workflows."},
+        {"name": "wso2/fhir-mcp-server", "why": "Read and write FHIR clinical records."},
+        {"name": "boltz", "why": "Protein structure prediction and molecule screening."}
+      ]
+    },
+    {
+      "division": "GIS",
+      "picks": [
+        {"name": "mapbox", "why": "Maps, geocoding, routing and static map images."},
+        {"name": "amazon-location-service", "why": "AWS maps, places and routes."},
+        {"name": "HasData Google Maps", "why": "Google Maps places and reviews data."}
+      ]
+    },
+    {
+      "division": "Game Development",
+      "picks": [
+        {"name": "unity", "match": "unity.com", "why": "Unity's official plugin for building and shipping games."},
+        {"name": "unreal-engine-skills-for-claude-code", "why": "Epic's plugin to control Unreal Editor."},
+        {"name": "beckettlab/beckett-godot-mcp", "why": "Drives the Godot editor for scenes and scripts."}
+      ]
+    },
+    {
+      "division": "Spatial Computing",
+      "picks": [
+        {"name": "ahujasid/blender-mcp", "why": "Create and edit 3D scenes in Blender."},
+        {"name": "swift-lsp", "why": "Swift language intelligence for visionOS and iOS apps."},
+        {"name": "r-huijts/xcode-mcp-server", "why": "Build, run and test Xcode projects."}
+      ]
+    },
+    {
+      "division": "Specialized: legal, HR and AI ops",
+      "picks": [
+        {"name": "legal", "why": "Anthropic's legal plugin: contract review, NDA triage, compliance."},
+        {"name": "human-resources", "why": "Anthropic's HR plugin: hiring, onboarding, reviews."},
+        {"name": "langfuse", "match": "langfuse.com", "why": "Traces, evals and prompt management for LLM apps."},
+        {"name": "deepeval", "why": "Evaluation suites for agent and LLM output quality."},
+        {"name": "datadog", "match": "datadoghq.com", "why": "Datadog logs, metrics and traces through its MCP server."},
+        {"name": "sentry", "match": "getsentry/plugin", "why": "Errors, stack traces and releases from Sentry."},
+        {"name": "grafana-assistant", "why": "Dashboards and observability queries on Grafana Cloud."}
+      ]
+    }
+  ]
+}

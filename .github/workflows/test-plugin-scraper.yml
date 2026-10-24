@@ -1,0 +1,38 @@
+name: Test Plugin Scraper
+
+# Offline unit tests for scripts/plugin-scraper.py (no network, no deps beyond python3).
+on:
+  pull_request:
+    paths:
+      - "scripts/plugin-scraper.py"
+      - "scripts/plugin_categories.py"
+      - "scripts/plugin_vetting.py"
+      - "scripts/build-shortlist.py"
+      - "catalogs/ai-plugins/shortlist.json"
+      - "catalogs/ai-plugins/plugins.json"
+      - "scripts/test-plugin-scraper.py"
+      - ".github/workflows/test-plugin-scraper.yml"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/plugin-scraper.py"
+      - "scripts/plugin_categories.py"
+      - "scripts/plugin_vetting.py"
+      - "scripts/build-shortlist.py"
+      - "catalogs/ai-plugins/shortlist.json"
+      - "catalogs/ai-plugins/plugins.json"
+      - "scripts/test-plugin-scraper.py"
+
+jobs:
+  test-plugin-scraper:
+    name: plugin-scraper unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.9"
+
+      - name: Run tests
+        run: python3 scripts/test-plugin-scraper.py
