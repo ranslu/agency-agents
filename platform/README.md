@@ -19,7 +19,7 @@ that turn the roster into something you can **query, route, audit, orchestrate a
 | Auto-fix | `agency fix --grade D [--ai] --write` | Adds missing template sections: offline scaffold, or written by Claude in the agent's voice |
 | Behavioural evals | `agency eval <slug> --models a,b` | Grades real outputs against the agent's *own* success metrics and rules; compares models |
 | promptfoo suite | `agency eval --grade A --promptfoo suite.json` | Exports `llm-rubric` tests for any providers promptfoo supports |
-| Open-format export | `agency export skills\|agents-md\|json\|txt -o dist` | Agent Skills (`SKILL.md`), `AGENTS.md`, JSON or plain prompts — no per-tool adaptation |
+| Open-format export | `agency export skills\|skill-bundle\|agents-md\|json\|txt -o dist` | Agent Skills (`SKILL.md`, one per agent or one `agency-roster` bundle), `AGENTS.md`, JSON or plain prompts |
 | PR triage | `agency triage --base origin/main` | First-pass review of changed agents: grade, missing sections, near-duplicates |
 | Overlap finder | `agency overlaps --threshold 0.45` | Near-duplicate pairs across the whole corpus |
 
