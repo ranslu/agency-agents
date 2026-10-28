@@ -44,6 +44,16 @@ for a key in chat; keys go in the cloud environment's secrets.
   `customer-support`, `product-management`, `operations` and `design` plugins
 - Diagrams: the `mermaid` and `excalidraw` servers above
 
+**Project skills** (in `.claude/skills/`)
+- App cloning, the Replica pack (MIT, from
+  [Jakeschincariol/replica-skill](https://github.com/Jakeschincariol/replica-skill) @ `77c9436`).
+  Run in order: `/replica-recon` → `/replica-architect` → `/replica-design` →
+  `/replica-build` → `/replica-backend` → `/replica-test` → `/replica-diff` →
+  `/replica-entrepreneur` → `/replica-brand` → `/replica-launch` → `/replica-deploy`.
+  Its helper scripts live beside each skill, e.g. `.claude/skills/replica-diff/parity.py`.
+  It rebuilds features and UX clean-room: never copy the original's code, assets or brand.
+- `skill-scraper`
+
 **Keeping it current**
 - Re-scrape the catalog: `python3 scripts/plugin-scraper.py`
 - Change the shortlist: edit `catalogs/ai-plugins/shortlist.json`, then run
