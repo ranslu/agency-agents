@@ -38,6 +38,7 @@ MARKETPLACES = {
     "anthropics/claude-plugins-official": "https://raw.githubusercontent.com/anthropics/claude-plugins-official/main/.claude-plugin/marketplace.json",
     "anthropics/knowledge-work-plugins": "https://raw.githubusercontent.com/anthropics/knowledge-work-plugins/main/.claude-plugin/marketplace.json",
     "anthropics/claude-code": "https://raw.githubusercontent.com/anthropics/claude-code/main/.claude-plugin/marketplace.json",
+    "Jakeschincariol/replica-skill": "https://raw.githubusercontent.com/Jakeschincariol/replica-skill/main/.claude-plugin/marketplace.json",
 }
 
 # (source label, raw README URL, entry type)

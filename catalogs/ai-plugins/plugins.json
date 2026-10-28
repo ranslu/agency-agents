@@ -9425,6 +9425,23 @@
   ]
  },
  {
+  "name": "replica-skill",
+  "id": "replica-skill",
+  "type": "claude-code-plugin",
+  "category": "productivity",
+  "description": "Eleven Claude skills that clone any app: recon, architecture, design, build, backend, test, parity diff, a review-reading Entrepreneur skill, brand, launch and deploy.",
+  "url": "https://github.com/Jakeschincariol/replica-skill",
+  "sources": [
+   "Jakeschincariol/replica-skill"
+  ],
+  "category_source": "listed",
+  "quality_score": 30,
+  "tier": "unvetted",
+  "flags": [
+   "+open-source"
+  ]
+ },
+ {
   "name": "save-to-spotify",
   "id": "save-to-spotify",
   "type": "claude-code-plugin",

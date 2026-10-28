@@ -31,6 +31,7 @@
         {"name": "pyright-lsp", "why": "Python type intelligence via Pyright."},
         {"name": "serena", "why": "Semantic code navigation and symbol-level editing across large repos."},
         {"name": "frontend-design", "why": "Anthropic's skill for distinctive, production-grade frontend UI."},
+        {"name": "replica-skill", "why": "Eleven skills that rebuild an app clean-room, recon to deploy; already in .claude/skills as /replica-*."},
         {"name": "chrome-devtools-mcp", "why": "Debug a live browser: console, network, performance traces."},
         {"name": "gitkraken", "match": "gitkraken.com", "why": "Git context across repos, branches, PRs and issues."},
         {"name": "gitlab", "match": "external_plugins/gitlab", "why": "Merge requests and pipelines for GitLab-hosted work."},

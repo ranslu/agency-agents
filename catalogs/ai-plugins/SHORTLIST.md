@@ -2,10 +2,10 @@
 
 Hand-picked plugins for each Agency division, chosen from catalogs/ai-plugins/plugins.json. Picks favour official vendor plugins and servers, Anthropic-maintained plugins, and widely used open-source servers. Every pick is checked against the catalog by scripts/build-shortlist.py.
 
-162 picks across 20 groups. Tier is the catalog's heuristic vetting tier.
+163 picks across 20 groups. Tier is the catalog's heuristic vetting tier.
 
 - [Core (every division)](#core-every-division) (11)
-- [Engineering](#engineering) (24)
+- [Engineering](#engineering) (25)
 - [Engineering: data and databases](#engineering-data-and-databases) (15)
 - [Testing](#testing) (7)
 - [Security](#security) (12)
@@ -55,6 +55,7 @@ Hand-picked plugins for each Agency division, chosen from catalogs/ai-plugins/pl
 | [pyright-lsp](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/pyright-lsp) | Claude Code plugin | recommended | Python type intelligence via Pyright. |
 | [serena](https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/serena) | Claude Code plugin | recommended | Semantic code navigation and symbol-level editing across large repos. |
 | [frontend-design](https://github.com/anthropics/claude-plugins-public/tree/main/plugins/frontend-design) | Claude Code plugin | recommended | Anthropic's skill for distinctive, production-grade frontend UI. |
+| [replica-skill](https://github.com/Jakeschincariol/replica-skill) | Claude Code plugin | unvetted | Eleven skills that rebuild an app clean-room, recon to deploy; already in .claude/skills as /replica-*. |
 | [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | Claude Code plugin | recommended | Debug a live browser: console, network, performance traces. |
 | [gitkraken](https://www.gitkraken.com) | Claude Code plugin | recommended | Git context across repos, branches, PRs and issues. |
 | [gitlab](https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/gitlab) | Claude Code plugin | recommended | Merge requests and pipelines for GitLab-hosted work. |

@@ -7,10 +7,10 @@ touches one of the areas below, reach for the matching tool first, and check
 the shortlist before suggesting or installing anything new.
 
 **Where it lives**
-- Shortlist (162 picks by division, with reasons): `catalogs/ai-plugins/SHORTLIST.md`,
+- Shortlist (163 picks by division, with reasons): `catalogs/ai-plugins/SHORTLIST.md`,
   also in Google Drive: https://docs.google.com/spreadsheets/d/1xJrGovgrQiqYwYLguzkw2u3UirmrWRPhRy1aRqT6JWQ
   (folder: https://drive.google.com/drive/folders/1-UhVIRf5SSeqfjSDoGoGfTJrel4YcGJi)
-- Full catalog (20,805 plugins, vetted into tiers): `catalogs/ai-plugins/plugins.csv`;
+- Full catalog (20,806 plugins, vetted into tiers): `catalogs/ai-plugins/plugins.csv`;
   filter on `tier` and ignore `likely-junk`.
 - Installed plugins: `enabledPlugins` in `.claude/settings.json`.
   MCP servers: `.mcp.json`.
