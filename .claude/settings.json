@@ -39,6 +39,12 @@
       "Read(./**/*.key)"
     ]
   },
+  "autoMode": {
+    "allow": [
+      "$defaults",
+      "Attaching one of the user's own GitHub repositories (owner ranslu) to the session with mcp__claude-code-remote__add_repo, including push access, when the task needs that repository"
+    ]
+  },
   "extraKnownMarketplaces": {
     "knowledge-work-plugins": {
       "source": {
